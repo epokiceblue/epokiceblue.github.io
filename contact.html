@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <form action="index.php" method="get">
+    <label for="username">Jméno a příjmení:</label>
+    <input id="username" required>
+    <div>
+     <label for="phone">Telefon:</label>
+     <input required id="phone" placeholder="+XXX 123 456 789/XXX podla předvolby" pattern="[+][0-9]{3} [0-9]{3} [0-9]{3} [0-9]{3}">
+    </div>
+    <div>
+     <label for="email">E‑mail:</label>
+     <input required id="email" type="email">
+    </div>
+    <div>
+     <label>Mám zájem o:</label>
+     <div>
+     <label for="nataceni">Natáčení</label>
+     <input type="radio" id="nataceni" name="dotaznik" value="Natáčení">
+     <div>
+     <label for="foceni">Focení</label>
+     <input type="radio" id="foceni" name="dotaznik" value="Focení">
+    </div>
+    <div>
+    <label>Kde budeme fotit/točit?</label>
+    <input required placeholder="prosím napište: město, interiér/exteriér, případne konkrétn=i lokaci">
+    </div>
+    <div>
+    <label>Moje představa o spolupráci:</label>
+    <textarea rows="5" cols="50" placeholder="o jaké focení máte zájem? rozepište se o vaší představe, zámeru apod."></textarea>
+    </div>
+    <label>Odkud mě znáte? / Jak jste mě našli?</label>
+    <input required placeholder="např. z instagramu, z reklamy, z doporučení">
+    <div>
+    <input type="submit">
+    </form>
+</body>
+</html>
