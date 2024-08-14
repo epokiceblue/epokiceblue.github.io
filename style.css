@@ -1,0 +1,77 @@
+input {
+    width: 70%;
+    margin-left: 12%;
+    border-radius: 10px;
+
+}
+
+body{
+    background-color: #222222;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+h1.titul {
+    background-color: #222222;
+    color:#FFFFFF;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 80px; /* Sets the font size */
+    font-weight: 400; /* Sets the font weight */
+    line-height: 1; /* Sets the line height */
+    letter-spacing: 1.5px; /* Sets the space between letters */
+    text-transform: lowercase;
+    margin: 0;
+    margin-top: 100px;
+    padding: 0;
+}
+
+p.podtitul {
+    background-color: #222222;
+    color:#FFFFFF;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px; /* Sets the font size */
+    font-weight: 400; /* Sets the font weight */
+    line-height: 1; /* Sets the line height */
+    letter-spacing: 1.5px; /* Sets the space between letters */
+    text-transform: lowercase;
+    margin: 0;
+    margin-left: 400px;
+    padding: 0;
+}
+
+form {
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    background-color: #222222;
+    color:#FFFFFF;
+    text-align: center;
+    font-family: 'Poppins semi bold', sans-serif;
+    font-size: 15px; /* Sets the font size */
+    font-weight: 700; /* Sets the font weight */
+    line-height: 1; /* Sets the line height */
+}
+
+.text{
+    background-color: #222222;
+    color:#FFFFFF;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px; /* Sets the font size */
+    font-weight: 400; /* Sets the font weight */
+    line-height: 1; /* Sets the line height */
+}
+
+.text-container{
+    text-align: center; /* Centers inline and inline-block elements */
+    padding: 20px; /* Optional: Add padding around the container */
+}
