@@ -1,5 +1,6 @@
 body{
     margin: 0px;
+    padding: 0px;
 }
 a{
     text-decoration: none;
@@ -7,6 +8,7 @@ a{
 }
 .black_background{
     background-color: #222222;
+    padding-bottom: 35px;
 }
 .container{
     display: flex;
@@ -45,7 +47,7 @@ a{
     flex-direction: column;
     justify-content: center;
     color:#222222;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20px; 
     font-weight: bold;
     width: 65%;
@@ -75,10 +77,10 @@ a{
     font-family: 'Roboto', sans-serif;
     font-size: 80px; 
     font-weight: 400; 
-
+    height: 85px;
     letter-spacing: 1.5px; 
     margin: 0;
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 0;
 }
 
@@ -106,7 +108,7 @@ a{
     background-color: #FFFFFF;
     color:#222222;  
     text-align: left;
-    font-family: 'Poppins semi bold', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 15px; 
     font-weight: 400; 
  
@@ -119,12 +121,17 @@ form{
 .formular{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 50%;
     justify-content:left;
     align-items: left;
     gap: 1em;
+    max-width: 700px;   /* Optional: limits max width on desktop */
+    min-width: 250px;   /* Optional: minimum width */
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
 }
-.formular input{
+.formular input, 
+.formular textarea {
     width: 100%;
     height: 22px;
     border-radius: 11px;
@@ -132,19 +139,36 @@ form{
     text-align: center;
     border: none;
     outline: none;
+    font-family: 'Poppins', sans-serif;
 }
 .jmeno_a_phone input{
-    width: 280px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.jmeno_a_phone > .form_text {
+    flex: 1 1 0;      /* each input takes equal width */
+    width: auto;      /* allow flex to control width */
 }
 
 .jmeno_a_phone{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-}
-.predstava input{
     width: 100%;
-    height: 250px;
+    box-sizing: border-box;
+    gap: 1em;
 }
+textarea.predstava {
+    width: 100%;
+    height: 150px;
+}
+
+textarea.kdefotit {
+    width: 100%;
+    height: 60px;
+}
+
 .mamzajem{
     display: flex;
     justify-content: left;
@@ -173,11 +197,10 @@ input[type="radio"] {
 .muzes{
     background-color: #ece6e5;
     color: #6e6e6e;
-    font-family: 'Montserrat';
+    font-family: 'Poppins';
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px;
     font-weight: 400;
 }
 h {
@@ -190,14 +213,15 @@ h {
 h1 {
     text-align: center;
     color: #333;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20px; 
     font-weight: 400; 
 }
 .modre_pozadie{
     background-image: url(/pexels-karolina-grabowska-4862892-2.jpg);
-    padding: 25px;
     background-size: cover;
+    padding: 30px;
+    box-sizing: border-box;
 }
 .faq-tabs {
     display: flex;
@@ -220,7 +244,8 @@ h1 {
 
 .tab-link.active {
     color: #000;
-    border-bottom: 2px solid #ff6347; 
+    border-bottom: 2px solid #ff6347;
+    font-weight: 700;
 }
 
 .tab-content {
@@ -231,16 +256,21 @@ h1 {
     display: block;
     display: block;
     font-family: 'Montserrat', sans-serif;
+    padding: 15px;
 }
 .faq-container {
     max-width: 900px;
     margin: 0px auto;
-    padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.5)
 }
+.faq-item:last-child {
+    border-bottom: none;
+}
+/* This rule ensures the last FAQ item does not have a bottom border -->*/
+
 .faq-item {
     margin-bottom: 10px;
     border-bottom: 1px solid #ccc;
@@ -304,6 +334,8 @@ section{
     font-family: 'Montserrat';
     font-weight: 400;
     font-size: 14px;
+    max-width: 900px;
+    color: #6e6e6e;
 }
 .text{
     color:#FFFFFF;
@@ -312,6 +344,7 @@ section{
     font-weight: 400; 
     background-color: #222222;
     text-decoration: none;
+    padding: 20px;
 }
 .instagram-icon {
     width: 25px;
@@ -461,4 +494,159 @@ section{
     font-family: 'Roboto';
     font-weight: 600    ;
     letter-spacing: 1px;
+}
+
+.desktop-only { display: block; }
+.mobile-only { display: none; }
+
+.instagram {
+    display: flex; 
+    flex-direction: row; 
+    margin-right:150px;
+}
+
+@media (max-width: 768px) {
+    .desktop-only { display: none; }
+
+    .mobile-only { 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color:#6e6e6e;
+        font-family: 'Poppins';
+        font-size: 16px; 
+        font-weight: bold;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .black_background {
+        width: 100%;
+    }
+    .container {
+        flex-direction: column;
+        gap: 1em;
+        font-size: 15px;
+        padding: 10px;
+    }
+    .sofi_obr_index {
+        flex-direction: column;
+        padding: 20px 0;
+        align-items: center;
+    }
+    .sofi_kruh {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+        order: 0;
+    }
+    .sofi_kruh img {
+        width: 90%;
+    }
+    .text_index {
+        font-size: 16px;
+    }
+    .pozadie_farba {
+        margin-left: 0;
+        margin-right: 0;
+        flex-direction: column;
+        padding: 0px;
+    }
+    .po_fa_text {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        order: -1;
+    }
+    .dva_texty {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .formular {
+        width: 70%;
+        padding: 0 1%;
+    }
+    .jmeno_a_phone {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .jmeno_a_phone input {
+        width: 100%;
+    }
+    .predstava {
+        height: 120px;
+        text-align: left;
+        vertical-align: top;
+    }
+    .faq-container {
+        max-width: 100%;
+        padding: 20px;
+    }
+    .informacie{
+        flex-direction: column;
+        width: 100%;
+        font-size: 12px;
+        gap: 2em;
+
+    }
+    .podinformacie {
+        flex-direction: column;
+        width: 80%;
+        font-size: 12px;
+        padding: 0px;
+        gap: 2em;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .submit-button {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 16px;
+    }
+    .muzes {
+        font-size: 14px;
+        width: 100%;
+    }
+    .muzes p{
+        width: 90%;
+        text-align: center;
+        margin: 50px;
+    }
+    .text {
+        font-size: 16px;
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .titul {
+        font-size: 50px;
+        margin-top: 40px;
+        height: 55px;
+    }
+    .podtitul {
+        font-size: 16px;
+        margin-left: 240px;
+        padding-bottom: 20px;
+    }
+    .instagram-icon, .location-pin-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .instagram {
+    display: flex; 
+    flex-direction: row; 
+    margin-right:0px;
+    }
+    .tab-link {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 12px 8px;
+        margin: 2px 0;
+        text-align: center;
+    }
+    
 }

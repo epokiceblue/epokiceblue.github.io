@@ -7,6 +7,7 @@ input {
 a{
     text-decoration: none;
     color: inherit ;
+    filter: brightness(100%);
 }
 body{
     /*background-color: #222222;*/
@@ -98,7 +99,7 @@ img:hover{
 
     letter-spacing: 1.5px; 
     margin: 0;
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 0;
 }
 
@@ -141,7 +142,16 @@ form {
     font-family: 'Roboto', sans-serif;
     font-size: 20px; 
     font-weight: 400; 
+    display: flex; 
+    justify-content:space-around; 
+    align-items: center; 
+    padding: 35px;
 
+}
+
+.text > div {
+    flex: 1 1 0;
+    text-align: center;
 }
 
 .text-container{
@@ -246,7 +256,7 @@ form {
 }
 .bublina_contact_form{
     background-color: #eee9e7;
-    padding: 50px 125px;
+    padding: 20px 125px;
     border-radius: 125px;
     color: #074151;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -263,18 +273,20 @@ form {
     align-items: center;
     padding:50px;
 }
-.codelam_container{
+.codelam_container {
     display:flex;
     flex-direction: column;
     justify-content:flex-start;
     width: 1000px;
     font-family: 'Montserrat', sans-serif;
     padding: 0 ;
+    margin: 0;
 }
 .sedy_text{
     display: flex; 
     justify-content:center;
     color: #6e6e6e;
+    text-align: justify;
 }
 .kokot_2{
     position: relative;
@@ -292,7 +304,7 @@ form {
 }
 .parallax {
     height: 100vh; /* Full viewport height */
-    background-image: url('/VS_17_10_20\ \(50\ of\ 15\)_edited.jpg'); /* Replace with your image path */
+    background-image: url('/VS_17_10_20\ \(50\ of\ 15\)_edited.jpg'); /* Replace with your image path */ 
     background-attachment: fixed; /* Creates the parallax effect */
     background-size: cover; /* Cover the entire section */
     background-position: center; /* Center the background image */
@@ -303,18 +315,18 @@ form {
     align-items: center;
     width: 100%;
   }
-  
-  /* Overlay text styling */
+
   .overlay-text {
     color: white; /* Text color */
     font-size: 2rem; /* Adjust the font size as needed */
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: rgba(0, 0, 0, 0); /* Semi-transparent background for better text visibility */
     padding: 20px; /* Padding around the text */
     border-radius: 10px; /* Rounded corners */
     font-size: 80px;
-    font-weight:700;
+    font-weight: bold;
+    filter: brightness(100%);
   }
   .faq-container {
     max-width: 900px;
@@ -335,21 +347,21 @@ h {
 h1 {
     text-align: center;
     color: #333;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20px; 
     font-weight: 400; 
+    font-weight: bold;
 }
 .modre_pozadie{
     background-image: url(/pexels-karolina-grabowska-4862892-2.jpg);
     padding: 25px;
     width: 100%;
+    background-size: 70% auto;
 }
 .faq-tabs {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
 }
 
 .tab-link {
@@ -361,15 +373,19 @@ h1 {
     color: #666;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.3s ease;
+    font-family: 'Poppins';
+    font-weight: 500;
 }
 
 .tab-link.active {
     color: #000;
-    border-bottom: 2px solid #ff6347; 
+    border-bottom: 2px solid #ff6347;
+    font-weight: 700;
 }
 
 .tab-content {
     display: none;
+    font-style: "Montserrat";
 }
 
 .tab-content.active {
@@ -516,4 +532,183 @@ h1 {
 }
 body{
     background-color: #222222;
+}
+.codelam_text{
+    margin-top: -50px;
+    z-index: 1;
+}
+
+.posledneikony{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* centers child elements horizontally */
+    align-items: center;     /* centers child elements vertically */
+    text-align: center; 
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+.cennik_kontakt{
+    display: flex; 
+    justify-content: center; 
+    padding: 45px;
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+    }
+    .posledneikony {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* centers children horizontally */
+    align-items: center;     /* centers children vertically */
+    text-align: center;      /* centers text inside children */
+    padding: 5px;
+}
+    .container {
+        flex-direction: column;
+        gap: 1em;
+        padding: 10px;
+        font-size: 15px;
+    }
+    .sofi_obr_index {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+    .sofi_kruh {
+        width: 80vw;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    .text_index {
+        width: 95vw;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .omne_container,
+    .form_bublina_container {
+        margin-left: 0;
+        padding-bottom: 20px;
+        padding: 10px;
+    }
+    .codelam_container {
+        width: 100vw;
+        padding: 10px;
+    }
+    .sedy_text {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+    .tri_obrazky {
+        width: 90vw;
+        height: auto;
+        margin: 0 auto 10px auto;
+    }
+    .faq-container {
+        max-width: 98vw;
+        margin: 0px;
+    }
+    .modre_pozadie {
+        padding: 30px;
+        background-size: cover;
+        box-sizing: border-box;
+    }
+    .bublina_contact_form,
+    .bublina_cennik {
+        max-width: 95vw;
+        font-size: 16px;
+        padding: 10px 10px;
+        margin: 10px auto;
+    }
+
+    .bublina_omne {
+        max-width: 95vw;
+        font-size: 16px;
+        padding: 10px 15px;
+        margin: 10px auto;
+    }
+
+    .form_bublina_container {
+        padding: 10px;
+    }
+    .text_white,
+    .text,
+    .text-container {
+        font-size: 16px;
+        padding: 10px;
+        text-align: center;
+    }
+    .slider {
+        height: 200px;
+    }
+    .slide {
+        width: 90vw;
+        height: 150px;
+        padding: 5px;
+    }
+    .faq-tabs {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .faq-container {
+        max-width: 100%;
+    }
+    .tab-link {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 12px 8px;
+        margin: 2px 0;
+        text-align: center;
+    }
+    .text {
+        font-size: 16px;
+        line-height: 1.4;
+        text-align: center;
+        padding: 10px 5px;
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+    }
+    .parallax {
+        background-size: cover;         /* Show the whole image */
+        background-position: center center;  /* Center horizontally, align top vertically */
+        min-height: 200px;                /* Set a reasonable height for mobile */
+        height: auto;
+        background-attachment: scroll;    /* Disable parallax effect on mobile */
+    }
+    .overlay-text {
+        font-size: 30px; /* Adjust the font size as needed */
+        padding: 10px; /* Padding around the text */
+        border-radius: 5px; /* Rounded corners */
+    }
+    .cennik_kontakt {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+    .codelam_text {
+        padding: 10px;
+        margin-top: -55px;
+    }
+    .bublina_omne p {
+        margin: 0;
+        padding: 0;
+    }
+    .titul {
+        font-size: 50px;
+        margin-top: 40px;
+        height: 55px;
+    }
+    .podtitul {
+        font-size: 16px;
+        margin-left: 240px;
+        padding-bottom: 35px;
+    }
 }
