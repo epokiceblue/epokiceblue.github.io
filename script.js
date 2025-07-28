@@ -21,3 +21,22 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).classList.add("active");
     evt.currentTarget.classList.add("active");
 }
+
+
+function openMenu() {
+    document.getElementById('mobileMenuOverlay').classList.add('active');
+}
+function closeMenu() {
+    document.getElementById('mobileMenuOverlay').classList.remove('active');
+}
+
+function openMenu() {
+    document.getElementById('mobileMenuOverlay').classList.add('active');
+    document.body.classList.add('menu-open');
+    document.documentElement.classList.add('menu-open'); // <html>
+}
+function closeMenu() {
+    document.getElementById('mobileMenuOverlay').classList.remove('active');
+    document.body.classList.remove('menu-open');
+    document.documentElement.classList.remove('menu-open');
+}

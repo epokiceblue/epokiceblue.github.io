@@ -504,10 +504,74 @@ section{
     flex-direction: row; 
     margin-right:150px;
 }
+.mobile-menu-btn {
+    position: fixed;
+    top: 22px;
 
+    left: 20px;
+
+    z-index: 1000;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #6e6e6e;
+    cursor: pointer;
+    display: none;
+    width: 50px;
+    height: 50px;
+}
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0px; left: 0px; right: 0px; bottom: 0px;
+    background: rgba(34,34,34,0.95);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.mobile-menu-overlay.active {
+    display: flex;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.mobile-menu-content a {
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.close-menu-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+body.menu-open,
+html.menu-open {
+    overflow: hidden;
+    height: 100vh;
+}
 @media (max-width: 768px) {
-    .desktop-only { display: none; }
-
+    .desktop-only { display: none; 
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
     .mobile-only { 
         display: flex;
         flex-direction: column;
@@ -523,12 +587,14 @@ section{
 
     .black_background {
         width: 100%;
+        padding: 0px;
     }
     .container {
         flex-direction: column;
         gap: 1em;
         font-size: 15px;
         padding: 10px;
+        display: none;
     }
     .sofi_obr_index {
         flex-direction: column;
@@ -622,14 +688,15 @@ section{
         text-align: center;
     }
     .titul {
-        font-size: 50px;
-        margin-top: 40px;
-        height: 55px;
+        font-size: 30px;
+        margin-top: 0px;
+        padding-top: 30px;
+        height: 35px;
     }
     .podtitul {
         font-size: 16px;
-        margin-left: 240px;
-        padding-bottom: 20px;
+        margin-left: 120px;
+        padding-bottom: 35px;
     }
     .instagram-icon, .location-pin-icon {
         width: 20px;

@@ -9,6 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script src="script.js"></script>
+    <button class="mobile-menu-btn" onclick="openMenu()">
+        <span class="menu-icon">&#9776;</span>
+    </button>
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <button class="close-menu-btn" onclick="closeMenu()">&times;</button>
+            <a href="index.html">hlavní stránka</a>
+            <a href="#">fotky</a>
+            <a href="#">videa</a>
+            <a href="#">ceník</a>
+            <a href="#">blog</a>
+            <a href="#">o mně</a>
+            <a href="contact.html">kontakt</a>
+        </div>
+    </div>
     <div class="black_background">
         <div class="container">
             <div class="Item-1"> <a href="index.html">hlavní stránka</a></div>
