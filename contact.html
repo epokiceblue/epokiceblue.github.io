@@ -65,50 +65,50 @@
             </div>
         </div>
     </div>
-    <form action="https://formspree.io/f/mqazbyyj" method="post">
+    <form action="https://formspree.io/f/mqazbyyj" method="POST">
         <div class="formular">
             <h1 style="font-weight: 700; display: flex; align-items: flex-start;"> KONTAKTNÍ FORMULÁŘ</h1>
             <div class="jmeno_a_phone">
                 <div class="form_text">
                     <label for="username" class="text_white">Jméno a příjmení:</label>
-                    <input id="username" required>
+                    <input id="username" required name="Jmeno a prijmeni">
                 </div>
                 <div class="form_text">
                     <label for="phone" class="text_white">Telefon:</label>
-                    <input required id="phone" placeholder="+XXX XXX XXX XXX" pattern="[+][0-9]{3} [0-9]{3} [0-9]{3} [0-9]{3}">
+                    <input name="Telefon" required id="phone" placeholder="+XXX XXX XXX XXX" pattern="[+][0-9]{3} [0-9]{3} [0-9]{3} [0-9]{3}">
                 </div>
             </div>
             <div class="form_text">
                 <label for="email" class="text_white">E‑mail:</label>
-                <input required id="email" type="email">
+                <input name="e-mail" required id="email" type="email">
             </div>
             <div class="form_text">
                 <label class="text_white">Mám zájem o:</label>
                 <div class="mamzajem">
-                    <input type="radio" name="dotaznik" value="Natáčení">
+                    <input type="radio" name="Dotaznik" value="Natáčení">
                     <label for="nataceni" class="text_white">Natáčení</label>
                 </div>
                 <div class="mamzajem">
-                    <input type="radio" name="dotaznik" value="Focení">
+                    <input type="radio" name="Dotaznik" value="Focení">
                     <label for="foceni" class="text_white">Focení</label>
                 </div>
             </div>
             <div class="form_text">
                 <label class="text_white">Kde budeme fotit/točit?</label>
-                <textarea class="kdefotit" placeholder="prosím napiš: město, interiér/exteriér, případně konkrétní lokaci..."></textarea>
+                <textarea name="Kde budeme fotit" class="kdefotit" placeholder="prosím napiš: město, interiér/exteriér, případně konkrétní lokaci..."></textarea>
             </div>
             <div class="form_text">
                 <div class="form_text">
                     <label class="text_white">Moje představa o spolupráci:</label>
-                    <textarea class="predstava" placeholder="o jaké focení máš zájem? rozepiš se o tvé představě, záměru apod."></textarea>
+                    <textarea name="Predstava" class="predstava" placeholder="o jaké focení máš zájem? rozepiš se o tvé představě, záměru apod."></textarea>
                 </div>
             </div>
             <div class="form_text">
                 <label class="text_white">Odkud mě znáš?</label>
-                <input required placeholder="např. z instagramu, z reklamy, z doporučení">
+                <input name="Odkud me znáš" required placeholder="např. z instagramu, z reklamy, z doporučení">
             </div>
             <div class="checkbox text_white">
-                <input type="checkbox" class="kruzok" id="no-style" required>
+                <input name="Podminky" type="checkbox" class="kruzok" id="no-style" required>
                 <label>souhlasím s <a href="podminky.html" style="text-decoration: underline;">obecnými obchodnímy podmínkamy</a></label>
             </div>
             <div style="padding-bottom: 15px;">

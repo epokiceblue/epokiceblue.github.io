@@ -646,6 +646,10 @@ html.menu-open {
         margin: 0;
         max-width: 100%;
     }
+    .faq-answer {
+        padding-bottom: 4px;
+        vertical-align: top;
+    }
     .slide_track:hover {
         animation-play-state: running !important;
     }
