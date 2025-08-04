@@ -452,8 +452,9 @@ h1 {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 150px; 
+    max-height: 100%; 
     transition: max-height 0.5s ease-in;
+    overflow:visible;
 }
 .bublina_cennik{
     background-color: white;
@@ -646,8 +647,20 @@ html.menu-open {
         margin: 0;
         max-width: 100%;
     }
-    .faq-answer {
-        padding-bottom: 4px;
+    .faq-item h3 {
+    text-align: left;
+    position: relative;
+    }
+     .faq-item h3:after {
+    float: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    }
+    .faq-answer p{
+        margin-top: 20px;
+        margin-bottom: 20px;
         vertical-align: top;
     }
     .slide_track:hover {
