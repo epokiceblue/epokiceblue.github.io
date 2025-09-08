@@ -207,7 +207,7 @@ form {
     justify-content: center;
 }
 .sofi_kruh{ 
-    width: 15%;
+    width: 450px;
     z-index: 10;
     padding: 2%;
 }
@@ -324,7 +324,7 @@ form {
 }
 .parallax {
     height: 100vh; /* Full viewport height */
-    background-image: url('/VS_17_10_20\ \(50\ of\ 15\)_edited.jpg'); /* Replace with your image path */ 
+    background-image: url('./fotky/VS_17_10_20\ \(50\ of\ 15\).jpg'); /* Replace with your image path */ 
     background-attachment: fixed; /* Creates the parallax effect */
     background-size: cover; /* Cover the entire section */
     background-position: center; /* Center the background image */
@@ -373,7 +373,7 @@ h1 {
     font-weight: bold;
 }
 .modre_pozadie{
-    background-image: url(/pexels-karolina-grabowska-4862892-2.jpg);
+    background-image: url(/fotky/pexels-karolina-grabowska-4862892-2.jpg);
     padding: 25px;
     width: 100%;
     background-size: 70% auto;
