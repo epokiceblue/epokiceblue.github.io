@@ -25,13 +25,6 @@ function openTab(evt, tabName) {
 
 function openMenu() {
     document.getElementById('mobileMenuOverlay').classList.add('active');
-}
-function closeMenu() {
-    document.getElementById('mobileMenuOverlay').classList.remove('active');
-}
-
-function openMenu() {
-    document.getElementById('mobileMenuOverlay').classList.add('active');
     document.body.classList.add('menu-open');
     document.documentElement.classList.add('menu-open'); // <html>
 }
@@ -40,3 +33,22 @@ function closeMenu() {
     document.body.classList.remove('menu-open');
     document.documentElement.classList.remove('menu-open');
 }
+
+// Handle all dropdown menus
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+    const btn = dropdown.querySelector(".dropdown-btn");
+    const menu = dropdown.querySelector(".dropdown-menu");
+
+    // open / close when clicking the button
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();                 // don't trigger document click
+      menu.classList.toggle("active");
+    });
+
+    // close when clicking anywhere else
+    document.addEventListener("click", () => {
+      menu.classList.remove("active");
+    });
+});

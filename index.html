@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sofie Zbořilová, foto & video</title>
+    <meta name="description" content="Jsem Sofie Zbořilová, fotografka z Brna. Fotím svatby, přirozené portréty a lifestyle focení po celé Moravě.">
+    <title>Sofie Zbořilová fotografka Brno | svatby, portréty, lifestyle</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <h1 class="visually-hidden">
+  Svatební, portrétní a lifestyle fotografka Sofie Zbořilová Brno
+    </h1>
     <button class="mobile-menu-btn" onclick="openMenu()">
         <span class="menu-icon">&#9776;</span>
     </button>
@@ -19,6 +23,14 @@
             <a href="index.html">hlavní stránka</a>
             <!--<a href="#">fotky</a>
             <a href="#">videa</a>-->
+            <div class="dropdown">
+                <button id="dropdownBtn" class="dropdown-btn">portfolio</button><div style="font-size: 9px; padding: 3px;">▼</div>
+                <div id="dropdownMenu" class="dropdown-menu">
+                    <a href="svatby.html">svatby</a>
+                    <a href="portrety.html">portréty</a>
+                    <a href="produktove.html">produktové</a> 
+                </div>
+            </div>
             <a href="cenik.html">ceník</a>
             <!--<a href="#">blog</a>
             <a href="#">o mně</a>-->
@@ -27,16 +39,24 @@
     </div>
     <section class="black_background">
     <div class="container">
-        <div class="Item-1"> <a href="index.html">hlavní stránka</a></div>
-        <div class="Item-4"> <a href="cenik.html">ceník</a></div>
+        <div> <a href="index.html">hlavní stránka</a></div>
+        <div class="dropdown">
+            <button id="dropdownBtn" class="dropdown-btn">portfolio</button><div style="font-size: 9px; padding: 3px;">▼</div>
+            <div id="dropdownMenu" class="dropdown-menu">
+                <a href="svatby.html">svatby</a>
+                <a href="portrety.html">portréty</a>
+                <a href="produktove.html">produktové</a> 
+            </div>
+        </div>
+        <div> <a href="cenik.html">ceník</a></div>
         <!--<div class="Item-2"> fotky</div>
         <div class="Item-3"> videa</div>
         <div class="Item-4"> blog</div>
         <div class="Item-4"> o mně</div>-->
-        <div class="Item-4"> <a href="contact.html">kontakt</a></div>
+        <div> <a href="contact.html">kontakt</a></div>
     </div>
     <a href="index.html">
-        <h1 class="titul">sofie zbořilová</h1>
+        <h2 class="titul">sofie zbořilová</h2>
         <p class="podtitul">foto/video</p>
     </a>
     <!--
@@ -203,11 +223,11 @@
                         </p>
             </div>
         </div>
-        <div class="omne_container">
+        <!--<div class="omne_container">
             <div class="bublina_omne" >
                 <p>chci se o tobě dozvědět víc</p>
             </div>
-        </div>
+        </div>-->
         <div class="form_bublina_container">
             <div>
                 <a href="contact.html" class="bublina_contact_form">ZAREZERVUJ SI SVŮJ TERMÍN</a>
@@ -229,19 +249,19 @@
             </div>
             <div class="sedy_text">
                 <div style="display: flex; flex-direction: column; margin: 30px 30px;">
-                    <img src="./fotky/naramky_kruh.png" class="tri_obrazky">
-                    <h1 style="font-size: 20px">FIRMY A PODNIKATELÉ</h1>
-                    <p>Můžete si u mě poptat reklamní, produktové focení nebo video. Vymyslím vám koncept na míru, do kterého zahrnu všechny vaše požadavky. Přizpůsobím ho vaší vizuální identitě, ale i přes to bude něčím oživený. Fotky i videa jsou skvělým způsobem, jak přilákat zákazníky a moc ráda vám s tím pomůžu!</p>
+                    <img src="./fotky/svadba_kruh.png" class="tri_obrazky">
+                    <h1 style="font-size: 20px";>SVATBY</h1>
+                    <p>Fotím svatby pro lidi, kteří si chtějí prožít svůj výjimečný den podle sebe. Pro ty, kteří se dokážou smát, udělat si legraci sami ze sebe, nebojí se být hraví a hlavně – milují se z celého srdce. Mám ráda jednoduchost, čistotu a nadčasovost. Zapadnu mezi vaše hosty a zachytím ty opravdové nestrojené emoce – dojaté rodiče, výbuchy smíchu i večerní tancovačku. Prostě to, co nás dělá lidma<3 </p>
                 </div>
                 <div style="display: flex; flex-direction: column; margin: 30px 30px;">
                     <img src="./fotky/Terezie.png" class="tri_obrazky">
                     <h1 style="font-size: 20px">PORTRÉTNÍ FOCENÍ</h1>
-                    <p>Focení není jen pro ty, které „má foťák rád“, naopak, fotit se dokáže úplně každý a já vám pomůžu, abyste toho dosáhli! Focení můžeme pojmout jakkoli jen budete chtít. Pár tipů najdete v mém průvodci na instagramu.</p>
+                    <p>Focení není jen pro ty, které „má foťák rád“, naopak, fotit se dokáže úplně každý a já ti s tím pomůžu! Focení můžeme pojmout jakkoli jen budeš chtít. Můžeme se jít někam projít, zajít na kafe a u toho udělat pár fotek. Nebo pokud se před lidma necítíš, můžeme fotit ve studiu – ráda ti pošlu potom moje nejoblíbenější.</p>
                 </div>
                 <div style="display: flex; flex-direction: column; margin: 30px 30px;">
-                    <img src="./fotky/svadba_kruh.png" class="tri_obrazky">
-                    <h1 style="font-size: 20px";>SVATBY</h1>
-                    <p>Bude mi ctí, když mě necháte zachytit váš jedinečný den. Doprovodím vás od ranních příprav, až po večerní tancovačku, nebo si mě můžete zabookovat jen na libovolnou část dne. Věřte mi, že pokud bude potřeba, na svatbě zapadnu do davu a zachytím tak vaše okamžiky i s těmi, kteří se neradi fotí. Budete tak moct u fotek vzpomínat na váš krásný den kdykoli se vám jen bude chtít.</p>
+                    <img src="./fotky/naramky_kruh.png" class="tri_obrazky">
+                    <h1 style="font-size: 20px">FIRMY A PODNIKATELÉ</h1>
+                    <p>Budujete značku s duší a potřebujete, aby to svět viděl? Ať už jde o produktové focení, byznys portréty nebo video, vytvořím pro vás vizuál, který nejen krásně vypadá, ale hlavně funguje. Žádná sterilní nuda – společně vymyslíme koncept, který přesně zapadne do vaší identity a ukáže lidskou tvář vašeho podnikání. Pojďme vytvořit fotky, ze kterých vaši klienti nespustí oči.</p>
                 </div>
             </div>
         </div>
@@ -264,123 +284,111 @@
     
         <div id="foceni" class="tab-content active">
             <div class="faq-item">
-                <h3>Kolik stojí focení?</h3>
+                <h3>kolik stojí focení?</h3>
                 <div class="faq-answer">
-                    <p>Cenu jednoduše zjistíte pomocí ceníku. V případě specifických požadavků nebo větších zakázek mi napište všechny podrobnosti a já vám focení ráda nacením individuálně</p>
+                    <p>svatební ceník vám ráda pošlu do zprávy, stačí jen vyplnit formulář na webu nebo mi napsat na email. cenu portrétních focení zjistíte v záložce ceník a v případě specifických požadavků nebo větších zakázek mi napište všechny podrobnosti a já vám focení ráda nacením individuálně</p>
                 </div>
             </div>
             <div class="faq-item">
-                <h3>Nafotíš nám naši svatbu?</h3>
+                <h3>můžeme se před svatbou nebo větším focením potkat osobně?</h3>
                 <div class="faq-answer">
-                    <p>lásce říkám ano vždycky! bude mi ctí vám zachytit tak důležitej den! na svatbách jsem spíš pozorovatel, než že bych tam dělala show, o mě ta svatba totiž není, žejo. budu dokumentovat vaše okamžiky s těma nejbližšíma, detaily, který dělají tento den výjimečný a můžete se spolehnout, že z fotek bude vyzařovat atmosféra, která vás vždycky dojme.
-
-
-                        na svatbu nabízím dva hlavní balíčky: část dne a celý den. pokud vám ale ani jeden z nich nevyhovuje, nebojte se mi napsat a společně něco vymyslíme<3</p>
+                    <p>to je pro mě vlastně úplný základ úspěchu. s klienty si před svatbou moc ráda dám krátký videocall nebo zajdu na kafe, abychom se seznámili, probrali detaily a hlavně zjistili, jestli si lidsky sedneme. ale vím, že ne vždy je na to prostor, takže vás do toho určitě nutit nebudu<3</p>
                 </div>
             </div>
             <div class="faq-item">
-                <h3>Když já nejsem fotogenický/fotogenická a na fotkách vypadám vždycky blbě...</h3>
+                <h3>když já nejsem fotogenický/fotogenická a na fotkách vypadám vždycky blbě...</h3>
                 <div class="faq-answer">
-                    <p>chápu, já jsem s tím měla taky vždycky problém, ale věřte mi, že nemusíte mít žádný obavy! nebudu váš štelovat do křečovitejch póz, ale budu se soustředit na vás - to, jací jste, co máte rádi, co z vás vyzařuje. budu zachycovat momenty, vaše úsměvy, doteky a lásku (v případě párovýho focení). budu vás navádět a ukazovat vám směr, ale do ničeho vás nebudu tlačit.
-
-
-                        pojďte si to focení udělat prostě hezký! pomůže vám hudba, abyste se uvolnili? super! klidně si na focení přineste reproduktor (nebo dejte vědět a vezmu ho já). nebo si na focení vemte vaši blízkou osobu, se kterou se cítíte bezpečně. cokoli, co vám pomůže.
-                        
-                        
-                        nezapomeňte se ale taky pořádně vyspat, naladit a odhodit starosti. prostě to berte tak, že půjdeme na procházku a jen tak mimochodem si odnesete i fotky ✨
-                        
-                        
-                        (PS: víc tipů vám pošlu v mým PDFku🙏🏻)</p>
+                    <p>chápu, já jsem s tím měla taky vždycky problém, ale věřte mi, že nemusíte mít žádný obavy! nebudu váš štelovat do křečovitejch póz, ale budu se soustředit na vás - to, jací jste, co máte rádi, co z vás vyzařuje. budu zachycovat momenty, vaše úsměvy, doteky a lásku (v případě párovýho focení). budu vás navádět a ukazovat vám směr, ale do ničeho vás nebudu tlačit. pojďte si to focení udělat prostě hezký! pomůže vám hudba, abyste se uvolnili? super! klidně si na focení přineste reproduktor (nebo dejte vědět a vezmu ho já). nebo si na focení vemte vaši blízkou osobu, se kterou se cítíte bezpečně. cokoli, co vám pomůže. nezapomeňte se ale taky pořádně vyspat, naladit a odhodit starosti. prostě to berte tak, že půjdeme na procházku a jen tak mimochodem si odnesete i fotky ✨</p>
                 </div>
             </div>
             <div class="faq-item">
-                <h3>Jak probíhá portrétní focení?</h3>
+                <h3>jak probíhá portrétní focení?</h3>
                 <div class="faq-answer">
-                    <p>~ jako první mi napiš, že máš zájem jít fotit - nezapomeň taky zmínit, jestli příjdeš jen ty, s partnerem, celou rodinou apod. ideálně i napiš kde chceš fotit a kdy by se ti to hodilo
-
-                        ~ kontaktuju tě a vybereme konkrétní termín
-                        
-                        ~ společně najdeme lokaci, vybereme oblečení, případně vymyslíme koncept (a neboj se experimentovat! jsem kreativní duše a ráda se pustím do nějaké výzvy)
-                        
-                        ~ get ready - nezapomeň se před focením pořádně vyspat, přijít s dobrou náladou a ideálně bez stresu (k tomu ti snad dopomůže mode PDFko, který předem dostaneš🤭)
-                        
-                        ~ a jdeme fotit! vůbec se toho nemusíš bát, pokud třeba nejseš na focení zvyklej/zvyklá, focení přizpůsobím tobě a tomu, jak se cítíš
-                        
-                        ~ nejraději fotím ve spojení s procházkou (pokud se nejedná o specifický focení), pomůže nám to si k sobě a k foťáku najít cestu, uvolní to atmosféru a případný obavy a to se pak promítne na výsledných fotkách, z kterých jde cítit uvolněnost a radost! focení trvá cca hodinu, domů ale odcházíme, až je spokojenost na obou stranách
-                        
-                        ~ teď už ti jen zbývá počkat na výsledný fotky!
-                        
-                        ~ po obdržení fotek se můžeš kochat tím, co jsme společně dokázali vytvořit!✨ budu zároveň moc ráda, když mi napíšeš tvou zpětnou vazbu, ať už soukromě do zpráv nebo do recenzí. vaše reflexe je pro mě opravdu důležitá a moc si ji vážím🫶🏻</p>
+                    <p>nejdřív mi napíšeš svou představu (kdo se bude fotit, zhruba kdy a kde) a společně vybereme termín, lokaci i outfity. domluvíme se na všech detailech a konceptu. na místě se foťáku vůbec bát nemusíš – focení trvá zhruba hodinu a probíhá spíš jako pohodová procházka. pomůže nám to uvolnit atmosféru a ztratit trému, takže z výsledných fotek vyzařuje jen čistá přirozenost. domů jdeme, až když jsme všichni spokojení! pak už se jen těšíš na hotovou galerii a já budu z celého srdce ráda za tvoji upřímnou zpětnou vazbu🫶🏻</p>
                 </div>
             </div>
             <div class="faq-item">
-                <h3>Potřebuji fotky pro můj band, můžeš mi s tím pomoct?</h3>
+                <h3>co si máme na focení ideálně obléct?</h3>
                 <div class="faq-answer">
-                    <p>ano! a moc ráda! focení pro firmy je moje srdcovka. ráda vám pomůžu z celým vizuálem a následnýma fotkama. a je jedno, jestli s firmou/podnikáním teprve začínáte, nebo už jste na scéně delší dobu. ideální pro mě je, když budeme spolupracovat dlouhodobě, abychom měli na celý projekt dostatek času, zjistili, co oběma stranám funguje a vytvořili si vzájemnou důvěru✨
-
-
-                        co ode mě (ne)můžete očekávat?
-                        
-                        ~ jak už jste asi zjistili z mých ukázek prací, fotky mám spíš lifestyle a ne zbytečně vyumělkované a vyretušované. zastávám názor, že přirozenost a uvolněnost je mnohem víc, než křečové pózy a falešný úsměv. to stejné i u čistě produktových fotek
-                        
-                        ~ to navazuje i na klasické fotky na bílém pozadí. takové v zásadě nefotím a je lepší, když si to vezme na starost fotograf, který se zaměřuje na toto konkrétní odvětví. to ale neznamená, že vám nenafotím fotky třeba na eshop - taková možnost určitě je, jen (opět) nepočítejte s vyretušovaným pozadím, ale s přirozenýma a uvolněnýma fotkama, které podtrhnou váš produkt nebo službu
-                        
-                        ~ součástí je samozřejmě i smlouva, ve které budou zmíněné všechny věci, na kterých se předem domluvíme, abychom měli vše černě na bílém a měli jsme klid v duši, že se můžeme na toho druhého spolehnout🙏🏻</p>
+                    <p>hlavně to, v čem se cítíte dobře a co vás neškrtí. skvěle vypadají zemité tóny (béžová, bílá, černá, hnědá, šalvějová), ale třeba i pastelové a přírodní materiály jako je len a bavlna. raději se vyhněte velkým nápisům a hodně divokým vzorům. moc ráda vám ale pomůžu najít ty nejlepší kousky, pošlu vám inspiraci na oblečení přímo pro vás</p>
                 </div>
             </div>
             <div class="faq-item">
-                <h3>Co si mám vzít na sebe?</h3>
+                <h3>fotíš jenom venku, nebo si můžeme pronajmout ateliér?</h3>
                 <div class="faq-answer">
-                    <p>o tom jsem napsala krátkej článek, kterej najdete tady! nehledejte v tom vědu - důležitý je se vyhnout velkým potiskům, logům a výrazným barvám. ostatní už je vesměs na vás. podrobněji rozepsaný tipy najdete ve zmíněným článku. klidně se ale podívejte na moje fotky nebo pinterest a uvidíte, co funguje a co se vám líbí.
-
-
-                        hlavně si oblíkněte něco, v čem se budete cítit dobře a co jste VY
-                        
-                        
-                        ~ klidně mi ale pošlete nějaký vaše oblečení, nad kterým přemýšlíte a já vám moc ráda s výběrem pomůžu!</p>
+                    <p>nejradši fotím venku nebo u vás doma v uvolněném lifestyle duchu. můžeme si ale pronajmout i ateliér (nejvíce se hodí ve špatném počasí, nebo když se vám doma nechce uklízet :D). vytvořila jsem přehledný seznam mých oblíbených ateliérů, ať víte, z čeho si můžete vybrat <3 </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3>potřebuju fotky pro můj band, můžeš mi s tím pomoct?</h3>
+                <div class="faq-answer">
+                    <p>ano! a moc ráda! focení pro firmy je moje srdcovka. ráda vám pomůžu z celým vizuálem a následnýma fotkama. a je jedno, jestli s firmou/podnikáním teprve začínáte, nebo už jste na scéně delší dobu. ideální pro mě je, když budeme spolupracovat dlouhodobě, abychom měli na celý projekt dostatek času, zjistili, co oběma stranám funguje a vytvořili si vzájemnou důvěru</p>
                 </div>
             </div>
         </div>
     
         <div id="nataceni" class="tab-content">
             <div class="faq-item">
-                <h3>Co všechno natáčíš?</h3>
+                <h3>co všechno natáčíš a pro koho?</h3>
                 <div class="faq-answer">
-                    <p>nejraději cokoli s fashion a lifestyle. postě uvolněný videa se super vizuálem, dynamikou a hravostí.
-
-
-                        můžu vám natočit třeba originální video ze svatby, který bude zaměřený hlavně na vás dva a při kterým se budete cítit jako hvězdy! jestli jste blázniví, jdete do všeho a chcete netradiční video, tak hit me up!🥳</p>
+                    <p>zaměřuju se hlavně na estetický content pro sítě. natáčím reels, krátká promo videa nebo spoty pro značky a podnikatele, kteří chtějí dělají svojí práce od srdce</p>
                 </div>
             </div>
             <div class="faq-item">
-                <h3>Kolik stojí natáčení?</h3>
+                <h3>kolik stojí natáčení?</h3>
                 <div class="faq-answer">
                     <p>to bohužel nejde takto jednoduše říct, protože to záleží na plno faktorech. stačí mi ale napsat a já ti zakázku ráda nacením! cena se odvíjí od náročnosti toho, co budeme točit, jakou techniku budu potřebovat, jestli budu muset shánět i další lidi nebo to bude one woman show...</p>
                 </div>
             </div>
             <div class="faq-item">
-                <h3>Hledáme dalšího člověka do týmu při natáčení projektu, nechceš se přidat?</h3>
+                <h3>vymyslíš nám i nápady a scénář na reels?</h3>
                 <div class="faq-answer">
-                    <p>jasně! ráda zkouším nový věci a poznávám nový lidi z oboru! zaměřuju se primárně na kameru a vizuál obecně - pro to bije moje srdce. zvládnu ale i střih nebo si ráda zkusím i něco úplně novýho!</p>
+                    <p>jasně! před samotným natáčením to spolu všechno probereme, vymyslím vám koncept na míru a přizpůsobím ho vaší vizuální identitě tak, aby to k vám stoprocentně sedělo</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3>natáčíš na telefon, nebo na foťák?</h3>
+                <div class="faq-answer">
+                    <p>záleží na tom, co přesně spolu tvoříme. pro autentický obsah na instagram nebo tiktok často bohatě stačí špičkový telefon, pro reklamní videa sáhnu po foťáku. domluvíme se podle toho, jaký výsledek potřebujete</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3>neumím vůbec mluvit na kameru, bude to problém?</h3>
+                <div class="faq-answer">
+                    <p>vůbec ne, do ničeho vás nebudu tlačit. můžeme natočit jen krásné záběry, přes které dáme hudbu a voiceover, který si v klidu namluvíte doma, nebo to celé postavíme na textu v obraze </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3>dostanu ta videa už hotová a sestříhaná?</h3>
+                <div class="faq-answer">
+                    <p>ano, odevzdávám rovnou hotový produkt. videa vám dodám sestříhaná a připravená k okamžitému sdílení s vašimi sledujícími</p>
                 </div>
             </div>
         </div>
     
         <div id="obecne" class="tab-content">
             <div class="faq-item">
-                <h3>Jak se můžu přihlásit na focení/točení?</h3>
+                <h3>jak se můžu přihlásit na focení/točení?</h3>
                 <div class="faq-answer">
-                    <p>Nejjednodušší je to před formulář na mých stránkách, který nejdete tady a já se vám obratem ozvu :)
-                        Nebo mi můžete napsat rovnou na email zborilovasofie@gmail.com nebo na instagram @sofiezbo </p>
+                    <p>stačí mi napsat zprávu přes kontaktní formulář tady na webu, na instagram @sofiezbo nebo na můj e-mail zborilovasofie@gmail.com. napište mi aspoň zhruba vaši představu a já se vám obratem ozvu zpět</p>
                 </div>
             </div>
             <div class="faq-item">
-                <h3>Odkud jsi? A kde s tebou můžeme fotit/točit?</h3>
+                <h3>odkud jsi a kam všude za námi jsi ochotná přijet?</h3>
                 <div class="faq-answer">
-                    <p>momentálně působím v Brně, ale pokud budete chtít, můžu za vámi přijet kamkoli! ať už do mé milované Olomouce, tak klidně do Prahy nebo kamkoli, kde mě potřebujete!🫶🏻 (nebo si uděláme výlet do zahraničí?🤭)
-
-
-                        ~ za dopravu (mimo Brno) si účtuji 8,-/km</p>
+                    <p>momentálně působím v Brně, ale za krásnou svatbou a fajn lidmi s radostí vyrazím do jakéhokoliv koutu republiky nebo i za hranice<3 </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3>nabízíš i dárkové poukazy na focení?</h3>
+                <div class="faq-answer">
+                    <p>jasně, moc ráda vám vystavím krásný dárkový poukaz, který můžete věnovat někomu blízkému. fotky jsou totiž ten nejhezčí dárek! </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3>dostaneme od tebe fotky i fyzicky vytištěné?</h3>
+                <div class="faq-answer">
+                    <p>u největšího svatebního balíčku ode mě dostanete vybrané fotky v tištěné podobě i v krásném balení . k ostatním focením jsem pro vás navíc domluvila super slevu na stránce kvalitnifotky.cz, ať vám fotky můžou opravdu ožít. stačí jen zadat kód SOFIEZBORILOVA a 15% sleva je vaše! </p>
                 </div>
             </div>
         </div>

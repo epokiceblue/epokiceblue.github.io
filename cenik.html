@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kontakt, Sofie Zbořilová</title>
+    <meta name="description" content="Ceník focení Sofie Zbořilové. Svatební, portrétní a lifestyle focení v Brně a na Moravě.">
+    <title>Ceník focení | Fotografka Brno Sofie Zbořilová</title>
     <link rel="stylesheet" href="cenik.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+  <h1 class="visually-hidden">Ceník focení fotografka Brno</h1>
     <button class="mobile-menu-btn" onclick="openMenu()">
         <span class="menu-icon">&#9776;</span>
     </button>
@@ -19,6 +21,14 @@
             <a href="index.html">hlavní stránka</a>
             <!--<a href="#">fotky</a>
             <a href="#">videa</a>-->
+            <div class="dropdown">
+                <button id="dropdownBtn" class="dropdown-btn">portfolio</button><div style="font-size: 9px; padding: 3px;">▼</div>
+                <div id="dropdownMenu" class="dropdown-menu">
+                    <a href="svatby.html">svatby</a>
+                    <a href="portrety.html">portréty</a>
+                    <a href="produktove.html">produktové</a> 
+                </div>
+            </div>
             <a href="cenik.html">ceník</a>
             <!--<a href="#">blog</a>
             <a href="#">o mně</a>-->
@@ -28,6 +38,14 @@
     <div class="black_background">
         <div class="container">
             <div class="Item-1"> <a href="index.html">hlavní stránka</a></div>
+            <div class="dropdown">
+              <button id="dropdownBtn" class="dropdown-btn">portfolio</button><div style="font-size: 9px; padding: 3px;">▼</div>
+              <div id="dropdownMenu" class="dropdown-menu">
+                  <a href="svatby.html">svatby</a>
+                  <a href="portrety.html">portréty</a>
+                  <a href="produktove.html">produktové</a> 
+              </div>
+            </div>
             <div class="Item-4"> <a href="cenik.html">ceník</a></div>
             <!--<div class="Item-2"> fotky</div>
             <div class="Item-3"> videa</div>
@@ -36,7 +54,7 @@
             <div class="Item-4"> <a href="contact.html">kontakt</a></div>
         </div>
         <a href="index.html">
-            <h1 class="titul">sofie zbořilová</h1>
+            <h2 class="titul">sofie zbořilová</h2>
             <p class="podtitul">foto/video</p>
         </a>
     </div>
@@ -59,24 +77,22 @@
     </div>
     <div class="cards">
       <div class="card">
-        <img src="./fotky/Mamasana_Kravíhora(91of115).jpg" alt="15 fotek" />
+        <img src="./fotky_portrety/parove-foceni-brno-laskajpg.jpg" alt="15 fotek" />
         <div class="label">
-          <p><strong>15 fotek</strong><br/>2 500,-</p>
+          <p><strong>15 fotek</strong><br/>3 000,-</p>
         </div>
         <ul>
-          <li class="red">~ pokud jste už u mě na focení byli, tak pro vás platí sleva 10 % ;)</li>
           <li>~ fotky si vybíráte vy z náhledů</li>
-          <li>~ každá další fotka za 150,-</li>
+          <li>~ každá další fotka 150,-/ks</li>
         </ul>
       </div>
       <div class="card">
-        <img src="./fotky/BáraLudvíková23_03_24(8of32).jpg" alt="všechny fotky" />
+        <img src="./fotky_portrety/lifestyle-prirozene rodinne foceni.jpg" alt="všechny fotky" />
         <div class="label">
-          <p><strong>všechny fotky</strong><br/>3 500,-</p>
+          <p><strong>všechny fotky</strong><br/>4 200,-</p>
         </div>
         <ul>
-          <li class="red">~ pokud jste už u mě na focení byli, tak pro vás platí sleva 10 % ;)</li>
-          <li>~ <strong>fotky vybírám já</strong>, dostanete všechny, na kterých vám to sluší</li>
+          <li>~ <strong>fotky vybírám já</strong>, dostanete všechny, na kterých vám to sluší (obvykle odevzdávám 60 a více fotek)</li>
         </ul>
       </div>
     </div>
@@ -86,6 +102,7 @@
       <li>~ <strong>rezervace termínu je platná až po zaplacení zálohy</strong></li>
       <li>~ v ceně není zahrnuta vizážistka, pokud si ji ale budete přát...</li>
       <li>~ k ceně se připočítává doprava 8 Kč/km (mimo Brno)</li>
+      <li>*tento ceník je platný od 1. března 2026</li>
     </ul>
     <div class="button-container">
       <button class="gray-button"><a href="contact.html">poptat portrétní focení</a></button>
@@ -100,8 +117,24 @@
       </p>
     </div>
     <div class="cards">
-      <div class="card"><img src="./fotky/Kroutilovi - svatba 6_04_24 (346 of 434).jpg" alt="Svatební pár" /></div>
-      <div class="card"><img src="./fotky/Soldánovi_svatba (359 of 671).jpg" alt="Svatební ruce" /></div>
+      <div class="card">
+        <img src="./fotky_svadby/prirozene-svatebni-momenty-1.jpg" alt="15 fotek" />
+        <div class="label">
+          <p><strong>váš celý příběh</strong></p>
+        </div>
+        <ul>
+          <li>Tato varianta je pro páry, které si chtějí užít svatební den v klidu. Osm hodin nám dává absolutní svobodu a klid. Stihneme zachytit tu krásnou nervozitu při ranních přípravách, dojemný obřad, uvolněné párové focení při západu slunce i to, jak to večer s přáteli rozjedete na parketu!✨ Vaše love story v celé své kráse❤️</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="./fotky_svadby/svatebni-portrety-druzicky-inspirace.jpg" alt="všechny fotky" />
+        <div class="label">
+          <p><strong>základní momenty</strong></p>
+        </div>
+        <ul>
+          <li>Ideální volba pro malé, komorní svatby nebo ty, kteří chtějí mít fotografa jen na ty nejdůležitější oficiální momenty. Zaměříme se na obřad, společné skupinky s rodinou a kratší párové focení</li>
+        </ul>
+      </div>
     </div>
     <div class="button-container">
       <button class="gray-button"><a href="contact.html">napiš mi a ráda ti pošlu ceník &lt;3</a></button>
