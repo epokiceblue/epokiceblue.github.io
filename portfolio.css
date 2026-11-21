@@ -561,27 +561,22 @@ body { font-family: sans-serif; }
     }
 }
 /* ===== Textová sekce nad fotkami (svatby) – styl jako cenik.html ===== */
-.svatby-wave-top,
-.svatby-wave-bottom {
+.svatby-wave-top {
     position: relative;
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    background-color: #eee8e5;
 }
-.svatby-wave-top { background-color: #eee8e5; }
-.svatby-wave-bottom { background-color: #222222; }
-.svatby-wave-top svg,
-.svatby-wave-bottom svg {
+.svatby-wave-top svg {
     position: relative;
     display: block;
-    width: calc(200% + 1.3px);
+    width: calc(200% + 4px);
+    margin-left: -2px; /* bez světlé linky na levém okraji */
     height: 100px;
+    transform: rotateY(180deg);
 }
-.svatby-wave-top svg { transform: rotateY(180deg); }
-/* spodní vlna: béžová plynule stéká do tmavého pozadí fotek */
-.svatby-wave-bottom svg { transform: none; }
 .svatby-wave-top .shape-fill { fill: #222222; }
-.svatby-wave-bottom .shape-fill { fill: #eee8e5; }
 
 .svatby-intro {
     width: 100%;
@@ -591,17 +586,13 @@ body { font-family: sans-serif; }
     overflow: hidden;
 }
 .svatby-intro-inner {
-    padding: 40px 20px 30px;
+    padding: 40px 20px 50px;
     max-width: 1200px;
     margin: auto;
 }
 .svatby-intro h2 { margin: 0.83em 0; }
 .svatby-intro h2 span {
     font-size: 1.5em;
-    background: white;
-    padding: 2px 10px;
-    padding-left: 180px;
-    margin-left: -180px;
     font-weight: bold;
     color: #000;
     display: block;
@@ -611,13 +602,10 @@ body { font-family: sans-serif; }
     max-width: 800px;
     line-height: normal;
 }
-.svatby-wave-bottom + .image-gallery { margin-top: 0; }
+.svatby-intro + .image-gallery { margin-top: 0; }
 
 @media (max-width: 768px) {
     .svatby-intro h2 span {
-        width: 100%;
-        margin-left: 0;
-        padding-left: 0;
         font-size: 1.4em;
         text-align: center;
         overflow-wrap: break-word;
