@@ -607,7 +607,6 @@ body { font-family: sans-serif; }
 @media (max-width: 768px) {
     .intro h2 span {
         font-size: 1.4em;
-        text-align: center;
         overflow-wrap: break-word;
     }
 }
@@ -647,6 +646,7 @@ body { font-family: sans-serif; }
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    justify-content: center;
     margin-top: 20px;
 }
 .process-button {
@@ -654,7 +654,7 @@ body { font-family: sans-serif; }
     background-color: #6c645e;
     color: #fff;
     padding: 12px 24px;
-    border-radius: 20px;
+    border-radius: 999px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -663,7 +663,6 @@ body { font-family: sans-serif; }
 @media (max-width: 768px) {
     .process h2 span {
         font-size: 1.4em;
-        text-align: center;
     }
     .process-buttons { justify-content: center; }
 }
