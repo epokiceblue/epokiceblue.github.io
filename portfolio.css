@@ -800,10 +800,3 @@ body { font-family: sans-serif; }
     .gallery-zigzag img.velka { width: 90%; margin-left: 0; margin-right: 0; }
     .gallery-zigzag img.velka:nth-child(even) { margin-left: auto; }
 }
-
-@media (max-width: 32rem) {
-    /* tenký černý rámeček u některých fotek, stejně jako v koláži */
-    .gallery-zigzag img { box-sizing: border-box; }
-    .gallery-zigzag img:nth-child(5n+2),
-    .gallery-zigzag img:nth-child(5n+4) { border: 1px solid #222; }
-}
