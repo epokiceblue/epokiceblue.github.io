@@ -611,3 +611,59 @@ body { font-family: sans-serif; }
         overflow-wrap: break-word;
     }
 }
+
+.process {
+    width: 100%;
+    background-color: #eee8e5;
+    font-family: 'Poppins', sans-serif;
+    color: #555;
+}
+.process-inner {
+    padding: 30px 20px 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+.process h2 { margin: 0.83em 0; }
+.process h2 span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000;
+    display: block;
+}
+.process ol {
+    max-width: 800px;
+    margin: 0;
+    padding-left: 1.3em;
+    line-height: 1.5;
+}
+.process li { margin-bottom: 14px; }
+.process li strong { color: #000; }
+.process-cta {
+    max-width: 800px;
+    margin: 24px 0 0;
+    line-height: 1.5;
+}
+.process-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+.process-button {
+    display: inline-block;
+    background-color: #6c645e;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.process-button:hover { background-color: #555; }
+
+@media (max-width: 768px) {
+    .process h2 span {
+        font-size: 1.4em;
+        text-align: center;
+    }
+    .process-buttons { justify-content: center; }
+}
