@@ -52,3 +52,8 @@ dropdowns.forEach(dropdown => {
       menu.classList.remove("active");
     });
 });
+
+// „jak to u mě probíhá“: na mobilu se kroky rozbalují klepnutím na nadpis
+document.querySelectorAll('.process li strong').forEach(title => {
+    title.addEventListener('click', () => title.parentElement.classList.toggle('open'));
+});

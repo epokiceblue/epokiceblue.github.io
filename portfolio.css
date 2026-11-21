@@ -587,7 +587,7 @@ body { font-family: sans-serif; }
 }
 .intro-inner {
     padding: 30px 20px 30px;
-    max-width: 1200px;
+    max-width: 840px;
     margin: auto;
 }
 .intro h2 { margin: 0.5em 0 0; }
@@ -620,7 +620,7 @@ body { font-family: sans-serif; }
 }
 .process-inner {
     padding: 30px 20px 50px;
-    max-width: 1200px;
+    max-width: 840px;
     margin: auto;
 }
 .process h2 { margin: 0.5em 0 14px; }
@@ -712,3 +712,43 @@ body { font-family: sans-serif; }
     .collage .c6 { grid-column: 5 / 13; grid-row: 4; margin-top: -40px; aspect-ratio: 3 / 2; position: relative; z-index: 1; }
 }
 .collage + .process .process-inner { padding-top: 10px; }
+
+/* mobil: kroky jako rozbalovací seznam */
+@media (max-width: 768px) {
+    .process ol {
+        list-style: none;
+        padding-left: 0;
+        border-top: 1px solid #c9c0bb;
+    }
+    .process li {
+        margin: 0;
+        border-bottom: 1px solid #c9c0bb;
+        counter-increment: krok;
+    }
+    .process li strong {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 0;
+        cursor: pointer;
+    }
+    .process li strong::before {
+        content: counter(krok) ".";
+        font-weight: normal;
+        color: #6c645e;
+    }
+    .process li strong::after {
+        content: "+";
+        margin-left: auto;
+        font-size: 1.3em;
+        font-weight: normal;
+        color: #6c645e;
+    }
+    .process li.open strong::after { content: "\2013"; }
+    .process li span {
+        display: none;
+        padding: 0 0 16px;
+    }
+    .process li.open span { display: block; }
+    .process ol { counter-reset: krok; }
+}
