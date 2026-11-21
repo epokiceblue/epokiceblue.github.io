@@ -794,3 +794,9 @@ body { font-family: sans-serif; }
     .gallery-zigzag img:nth-child(odd):nth-child(3n) { margin-left: 6%; }
     .gallery-zigzag img:nth-child(even):nth-child(3n) { margin-right: 6%; }
 }
+
+@media (max-width: 32rem) {
+    /* většina fotek na šířku je větší, každá třetí zůstává menší */
+    .gallery-zigzag img.velka { width: 90%; margin-left: 0; margin-right: 0; }
+    .gallery-zigzag img.velka:nth-child(even) { margin-left: auto; }
+}
