@@ -605,7 +605,8 @@ body { font-family: sans-serif; }
     max-width: 800px;
     line-height: normal;
 }
-.intro + .image-gallery { margin-top: 0; }
+.intro + .image-gallery,
+.process + .image-gallery { margin-top: 0; }
 
 @media (max-width: 768px) {
     .intro h2 span {
