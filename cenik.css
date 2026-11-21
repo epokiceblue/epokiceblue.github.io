@@ -271,7 +271,8 @@ a{
 .custom-shape-divider-top-1724510018 svg {
     position: relative;
     display: block;
-    width: calc(200% + 1.3px);
+    width: calc(200% + 4px);
+    margin-left: -2px; /* bez světlé linky na levém okraji */
     height: 100px;
     transform: rotateY(180deg);
 }

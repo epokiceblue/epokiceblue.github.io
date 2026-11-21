@@ -560,3 +560,54 @@ body { font-family: sans-serif; }
         padding-bottom: 35px;
     }
 }
+/* ===== Textová sekce nad fotkami (svatby) – styl jako cenik.html ===== */
+.svatby-wave-top {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    background-color: #eee8e5;
+}
+.svatby-wave-top svg {
+    position: relative;
+    display: block;
+    width: calc(200% + 4px);
+    margin-left: -2px; /* bez světlé linky na levém okraji */
+    height: 100px;
+    transform: rotateY(180deg);
+}
+.svatby-wave-top .shape-fill { fill: #222222; }
+
+.svatby-intro {
+    width: 100%;
+    background-color: #eee8e5;
+    font-family: 'Poppins', sans-serif;
+    color: #555;
+    overflow: hidden;
+}
+.svatby-intro-inner {
+    padding: 40px 20px 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+.svatby-intro h2 { margin: 0.83em 0; }
+.svatby-intro h2 span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000;
+    display: block;
+}
+.svatby-intro p {
+    margin-top: 10px;
+    max-width: 800px;
+    line-height: normal;
+}
+.svatby-intro + .image-gallery { margin-top: 0; }
+
+@media (max-width: 768px) {
+    .svatby-intro h2 span {
+        font-size: 1.4em;
+        text-align: center;
+        overflow-wrap: break-word;
+    }
+}
