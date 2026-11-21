@@ -379,7 +379,7 @@ h2 span {
   color: white;
   padding: 12px 24px;
   border: none;
-  border-radius: 20px;
+  border-radius: 999px;
   font-weight: bold;
   cursor: pointer;
   font-size: 17px;
@@ -618,5 +618,17 @@ body {
         font-weight: 300;
         margin: 0;
         padding: 5px 0;
+    }
+}
+
+/* malé telefony (do 340 px, např. zavřený Galaxy Fold): logo se nepřekrývá s ikonkou menu */
+@media (max-width: 340px) {
+    .titul {
+        font-size: 24px;
+        padding-left: 40px;
+    }
+    .podtitul {
+        font-size: 14px;
+        margin-left: 130px;
     }
 }

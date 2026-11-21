@@ -919,3 +919,15 @@ html.menu-open {
     font-weight: bold;
     margin: 0.67em 0;
 }
+
+/* malé telefony (do 340 px, např. zavřený Galaxy Fold): logo se nepřekrývá s ikonkou menu */
+@media (max-width: 340px) {
+    .titul {
+        font-size: 24px;
+        padding-left: 40px;
+    }
+    .podtitul {
+        font-size: 14px;
+        margin-left: 130px;
+    }
+}

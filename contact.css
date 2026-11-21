@@ -480,7 +480,7 @@ section{
     display: inline-block;
     padding: 12px 12px;
     border: none;
-    border-radius: 25px; /* Rounded corners */
+    border-radius: 999px; /* Rounded corners */
     width: 20%;
     /* Colors */
     background-color: #666666;
@@ -820,4 +820,16 @@ html.menu-open {
     font-size: 20px;
     font-weight: bold;
     margin: 0.67em 0;
+}
+
+/* malé telefony (do 340 px, např. zavřený Galaxy Fold): logo se nepřekrývá s ikonkou menu */
+@media (max-width: 340px) {
+    .titul {
+        font-size: 24px;
+        padding-left: 40px;
+    }
+    .podtitul {
+        font-size: 14px;
+        margin-left: 130px;
+    }
 }
