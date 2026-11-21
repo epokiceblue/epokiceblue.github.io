@@ -222,7 +222,8 @@ body { font-family: sans-serif; }
     letter-spacing: 1.5px; /* Sets the space between letters */
     text-transform: lowercase;
     margin: 0;
-    margin-left: 400px;
+    margin-left: 412px;
+    margin-top: -6px;
     padding: 0;
 }
 .instagram-icon {
@@ -340,6 +341,7 @@ body { font-family: sans-serif; }
     .podtitul {
         font-size: 16px;
         margin-left: 120px;
+        margin-top: -4px;
         padding-bottom: 35px;
     }
     body {
@@ -557,6 +559,7 @@ body { font-family: sans-serif; }
     .podtitul {
         font-size: 16px;
         margin-left: 120px;
+        margin-top: -4px;
         padding-bottom: 35px;
     }
 }
@@ -768,5 +771,6 @@ body { font-family: sans-serif; }
     .podtitul {
         font-size: 14px;
         margin-left: 130px;
+        margin-top: -9px;
     }
 }
