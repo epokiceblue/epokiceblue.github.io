@@ -819,5 +819,5 @@ body { font-family: sans-serif; }
 
 /* portréty, mobil: pár vpravo dole posunutý níž, aby mu fotka nad ním nezakrývala obličeje */
 @media (max-width: 768px) {
-    .collage-c6-niz .c6 { margin-top: calc(var(--m) * -10); }
+    .collage-c6-niz .c6 { margin-top: calc(var(--m) * -24); }
 }
