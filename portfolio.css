@@ -816,3 +816,8 @@ body { font-family: sans-serif; }
 .image-gallery > div.galerie-sloupce { columns: auto; display: flex; align-items: flex-start; }
 .galerie-sloupec { flex: 1; min-width: 0; }
 .image-gallery img { height: auto; }
+
+/* portréty, mobil: pár vpravo dole posunutý níž, aby mu fotka nad ním nezakrývala obličeje */
+@media (max-width: 768px) {
+    .collage-c6-niz .c6 { margin-top: calc(var(--m) * -10); }
+}
