@@ -722,6 +722,11 @@ body { font-family: sans-serif; }
     .collage .c6 { grid-column: 5 / 13; grid-row: 4; margin-top: calc(var(--m) * -40); aspect-ratio: 3 / 2; position: relative; z-index: 1; }
 }
 .collage + .process .process-inner { padding-top: 10px; }
+/* firmy, mobil: prohozené pozice c3 a c4 */
+@media (max-width: 768px) {
+    .collage-prohodit .c3 { grid-column: 8 / 12; grid-row: 2; margin-top: calc(var(--m) * 16); width: 100%; justify-self: stretch; position: relative; z-index: 3; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); }
+    .collage-prohodit .c4 { grid-column: 1 / 6;  grid-row: 2; margin-top: calc(var(--m) * -160); width: 88%; justify-self: end; z-index: auto; box-shadow: none; }
+}
 
 /* mobil: kroky jako rozbalovací seznam */
 @media (max-width: 768px) {
