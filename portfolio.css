@@ -664,6 +664,12 @@ body { font-family: sans-serif; }
 }
 .process-button:hover { background-color: #555; }
 
+/* počítač: větší mezera, stejně široká tlačítka, aby dvojice seděla opticky na středu */
+@media (min-width: 769px) {
+    .process-buttons { gap: 28px; margin-top: 32px; }
+    .process-button { min-width: 260px; box-sizing: border-box; text-align: center; }
+}
+
 @media (max-width: 768px) {
     .process h2 span {
         font-size: 1.4em;
