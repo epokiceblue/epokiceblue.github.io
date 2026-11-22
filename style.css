@@ -63,7 +63,7 @@ section{
 }
 
 .dropdown-menu a{
-  margin: 2px;
+  margin: 2px; white-space: nowrap;
   font-weight: 100;
   color: #b4b4b4;
 }
