@@ -800,3 +800,8 @@ body { font-family: sans-serif; }
     .gallery-zigzag img.velka { width: 90%; margin-left: 0; margin-right: 0; }
     .gallery-zigzag img.velka:nth-child(even) { margin-left: auto; }
 }
+
+/* galerie skládaná zleva doprava (rozložení dělá script.js) */
+.image-gallery > div.galerie-sloupce { columns: auto; display: flex; align-items: flex-start; }
+.galerie-sloupec { flex: 1; min-width: 0; }
+.image-gallery img { height: auto; }
