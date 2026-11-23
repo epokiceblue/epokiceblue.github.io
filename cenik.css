@@ -635,3 +635,9 @@ body {
         margin-top: -9px;
     }
 }
+
+/* ===== Úpravy 2026-11-23 ===== */
+/* bílý pruh pod nadpisy pokračuje až k levému kraji obrazovky i na velkém monitoru */
+h2 span { position: relative; }
+h2 span::before { content: ""; position: absolute; top: 0; bottom: 0; right: 100%; width: 100vw; background: white; }
+@media (max-width: 768px) { h2 span::before { display: none; } }
