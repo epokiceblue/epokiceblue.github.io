@@ -34,7 +34,7 @@ a{
   font-weight: 100;
 }
 
-.dropdown-menu a{
+.dropdown-menu a{ white-space: nowrap;
   margin: 2px;
   font-weight: 100;
   color: #b4b4b4;
@@ -91,7 +91,8 @@ a{
     letter-spacing: 1.5px; /* Sets the space between letters */
     text-transform: lowercase;
     margin: 0;
-    margin-left: 400px;
+    margin-left: 412px;
+    margin-top: -6px;
     padding: 0;
     height: 24px;
 }
@@ -379,7 +380,7 @@ h2 span {
   color: white;
   padding: 12px 24px;
   border: none;
-  border-radius: 20px;
+  border-radius: 999px;
   font-weight: bold;
   cursor: pointer;
   font-size: 17px;
@@ -558,6 +559,7 @@ body {
     .podtitul {
         font-size: 16px;
         margin-left: 120px;
+        margin-top: -4px;
         padding-bottom: 35px;
     }
     .instagram-icon, .location-pin-icon {
@@ -618,5 +620,18 @@ body {
         font-weight: 300;
         margin: 0;
         padding: 5px 0;
+    }
+}
+
+/* malé telefony (do 340 px, např. zavřený Galaxy Fold): logo se nepřekrývá s ikonkou menu */
+@media (max-width: 340px) {
+    .titul {
+        font-size: 24px;
+        padding-left: 40px;
+    }
+    .podtitul {
+        font-size: 14px;
+        margin-left: 130px;
+        margin-top: -9px;
     }
 }

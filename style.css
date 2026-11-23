@@ -63,7 +63,7 @@ section{
 }
 
 .dropdown-menu a{
-  margin: 2px;
+  margin: 2px; white-space: nowrap;
   font-weight: 100;
   color: #b4b4b4;
 }
@@ -181,7 +181,8 @@ img:hover{
     letter-spacing: 1.5px; /* Sets the space between letters */
     text-transform: lowercase;
     margin: 0;
-    margin-left: 400px;
+    margin-left: 412px;
+    margin-top: -6px;
     padding: 0;
 }
 
@@ -907,6 +908,7 @@ html.menu-open {
     .podtitul {
         font-size: 16px;
         margin-left: 120px;
+        margin-top: -4px;
         padding-bottom: 35px;
     }
 }
@@ -918,4 +920,17 @@ html.menu-open {
     font-size: 20px;
     font-weight: bold;
     margin: 0.67em 0;
+}
+
+/* malé telefony (do 340 px, např. zavřený Galaxy Fold): logo se nepřekrývá s ikonkou menu */
+@media (max-width: 340px) {
+    .titul {
+        font-size: 24px;
+        padding-left: 40px;
+    }
+    .podtitul {
+        font-size: 14px;
+        margin-left: 130px;
+        margin-top: -9px;
+    }
 }
