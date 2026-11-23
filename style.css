@@ -1216,9 +1216,9 @@ html.menu-open {
     .sluzba { column-gap: 0; }
     .sluzba_text { padding: 0 70px 0 28px; }
     /* nadpis víc do fotky: okraj fotky protne vždy jedno písmeno (svat|by, por|tréty, fir|my) */
-    #sluzba-svatby .sluzba_nadpis { margin-left: -137px; }
-    #sluzba-portrety .sluzba_nadpis { margin-left: -138px; }
-    #sluzba-firmy .sluzba_nadpis { margin-left: -128px; }
+    #sluzba-svatby .sluzba_nadpis { margin-left: -81px; }
+    #sluzba-portrety .sluzba_nadpis { margin-left: -91px; }
+    #sluzba-firmy .sluzba_nadpis { margin-left: -79px; }
 }
 @media (max-width: 768px) {
     .sluzba_cernobile { justify-content: center; } /* černobílé fotky společně na střed */
@@ -1229,4 +1229,64 @@ html.menu-open {
     .faq-item { letter-spacing: 0; }
     .faq-item h3 { font-size: 15px; line-height: 1.4; padding: 10px 26px 10px 0; }
     .faq-answer, .faq-answer p { font-size: 14px; line-height: 1.6; }
+}
+
+/* ===== Úpravy 2026-11-23 (3): plynulejší slider ===== */
+/* perspektiva na každé fotce zbytečně zatěžovala prohlížeč; přiblížení teď dělá scale (stejný dojem) */
+.slide { perspective: none; backface-visibility: hidden; }
+.slide img { backface-visibility: hidden; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.slide img:hover { transform: scale(1.25); }
+.slide:hover { position: relative; z-index: 1; }
+.slide_track.js-ovladany:active { cursor: grabbing; }
+@media (max-width: 768px) { .slide img:hover { transform: none; } }
+
+/* ===== Úpravy 2026-11-23 (4): rozložení slajdů podle editoru (Sofie) ===== */
+/* Vše se měří od hlavní fotky: text vždy začíná 141 px pod jejím vrškem, mezera text–tlačítko 18 px.
+   Nadpis leží volně (absolutně) a nepřesouvá text. Platí od 1210 px, kdy mají sloupce plnou šířku;
+   na menších noteboocích zůstává původní rozložení. */
+@media (min-width: 1210px) {
+    .sluzba_text, .sluzba_text_vys { align-self: start; padding-top: 141px; }
+    .sluzba_text p { margin-bottom: 18px; }
+    .sluzba_nadpis { position: absolute; margin: 0; white-space: nowrap; max-width: none; }
+    #sluzba-svatby .sluzba_nadpis   { left: -86px; top: -37px; font-size: 62px; margin: 0; }
+    #sluzba-portrety .sluzba_nadpis { left: -93px; top: -37px; font-size: 62px; margin: 0; }
+    #sluzba-firmy .sluzba_nadpis    { left: -104px; top: -37px; font-size: 62px; margin: 0; }
+}
+
+/* podnadpis „Fotím svatby, rodiny…“ o kousek blíž k nadpisu */
+.kokot_2 .codelam_text p { margin-top: -2px !important; }
+
+/* ===== Úpravy 2026-11-23 (5): sekce „chci jít fotit!“ ===== */
+/* background-attachment: fixed v prohlížečích při scrollu cuká; fotka je teď samostatná pevná vrstva oříznutá sekcí */
+.parallax { background-image: none; clip-path: inset(0); overflow: hidden; }
+.parallax::before {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)), url('./fotky_portrety/prirozene-rodinne-foceni-v-pohybu.jpg') center / cover no-repeat;
+    will-change: transform;
+    z-index: 0;
+}
+.parallax .overlay-text a { font-family: 'Poppins', sans-serif; font-weight: 700; text-transform: lowercase; letter-spacing: 0; }
+@media (max-width: 768px) {
+    .parallax::before { position: absolute; will-change: auto; }
+}
+
+/* ===== Úpravy 2026-11-23 (6): video u firem přes roh hlavní fotky ===== */
+.sluzba_video {
+    position: absolute;
+    left: -26px;
+    bottom: -38px;
+    width: 40%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    box-sizing: border-box;
+    border: 2px solid var(--svetla, #F7F4EE);
+    background: #ddd;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+@media (max-width: 768px) {
+    /* na mobilu vpravo dole; fotka i video dohromady na střed */
+    .sluzba_video { left: auto; right: -16%; width: 36%; bottom: -14px; border-width: 1px; }
+    #sluzba-firmy .sluzba_hlavni { width: 74%; margin-left: 7%; }
 }

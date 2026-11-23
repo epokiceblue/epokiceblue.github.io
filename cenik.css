@@ -643,3 +643,33 @@ h2 span::before { content: ""; position: absolute; top: 0; bottom: 0; right: 100
 @media (max-width: 768px) { h2 span::before { display: none; } }
 
 @media (max-width: 768px) { .custom-shape-divider-top-1724510018 svg { height: 50px; } }
+
+/* ===== Úpravy 2026-11-23 (2) ===== */
+/* poznámky pod fotkami stejně široké a stejně velké jako úvodní text nad fotkami */
+.notes { max-width: none; font-size: 1em; }
+/* spodní pás: odkazy na galerie ve stylu tlačítek z hlavní stránky */
+.cennik_kontakt { flex-direction: column; align-items: center; gap: 18px; padding: 45px 20px; }
+.cennik_portfolio_nadpis { margin: 0; color: #F7F4EE; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 22px; }
+.cennik_portfolio { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.cennik_kontakt .bublina_cennik { display: inline-block; width: auto; min-width: 0; max-width: none; margin: 0; padding: 12px 28px; white-space: nowrap; background-color: #ECE6DB; color: #2F3B2C; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; border-radius: 999px; box-shadow: none; text-decoration: none; transition: background-color .2s; }
+.cennik_kontakt .bublina_cennik:hover { background-color: #F7F4EE; }
+@media (max-width: 768px) {
+    .cennik_portfolio { flex-direction: column; align-items: stretch; width: 100%; max-width: 280px; }
+    .cennik_kontakt .bublina_cennik { text-align: center; font-size: 15px; }
+}
+
+/* ===== Úpravy 2026-11-23 (3) ===== */
+/* odkaz na galerii hned pod tlačítkem poptávky */
+.cenik_galerie { display: block; width: fit-content; margin: 14px auto 0; color: inherit; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; opacity: .85; }
+.cenik_galerie::after { content: " \2192"; }
+.cenik_galerie:hover { opacity: 1; }
+/* spodní pás „o mně“ místo odkazů na galerie */
+.cenik_omne { display: flex; align-items: center; justify-content: center; gap: 36px; padding: 50px 24px; background: #222222; color: #F7F4EE; }
+.cenik_omne img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; flex: none; }
+.cenik_omne div { max-width: 520px; }
+.cenik_omne p { margin: 0; line-height: 1.6; }
+.cenik_omne .cenik_omne_nadpis { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 24px; margin-bottom: 8px; }
+@media (max-width: 768px) {
+    .cenik_omne { flex-direction: column; text-align: center; gap: 18px; padding: 40px 22px; }
+    .cenik_omne img { width: 120px; height: 120px; }
+}
