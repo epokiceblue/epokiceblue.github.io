@@ -836,3 +836,41 @@ html.menu-open {
         margin-top: -9px;
     }
 }
+
+/* ===== Úpravy 2026-11-23 ===== */
+/* FAQ (2026-11-23): béžové pozadí se zrnem, otázky kurzívou (Poppins), odpovědi normálně (Montserrat) */
+.modre_pozadie { background-color: #ECE6DB; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.22 0 0 0 0 0.18 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); background-size: 300px 300px; }
+.faq-container { background-color: #F7F4EE; box-shadow: none; }
+.faq-item { font-family: 'Montserrat', sans-serif; font-style: normal; }
+.faq-item h3 { font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 600; }
+.faq-answer, .faq-answer p { font-family: 'Montserrat', sans-serif; font-style: normal; }
+.tab-link { font-family: 'Poppins', sans-serif; }
+
+/* béžový pruh „Ráda ti odpovím…“: od pravého kraje obrazovky až za fotku */
+@media (min-width: 769px) {
+    .pozadie_farba { margin-left: calc((100vw - 80px) * -0.1); } /* začíná zhruba ve středu kulaté fotky */
+    .sofi_obr_index { align-items: flex-start; }
+    .text_index { justify-content: flex-start; padding-top: calc((100vw - 80px) * 0.03); }
+}
+.sofi_kruh img { border-radius: 50%; aspect-ratio: 1 / 1; height: auto; object-fit: cover; } /* kulatá fotka bez bílých rohů, pruh se schová za ni */
+.sofi_kruh { align-items: center; }
+@media (min-width: 769px) and (max-width: 1100px) { .text_index { font-size: 16px; } .sofi_kruh img { width: 75%; } }
+/* mobil (2026-11-23): stejně jako na PC – fotka vlevo, pruh od pravého kraje se schová za fotku */
+@media (max-width: 768px) {
+    .sofi_obr_index { flex-direction: row; flex-wrap: wrap; align-items: center; padding: 30px 0 10px 16px; }
+    .sofi_obr_index > .pozadie_farba.mobile-only { display: none; }
+    .sofi_kruh { width: 44%; margin: 0; justify-content: flex-start; align-items: center; }
+    .sofi_kruh img { width: 100%; }
+    .text_index { display: contents; }
+    .text_index .pozadie_farba.desktop-only {
+        display: flex;
+        flex: 0 0 78%;
+        margin: 0 0 0 -22%;
+        padding: 12px 14px 12px 0;
+        box-sizing: border-box;
+        flex-direction: row;
+    }
+    .text_index .po_fa_text.desktop-only { display: block; width: auto; padding-left: 31%; }
+    .text_index .po_fa_text p { margin: 0; font-size: 13px; line-height: 1.45; }
+    .dva_texty { flex: 0 0 100%; box-sizing: border-box; padding: 0 16px 0 calc(15vw - 16px); font-size: 16px; }
+}

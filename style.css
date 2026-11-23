@@ -96,7 +96,8 @@ section{
     --sw: 400px; /* šířka jedné fotky ve slideru */
     display: flex;
     width: calc(var(--sw) * 46);
-    animation: scroll 40s linear infinite;
+    animation: scroll 100s linear infinite;
+    will-change: transform; /* plynulejší posun na GPU */
 }
 
 .slide_track:hover{
@@ -105,10 +106,10 @@ section{
 
 @keyframes scroll {
     0% {
-        transform: translateX(0); 
+        transform: translate3d(0,0,0); 
     }
     100% {
-        transform: translateX(calc(var(--sw) * -23)); /* posun přesně o 23 fotek (počet fotek ve slideru), smyčka bez skoku */
+        transform: translate3d(calc(var(--sw) * -23),0,0); /* posun přesně o 23 fotek (počet fotek ve slideru), smyčka bez skoku */
     }    
 }
 
@@ -725,7 +726,7 @@ html.menu-open {
     z-index: 1;
     }
     .slide_track{
-    animation: scroll 60s linear infinite;
+    animation: scroll 80s linear infinite;
     }
     .dropdown {
         display: flex;
@@ -1175,4 +1176,29 @@ html.menu-open {
     .kokot .sofi_obr_index { margin-top: 30px; }
     .kokot { padding-bottom: 40px; }
     .kokot_2 { padding-top: 30px; }
+}
+
+/* ===== Úpravy 2026-11-23 ===== */
+.kokot_2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); background-size: 300px 300px; } /* o něco větší zrno */
+
+/* FAQ (2026-11-23): béžové pozadí se zrnem, otázky kurzívou (Poppins), odpovědi normálně (Montserrat) */
+.modre_pozadie { background-color: #ECE6DB; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.22 0 0 0 0 0.18 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); background-size: 300px 300px; }
+.faq-container { background-color: #F7F4EE; box-shadow: none; }
+.faq-item { font-family: 'Montserrat', sans-serif; font-style: normal; }
+.faq-item h3 { font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 600; }
+.faq-answer, .faq-answer p { font-family: 'Montserrat', sans-serif; font-style: normal; }
+.tab-link { font-family: 'Poppins', sans-serif; }
+
+/* slajdy Co vlastně dělám: o trochu víc prostoru mezi fotkou, textem a černobílými fotkami */
+@media (min-width: 769px) {
+    .sluzba { column-gap: 36px; }
+    .sluzba_text_vys { align-self: start; padding-top: 10px; }
+    .sluzba_nadpis_mensi { font-size: 62px; } /* firmy a podnikatelé: nadpis výš, líp čitelný */
+}
+/* mobil: hlavní fotka na střed, šipky v polovině výšky hlavní fotky */
+@media (max-width: 768px) {
+    .sluzba_hlavni { align-self: center; }
+    .sluzby_track { align-items: flex-start; }
+    .sluzba { justify-content: flex-start; }
+    .sluzby_sipky { position: absolute; inset: auto 0 auto 0; top: calc(30px + (100vw - 52px) * 0.5); height: 0; }
 }
