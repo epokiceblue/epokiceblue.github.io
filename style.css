@@ -957,7 +957,7 @@ html.menu-open {
 .sluzby {
     position: relative;
     width: 100%;
-    overflow: hidden; /* šipky přesahují okraj, vidět je jen jejich část */
+    overflow-x: clip;
     padding: 10px 0 30px;
 }
 .sluzby_track {
@@ -1005,7 +1005,6 @@ html.menu-open {
     color: #222222;
     margin: 0 0 26px -100px; /* nadpis částečně leží na hlavní fotce */
     max-width: 560px;
-    text-shadow: 0 0 22px rgba(238, 233, 231, 0.9); /* jemná světlá aura, aby byl nadpis čitelný i na tmavé fotce */
 }
 .sluzba_text p {
     font-size: 15.5px;
@@ -1038,26 +1037,34 @@ html.menu-open {
     object-fit: cover;
 }
 .sluzba_foto_a { top: 0; right: 0; width: 190px; }
-.sluzba_foto_b { bottom: 0; left: 0; width: 160px; border: 2px solid #222222; }
+.sluzba_foto_b { bottom: 0; left: 0; width: 160px; }
+.sluzby_sipky {  /* obal šipek: na PC přes celý slajd, na mobilu „přilepený“ uprostřed obrazovky */
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
 .sluzby_sipka {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 3;
-    width: 76px;
-    height: 76px;
-    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid currentColor;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
+    background: transparent;
     color: #222222;
-    font-size: 42px;
-    line-height: 1;
     cursor: pointer;
+    pointer-events: auto;
     transition: background 0.2s;
 }
-.sluzby_sipka:hover { background: rgba(255, 255, 255, 0.9); }
-.sluzby_sipka_vlevo { left: -38px; padding-left: 34px; }  /* šipka je vidět jen zčásti */
-.sluzby_sipka_vpravo { right: -38px; padding-right: 34px; }
+.sluzby_sipka:hover { background: rgba(255, 255, 255, 0.15); }
+.sluzby_sipka_vlevo { left: 24px; }
+.sluzby_sipka_vpravo { right: 24px; }
 .sluzby_tecky {
     display: flex;
     justify-content: center;
@@ -1095,8 +1102,9 @@ html.menu-open {
         margin-top: 28px;
     }
     .sluzba_cernobile img { position: static; width: 40%; }
-    .sluzba_foto_b { margin-top: 50px; border-width: 1px; }
-    .sluzby_sipka { top: 200px; width: 54px; height: 54px; font-size: 32px; }
-    .sluzby_sipka_vlevo { left: -27px; padding-left: 24px; }
-    .sluzby_sipka_vpravo { right: -27px; padding-right: 24px; }
+    .sluzba_foto_b { margin-top: 50px; }
+    .sluzby_sipky { position: sticky; top: 50vh; height: 0; inset: auto; }
+    .sluzby_sipka { top: 0; width: 40px; height: 40px; }
+    .sluzby_sipka_vlevo { left: 6px; }
+    .sluzby_sipka_vpravo { right: 6px; }
 }
