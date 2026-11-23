@@ -48,7 +48,7 @@
         lista.innerHTML =
             '<h2>cookies</h2>' +
             '<p>Ráda bych věděla, které fotky a stránky tě tu nejvíc zajímají. ' +
-            'K tomu používám Google Analytics, žádné reklamy. ' +
+            'K tomu používám Google Analytics. ' +
             '<a href="podminky.html#osobni-udaje">Víc informací</a></p>' +
             '<div class="sz-cookies-tlacitka">' +
             '<button type="button" class="sz-ne">Odmítnout</button>' +
