@@ -87,14 +87,15 @@ section{
     margin: 0px;
     position: relative;
     width: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center; /* flex: slider začíná první fotkou vlevo (svatby) */
     overflow: hidden;
 }
 
 .slide_track{
+    --sw: 400px; /* šířka jedné fotky ve slideru */
     display: flex;
-    width: calc(400px * 44);
+    width: calc(var(--sw) * 44);
     animation: scroll 40s linear infinite;
 }
 
@@ -107,7 +108,7 @@ section{
         transform: translateX(0); 
     }
     100% {
-        transform: translateX(calc(-350px * 22));
+        transform: translateX(calc(var(--sw) * -22)); /* posun přesně o 22 fotek, smyčka bez skoku */
     }    
 }
 
@@ -301,6 +302,7 @@ form {
 }
 .black_background{
     background-color: #222222;
+    justify-self: stretch; /* plná šířka; jinak ji body (place-items: center) zúží/rozšíří podle slideru a slider začne uprostřed */
 }
 .bublina_omne{
     background-color: #7b736f;
@@ -846,10 +848,16 @@ html.menu-open {
     .slider {
         height: 300px;
     }
+    /* mobil: užší fotky na výšku (4:5), aby byla vidět další fotka a slider nezabral celou šířku */
+    .slide_track { --sw: 240px; }
     .slide {
-        width: 90vw;
-        height: 150px;
+        width: var(--sw);
+        height: 300px;
         padding: 0px;
+    }
+    .slide img {
+        height: 100%;
+        object-fit: cover;
     }
     .faq-tabs {
         flex-direction: row;
