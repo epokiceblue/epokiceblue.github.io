@@ -1248,7 +1248,7 @@ html.menu-open {
     .sluzba_text, .sluzba_text_vys { align-self: start; padding-top: 141px; }
     .sluzba_text p { margin-bottom: 18px; }
     .sluzba_nadpis { position: absolute; margin: 0; white-space: nowrap; max-width: none; }
-    #sluzba-svatby .sluzba_nadpis   { left: -92px; top: 0;     font-size: 66px; margin: 0; }
-    #sluzba-portrety .sluzba_nadpis { left: -88px; top: -23px; font-size: 59px; margin: 0; }
-    #sluzba-firmy .sluzba_nadpis    { left: -52px; top: -37px; font-size: 62px; margin: 0; }
+    #sluzba-svatby .sluzba_nadpis   { left: -86px; top: -37px; font-size: 62px; margin: 0; }
+    #sluzba-portrety .sluzba_nadpis { left: -93px; top: -37px; font-size: 62px; margin: 0; }
+    #sluzba-firmy .sluzba_nadpis    { left: -104px; top: -37px; font-size: 62px; margin: 0; }
 }
