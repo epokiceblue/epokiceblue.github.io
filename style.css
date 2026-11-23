@@ -1255,3 +1255,18 @@ html.menu-open {
 
 /* podnadpis „Fotím svatby, rodiny…“ o kousek blíž k nadpisu */
 .kokot_2 .codelam_text p { margin-top: -2px !important; }
+
+/* ===== Úpravy 2026-11-23 (5): sekce „chci jít fotit!“ ===== */
+/* background-attachment: fixed v prohlížečích při scrollu cuká; fotka je teď samostatná pevná vrstva oříznutá sekcí */
+.parallax { background-image: none; clip-path: inset(0); overflow: hidden; }
+.parallax::before {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)), url('./fotky_portrety/prirozene-rodinne-foceni-v-pohybu.jpg') center / cover no-repeat;
+    will-change: transform;
+    z-index: 0;
+}
+.parallax .overlay-text a { font-family: 'Poppins', sans-serif; font-weight: 700; text-transform: lowercase; letter-spacing: 0; }
+@media (max-width: 768px) {
+    .parallax::before { position: absolute; will-change: auto; }
+}
