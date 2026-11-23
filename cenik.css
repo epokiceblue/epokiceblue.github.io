@@ -673,3 +673,10 @@ h2 span::before { content: ""; position: absolute; top: 0; bottom: 0; right: 100
     .cenik_omne { flex-direction: column; text-align: center; gap: 18px; padding: 40px 22px; }
     .cenik_omne img { width: 120px; height: 120px; }
 }
+
+.cenik_vzkaz {
+  margin: 30px 0 0;
+  max-width: 800px;
+  font-style: italic;
+  font-size: 1.05em;
+}
