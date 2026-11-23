@@ -948,60 +948,155 @@ html.menu-open {
     }
 }
 
-/* „Co vlastně dělám?“ – karty s fotkou v rámečku jako v kolážích v galeriích (2026-11) */
-.codelam_karta {
+/* „Co vlastně dělám?“ – 3 slajdy (svatby / portréty a rodiny / firmy), posun šipkami, tečkami i prstem (2026-11) */
+.kokot_2 {
+    background-color: #eee9e7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.27 0 0 0 0 0.25 0 0 0 0.14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='900'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0035 0.006' numOctaves='4' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.36 0 0 0 0 0.31 0 0 0 -0.9 0.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+    background-size: 300px 300px, cover;
+}
+.sluzby {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* šipky přesahují okraj, vidět je jen jejich část */
+    padding: 10px 0 30px;
+}
+.sluzby_track {
     display: flex;
-    flex-direction: column;
-    width: 290px;
-    margin: 30px 22px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
-.codelam_ramecek {
+.sluzby_track::-webkit-scrollbar { display: none; }
+.sluzba {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 360px) minmax(0, 430px) minmax(0, 240px);
+    justify-content: center;
+    align-items: center;
+    padding: 40px 90px 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+.sluzba_hlavni {
     display: block;
+    position: relative;
+    z-index: 1;
 }
-.codelam_karta .tri_obrazky {
+.sluzba_foto_hlavni {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: 380px;
+    height: auto;
+    aspect-ratio: 2 / 3;
     object-fit: cover;
-    margin: 0;
-    border: 2px solid #222222; /* stejně jako koláže v galeriích na PC */
+    border: 2px solid #222222; /* jako koláže v galeriích */
 }
-.codelam_nadpis {
-    font-family: 'Poppins', sans-serif; /* stejně jako nadpisy v galeriích */
+.sluzba_text {
+    position: relative;
+    z-index: 2;
+    padding: 0 50px 0 50px;
+}
+.sluzba_nadpis {
+    font-family: 'Poppins', sans-serif; /* jako nadpisy v galeriích */
     font-weight: bold;
-    font-size: 24px;
-    color: #000;
-    margin: 18px 0 4px 0;
-    text-align: left;
+    font-size: 72px;
+    line-height: 1;
+    color: #222222;
+    margin: 0 0 26px -100px; /* nadpis částečně leží na hlavní fotce */
+    max-width: 560px;
+    text-shadow: 0 0 22px rgba(238, 233, 231, 0.9); /* jemná světlá aura, aby byl nadpis čitelný i na tmavé fotce */
 }
-.codelam_karta p {
-    font-size: 16px;
-    line-height: 1.6;
+.sluzba_text p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: #555555;
     text-align: left;
+    margin: 0 0 26px 0;
 }
-.codelam_odkaz {
-    align-self: flex-start;
-    margin-top: auto;
-    color: #000;
+.sluzba_tlacitko {
+    display: inline-block;
+    background-color: #6c645e;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 999px;
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
     font-weight: bold;
     text-decoration: none;
-    border-bottom: 1px solid #000;
-    padding-bottom: 1px;
 }
+.sluzba_tlacitko:hover { background-color: #555; }
+.sluzba_cernobile {
+    position: relative;
+    height: 540px;
+}
+.sluzba_cernobile img {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+.sluzba_foto_a { top: 0; right: 0; width: 190px; }
+.sluzba_foto_b { bottom: 0; left: 0; width: 160px; border: 2px solid #222222; }
+.sluzby_sipka {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 76px;
+    height: 76px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    color: #222222;
+    font-size: 42px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.sluzby_sipka:hover { background: rgba(255, 255, 255, 0.9); }
+.sluzby_sipka_vlevo { left: -38px; padding-left: 34px; }  /* šipka je vidět jen zčásti */
+.sluzby_sipka_vpravo { right: -38px; padding-right: 34px; }
+.sluzby_tecky {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 6px;
+}
+.sluzby_tecky button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 1px solid #222222;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+.sluzby_tecky button.aktivni { background: #222222; }
 @media (max-width: 768px) {
-    .codelam_karta {
-        width: 84vw;
-        margin: 20px 0;
+    .sluzba {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 26px 20px;
     }
-    .codelam_karta .tri_obrazky {
-        height: 105vw;
-        width: 100%;
-        border-width: 1px;
+    .sluzba_hlavni { width: 80%; }
+    .sluzba_foto_hlavni { aspect-ratio: 4 / 5; border-width: 1px; }
+    .sluzba_text { padding: 0; margin-top: 18px; }
+    .sluzba_nadpis { font-size: 44px; margin: 0 0 18px 0; }
+    .sluzba_text p { font-size: 16px; }
+    .sluzba_cernobile {
+        height: auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 14px;
+        margin-top: 28px;
     }
-    .codelam_karta p {
-        font-size: 16px;
-    }
+    .sluzba_cernobile img { position: static; width: 40%; }
+    .sluzba_foto_b { margin-top: 50px; border-width: 1px; }
+    .sluzby_sipka { top: 200px; width: 54px; height: 54px; font-size: 32px; }
+    .sluzby_sipka_vlevo { left: -27px; padding-left: 24px; }
+    .sluzby_sipka_vpravo { right: -27px; padding-right: 24px; }
 }
