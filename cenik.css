@@ -691,8 +691,8 @@ h2 span::before { content: ""; position: absolute; top: 0; bottom: 0; right: 100
   .cenik_vzkaz .vz-mob { display: block; height: auto; }
   .cenik_vzkaz .vzm1 { width: 50%; aspect-ratio: 3 / 2; left: 5%; top: 22px; }
   .cenik_vzkaz .vzm2 { width: 36%; aspect-ratio: 2 / 3; right: 5%; top: 60px; }
-  .cenik_vzkaz .vzm3 { width: 54%; aspect-ratio: 3 / 2; left: 4%; bottom: 24px; }
-  .cenik_vzkaz .vzm4 { width: 37%; aspect-ratio: 3 / 2; right: 5%; bottom: 74px; }
+  .cenik_vzkaz .vzm3 { width: 44%; aspect-ratio: 3 / 2; left: 4%; bottom: 18px; }
+  .cenik_vzkaz .vzm4 { width: 43%; aspect-ratio: 3 / 2; right: 5%; bottom: 56px; }
   .cenik_vzkaz blockquote { position: absolute; left: 0; right: 0; top: 295px; padding: 0 28px; font-size: 19px; line-height: 1.3; }
   .cenik_vzkaz blockquote span { margin-top: 12px; font-size: 16px; }
 }
