@@ -1274,8 +1274,8 @@ html.menu-open {
 /* ===== Úpravy 2026-11-23 (6): video u firem přes roh hlavní fotky ===== */
 .sluzba_video {
     position: absolute;
-    right: -16px;
-    bottom: -22px;
+    left: -26px;
+    bottom: -38px;
     width: 40%;
     height: auto;
     aspect-ratio: 9 / 16;
@@ -1286,5 +1286,7 @@ html.menu-open {
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
 }
 @media (max-width: 768px) {
-    .sluzba_video { width: 36%; right: -15%; bottom: -14px; border-width: 1px; }
+    /* na mobilu vpravo dole; fotka i video dohromady na střed */
+    .sluzba_video { left: auto; right: -16%; width: 36%; bottom: -14px; border-width: 1px; }
+    #sluzba-firmy .sluzba_hlavni { width: 74%; margin-left: 7%; }
 }
