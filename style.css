@@ -1108,3 +1108,59 @@ html.menu-open {
     .sluzby_sipka_vlevo { left: 6px; }
     .sluzby_sipka_vpravo { right: 6px; }
 }
+
+/* ===== Barvy hlavní stránky (2026-11): tmavě šedá nahoře, písková, lesní zelená, kost ===== */
+:root {
+    --zelena: #2F3B2C;
+    --piskova: #DDD3C4;
+    --kost: #ECE6DB;
+    --svetla: #F7F4EE;
+}
+.kokot { background-color: var(--piskova); }
+.shape-fill_2 { fill: var(--piskova); }
+.kokot_2 {
+    background-color: var(--zelena);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); /* jemné zrno papíru */
+    background-size: 300px 300px;
+}
+.form_bublina_container .bublina_contact_form {
+    display: inline-block;
+    background-color: var(--zelena);
+    color: var(--svetla);
+    padding: 12px 28px;
+    border-radius: 999px;
+    box-shadow: none;
+    max-width: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0;
+}
+.form_bublina_container .bublina_contact_form:hover { background-color: #3d4b39; }
+.kokot_2 .codelam_container { width: 1030px; } /* zarovnání s levým okrajem fotky ve slajdech */
+.kokot_2 .codelam_text { margin-top: 30px; }
+.kokot_2 .codelam_text h { color: var(--svetla); display: block; line-height: 1.1; }
+.kokot_2 .codelam_text p { color: var(--svetla); opacity: 0.85; margin: 6px 0 0 !important; }
+.sluzba_nadpis { color: var(--svetla); }
+.sluzba_text p { color: var(--svetla); opacity: 0.85; }
+.sluzba_foto_hlavni { border-color: var(--svetla); }
+.sluzba_tlacitko { background-color: var(--kost); color: var(--zelena); }
+.sluzba_tlacitko:hover { background-color: var(--svetla); }
+.sluzby_sipka { color: var(--svetla); }
+.sluzby_tecky button { border-color: var(--svetla); }
+.sluzby_tecky button.aktivni { background: var(--svetla); }
+.parallax::before { /* přiznané ztmavení fotky, aby se líp četl text */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.12);
+}
+.parallax .overlay-text { position: relative; z-index: 1; }
+.modre_pozadie { background-image: none; background-color: var(--kost); }
+.faq-container { background-color: var(--svetla); box-shadow: none; }
+@media (max-width: 768px) {
+    .kokot_2 .codelam_container { width: 100%; padding: 0 26px; box-sizing: border-box; }
+    .kokot_2 .codelam_text { padding: 0; margin-top: 20px; }
+    .form_bublina_container .bublina_contact_form { font-size: 16px; padding: 12px 28px; margin: 10px auto; }
+}
