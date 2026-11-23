@@ -1252,3 +1252,6 @@ html.menu-open {
     #sluzba-portrety .sluzba_nadpis { left: -93px; top: -37px; font-size: 62px; margin: 0; }
     #sluzba-firmy .sluzba_nadpis    { left: -104px; top: -37px; font-size: 62px; margin: 0; }
 }
+
+/* podnadpis „Fotím svatby, rodiny…“ o kousek blíž k nadpisu */
+.kokot_2 .codelam_text p { margin-top: -2px !important; }
