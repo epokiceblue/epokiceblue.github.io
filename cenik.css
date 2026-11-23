@@ -641,3 +641,5 @@ body {
 h2 span { position: relative; }
 h2 span::before { content: ""; position: absolute; top: 0; bottom: 0; right: 100%; width: 100vw; background: white; }
 @media (max-width: 768px) { h2 span::before { display: none; } }
+
+@media (max-width: 768px) { .custom-shape-divider-top-1724510018 svg { height: 50px; } }
