@@ -1274,11 +1274,11 @@ html.menu-open {
 /* ===== Úpravy 2026-11-23 (6): video u firem přes roh hlavní fotky ===== */
 .sluzba_video {
     position: absolute;
-    left: -26px;
-    bottom: -38px;
+    left: -48px;
+    bottom: -26px;
     width: 40%;
     height: auto;
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 2 / 3;
     object-fit: cover;
     box-sizing: border-box;
     border: 2px solid var(--svetla, #F7F4EE);
@@ -1288,5 +1288,13 @@ html.menu-open {
 @media (max-width: 768px) {
     /* na mobilu vpravo dole; fotka i video dohromady na střed */
     .sluzba_video { left: auto; right: -16%; width: 36%; bottom: -14px; border-width: 1px; }
-    #sluzba-firmy .sluzba_hlavni { width: 74%; margin-left: 7%; }
+    #sluzba-firmy .sluzba_hlavni { width: 74%; margin-left: 7%; align-self: flex-start; }
 }
+
+/* ===== Úpravy 2026-11-23 (7) ===== */
+/* „Co vlastně dělám?“ víc vzduchu: text výš od slajdů, pozadí se tím protáhne */
+.kokot_2 .codelam_text { margin-bottom: 44px; }
+@media (max-width: 768px) { .kokot_2 .codelam_text { margin-bottom: 26px; } }
+/* „chci jít fotit!“ – klikatelná je celá fotka */
+.parallax_odkaz { position: absolute; inset: 0; z-index: 1; }
+.parallax .overlay-text { z-index: 2; }
