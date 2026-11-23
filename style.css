@@ -1239,3 +1239,16 @@ html.menu-open {
 .slide:hover { position: relative; z-index: 1; }
 .slide_track.js-ovladany:active { cursor: grabbing; }
 @media (max-width: 768px) { .slide img:hover { transform: none; } }
+
+/* ===== Úpravy 2026-11-23 (4): rozložení slajdů podle editoru (Sofie) ===== */
+/* Vše se měří od hlavní fotky: text vždy začíná 141 px pod jejím vrškem, mezera text–tlačítko 18 px.
+   Nadpis leží volně (absolutně) a nepřesouvá text. Platí od 1210 px, kdy mají sloupce plnou šířku;
+   na menších noteboocích zůstává původní rozložení. */
+@media (min-width: 1210px) {
+    .sluzba_text, .sluzba_text_vys { align-self: start; padding-top: 141px; }
+    .sluzba_text p { margin-bottom: 18px; }
+    .sluzba_nadpis { position: absolute; margin: 0; white-space: nowrap; max-width: none; }
+    #sluzba-svatby .sluzba_nadpis   { left: -92px; top: 0;     font-size: 66px; margin: 0; }
+    #sluzba-portrety .sluzba_nadpis { left: -88px; top: -23px; font-size: 59px; margin: 0; }
+    #sluzba-firmy .sluzba_nadpis    { left: -52px; top: -37px; font-size: 62px; margin: 0; }
+}
