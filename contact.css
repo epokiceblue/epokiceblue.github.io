@@ -855,3 +855,22 @@ html.menu-open {
 .sofi_kruh img { border-radius: 50%; aspect-ratio: 1 / 1; height: auto; object-fit: cover; } /* kulatá fotka bez bílých rohů, pruh se schová za ni */
 .sofi_kruh { align-items: center; }
 @media (min-width: 769px) and (max-width: 1100px) { .text_index { font-size: 16px; } .sofi_kruh img { width: 75%; } }
+/* mobil (2026-11-23): stejně jako na PC – fotka vlevo, pruh od pravého kraje se schová za fotku */
+@media (max-width: 768px) {
+    .sofi_obr_index { flex-direction: row; flex-wrap: wrap; align-items: center; padding: 30px 0 10px 16px; }
+    .sofi_obr_index > .pozadie_farba.mobile-only { display: none; }
+    .sofi_kruh { width: 44%; margin: 0; justify-content: flex-start; align-items: center; }
+    .sofi_kruh img { width: 100%; }
+    .text_index { display: contents; }
+    .text_index .pozadie_farba.desktop-only {
+        display: flex;
+        flex: 0 0 78%;
+        margin: 0 0 0 -22%;
+        padding: 12px 14px 12px 0;
+        box-sizing: border-box;
+        flex-direction: row;
+    }
+    .text_index .po_fa_text.desktop-only { display: block; width: auto; padding-left: 31%; }
+    .text_index .po_fa_text p { margin: 0; font-size: 13px; line-height: 1.45; }
+    .dva_texty { flex: 0 0 100%; box-sizing: border-box; padding: 0 16px 0 calc(15vw - 16px); font-size: 16px; }
+}

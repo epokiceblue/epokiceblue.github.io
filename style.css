@@ -96,7 +96,7 @@ section{
     --sw: 400px; /* šířka jedné fotky ve slideru */
     display: flex;
     width: calc(var(--sw) * 46);
-    animation: scroll 100s linear 1.5s infinite; /* chvilku počká, ať je vidět první fotka */
+    animation: scroll 100s linear infinite;
     will-change: transform; /* plynulejší posun na GPU */
 }
 
@@ -726,7 +726,7 @@ html.menu-open {
     z-index: 1;
     }
     .slide_track{
-    animation: scroll 80s linear 1.5s infinite;
+    animation: scroll 80s linear infinite;
     }
     .dropdown {
         display: flex;
