@@ -839,7 +839,7 @@ html.menu-open {
 
 /* ===== Úpravy 2026-11-23 ===== */
 /* FAQ (2026-11-23): béžové pozadí se zrnem, otázky kurzívou (Poppins), odpovědi normálně (Montserrat) */
-.modre_pozadie { background-color: #ECE6DB; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.22 0 0 0 0 0.18 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); background-size: 300px 300px; }
+.modre_pozadie { background-color: #ECE6DB; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.22 0 0 0 0 0.18 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); background-size: 300px 300px; }
 .faq-container { background-color: #F7F4EE; box-shadow: none; }
 .faq-item { font-family: 'Montserrat', sans-serif; font-style: normal; }
 .faq-item h3 { font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 600; }
@@ -873,4 +873,14 @@ html.menu-open {
     .text_index .po_fa_text.desktop-only { display: block; width: auto; padding-left: 31%; }
     .text_index .po_fa_text p { margin: 0; font-size: 13px; line-height: 1.45; }
     .dva_texty { flex: 0 0 100%; box-sizing: border-box; padding: 0 16px 0 calc(15vw - 16px); font-size: 16px; }
+}
+
+/* FAQ na mobilu menší a úhlednější (stejně jako hlavní stránka) */
+@media (max-width: 768px) {
+    .modre_pozadie { padding: 24px 12px; }
+    .faq-container { padding: 16px 14px; }
+    .tab-link { padding: 8px 10px; font-size: 14px; }
+    .faq-item { letter-spacing: 0; }
+    .faq-item h3 { font-size: 15px; line-height: 1.4; padding: 10px 26px 10px 0; }
+    .faq-answer, .faq-answer p { font-size: 14px; line-height: 1.6; }
 }

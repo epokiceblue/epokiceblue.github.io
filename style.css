@@ -1179,10 +1179,10 @@ html.menu-open {
 }
 
 /* ===== Úpravy 2026-11-23 ===== */
-.kokot_2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); background-size: 300px 300px; } /* o něco větší zrno */
+.kokot_2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.085 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); background-size: 300px 300px; } /* o něco větší zrno */
 
 /* FAQ (2026-11-23): béžové pozadí se zrnem, otázky kurzívou (Poppins), odpovědi normálně (Montserrat) */
-.modre_pozadie { background-color: #ECE6DB; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.22 0 0 0 0 0.18 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); background-size: 300px 300px; }
+.modre_pozadie { background-color: #ECE6DB; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.22 0 0 0 0 0.18 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); background-size: 300px 300px; }
 .faq-container { background-color: #F7F4EE; box-shadow: none; }
 .faq-item { font-family: 'Montserrat', sans-serif; font-style: normal; }
 .faq-item h3 { font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 600; }
@@ -1201,4 +1201,32 @@ html.menu-open {
     .sluzby_track { align-items: flex-start; }
     .sluzba { justify-content: flex-start; }
     .sluzby_sipky { position: absolute; inset: auto 0 auto 0; top: calc(30px + (100vw - 52px) * 0.5); height: 0; }
+}
+
+/* ===== Úpravy 2026-11-23 (2) ===== */
+/* slider ovládaný skriptem (slider.js): jde chytit a potáhnout */
+.slide_track.js-ovladany { animation: none !important; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.slide_track.js-ovladany:active { cursor: grabbing; }
+.slide_track img { -webkit-user-drag: none; }
+/* tlačítka dole na hlavní stránce: Poppins tučně, béžová jako ostatní tlačítka */
+.bublina_cennik { width: auto; min-width: 170px; padding: 12px 28px; white-space: nowrap; background-color: #ECE6DB; color: #2F3B2C; font-family: 'Poppins', sans-serif; font-weight: 700; border-radius: 999px; box-shadow: none; }
+.bublina_cennik:hover { background-color: #F7F4EE; }
+/* slajdy: text a tlačítko blíž k hlavní fotce */
+@media (min-width: 769px) {
+    .sluzba { column-gap: 0; }
+    .sluzba_text { padding: 0 70px 0 28px; }
+    /* nadpis víc do fotky: okraj fotky protne vždy jedno písmeno (svat|by, por|tréty, fir|my) */
+    #sluzba-svatby .sluzba_nadpis { margin-left: -137px; }
+    #sluzba-portrety .sluzba_nadpis { margin-left: -138px; }
+    #sluzba-firmy .sluzba_nadpis { margin-left: -128px; }
+}
+@media (max-width: 768px) {
+    .sluzba_cernobile { justify-content: center; } /* černobílé fotky společně na střed */
+    /* FAQ na mobilu menší a úhlednější */
+    .modre_pozadie { padding: 24px 12px; box-sizing: border-box; }
+    .faq-container { padding: 16px 14px; }
+    .tab-link { padding: 8px 10px; font-size: 14px; }
+    .faq-item { letter-spacing: 0; }
+    .faq-item h3 { font-size: 15px; line-height: 1.4; padding: 10px 26px 10px 0; }
+    .faq-answer, .faq-answer p { font-size: 14px; line-height: 1.6; }
 }
