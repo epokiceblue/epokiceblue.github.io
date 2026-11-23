@@ -87,14 +87,15 @@ section{
     margin: 0px;
     position: relative;
     width: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center; /* flex: slider začíná první fotkou vlevo (svatby) */
     overflow: hidden;
 }
 
 .slide_track{
+    --sw: 400px; /* šířka jedné fotky ve slideru */
     display: flex;
-    width: calc(400px * 44);
+    width: calc(var(--sw) * 46);
     animation: scroll 40s linear infinite;
 }
 
@@ -107,7 +108,7 @@ section{
         transform: translateX(0); 
     }
     100% {
-        transform: translateX(calc(-350px * 22));
+        transform: translateX(calc(var(--sw) * -23)); /* posun přesně o 23 fotek (počet fotek ve slideru), smyčka bez skoku */
     }    
 }
 
@@ -294,13 +295,14 @@ form {
     fill: #222222;
 }
 
-.kokot{
+.kokot{
     position: relative;
     background-color: #d4c4b6;
     padding-bottom: 10px;
 }
 .black_background{
     background-color: #222222;
+    justify-self: stretch; /* plná šířka; jinak ji body (place-items: center) zúží/rozšíří podle slideru a slider začne uprostřed */
 }
 .bublina_omne{
     background-color: #7b736f;
@@ -361,7 +363,7 @@ form {
     color: #6e6e6e;
     text-align: justify;
 }
-.kokot_2{
+.kokot_2{
     position: relative;
     background-color: #eee9e7;
     width: 100%;
@@ -845,11 +847,22 @@ html.menu-open {
     }
     .slider {
         height: 300px;
+        margin-bottom: 22px; /* tmavý pruh pod fotkami jako na PC */
     }
+    /* vlna pod sliderem: na mobilu nižší, aby nebyla zdeformovaná */
+    .custom-shape-divider-top-1724510018 svg {
+        height: 50px;
+    }
+    /* mobil: užší fotky na výšku (4:5), aby byla vidět další fotka a slider nezabral celou šířku */
+    .slide_track { --sw: 240px; }
     .slide {
-        width: 90vw;
-        height: 150px;
+        width: var(--sw);
+        height: 300px;
         padding: 0px;
+    }
+    .slide img {
+        height: 100%;
+        object-fit: cover;
     }
     .faq-tabs {
         flex-direction: row;
@@ -933,4 +946,233 @@ html.menu-open {
         margin-left: 130px;
         margin-top: -9px;
     }
+}
+
+/* „Co vlastně dělám?“ – 3 slajdy (svatby / portréty a rodiny / firmy), posun šipkami, tečkami i prstem (2026-11) */
+.kokot_2 {
+    background-color: #eee9e7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.27 0 0 0 0 0.25 0 0 0 0.14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='900'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0035 0.006' numOctaves='4' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0.42 0 0 0 0 0.36 0 0 0 0 0.31 0 0 0 -0.9 0.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+    background-size: 300px 300px, cover;
+}
+.sluzby {
+    position: relative;
+    width: 100%;
+    overflow-x: clip;
+    padding: 10px 0 30px;
+}
+.sluzby_track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.sluzby_track::-webkit-scrollbar { display: none; }
+.sluzba {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 360px) minmax(0, 430px) minmax(0, 240px);
+    justify-content: center;
+    align-items: center;
+    padding: 40px 90px 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+.sluzba_hlavni {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+.sluzba_foto_hlavni {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border: 2px solid #222222; /* jako koláže v galeriích */
+}
+.sluzba_text {
+    position: relative;
+    z-index: 2;
+    padding: 0 50px 0 50px;
+}
+.sluzba_nadpis {
+    font-family: 'Poppins', sans-serif; /* jako nadpisy v galeriích */
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 1;
+    color: #222222;
+    margin: 0 0 26px -100px; /* nadpis částečně leží na hlavní fotce */
+    max-width: 560px;
+}
+.sluzba_text p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: #555555;
+    text-align: left;
+    margin: 0 0 26px 0;
+}
+.sluzba_tlacitko {
+    display: inline-block;
+    background-color: #6c645e;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+.sluzba_tlacitko:hover { background-color: #555; }
+.sluzba_cernobile {
+    position: relative;
+    height: 540px;
+}
+.sluzba_cernobile img {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+.sluzba_foto_a { top: 0; right: 0; width: 190px; }
+.sluzba_foto_b { bottom: 0; left: 0; width: 160px; }
+.sluzby_sipky {  /* obal šipek: na PC přes celý slajd, na mobilu „přilepený“ uprostřed obrazovky */
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+.sluzby_sipka {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    color: #222222;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background 0.2s;
+}
+.sluzby_sipka:hover { background: rgba(255, 255, 255, 0.15); }
+.sluzby_sipka_vlevo { left: 24px; }
+.sluzby_sipka_vpravo { right: 24px; }
+.sluzby_tecky {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 6px;
+}
+.sluzby_tecky button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 1px solid #222222;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+.sluzby_tecky button.aktivni { background: #222222; }
+@media (max-width: 768px) {
+    .sluzba {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 26px 20px;
+    }
+    .sluzba_hlavni { width: 80%; }
+    .sluzba_foto_hlavni { aspect-ratio: 4 / 5; border-width: 1px; }
+    .sluzba_text { padding: 0; margin-top: 18px; }
+    .sluzba_nadpis { font-size: 44px; margin: 0 0 18px 0; }
+    .sluzba_text p { font-size: 16px; }
+    .sluzba_cernobile {
+        height: auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 14px;
+        margin-top: 28px;
+    }
+    .sluzba_cernobile img { position: static; width: 40%; }
+    .sluzba_foto_b { margin-top: 50px; }
+    .sluzby_sipky { position: sticky; top: 50vh; height: 0; inset: auto; }
+    .sluzby_sipka { top: 0; width: 40px; height: 40px; }
+    .sluzby_sipka_vlevo { left: 6px; }
+    .sluzby_sipka_vpravo { right: 6px; }
+}
+
+/* ===== Barvy hlavní stránky (2026-11): tmavě šedá nahoře, písková, lesní zelená, kost ===== */
+:root {
+    --zelena: #2F3B2C;
+    --piskova: #DDD3C4;
+    --kost: #ECE6DB;
+    --svetla: #F7F4EE;
+}
+.kokot { background-color: var(--piskova); }
+.shape-fill_2 { fill: var(--piskova); }
+.kokot_2 {
+    background-color: var(--zelena);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); /* jemné zrno papíru */
+    background-size: 300px 300px;
+}
+.form_bublina_container .bublina_contact_form {
+    display: inline-block;
+    background-color: var(--zelena);
+    color: var(--svetla);
+    padding: 12px 28px;
+    border-radius: 999px;
+    box-shadow: none;
+    max-width: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0;
+}
+.form_bublina_container .bublina_contact_form:hover { background-color: #3d4b39; }
+.kokot_2 .codelam_container { width: 1030px; } /* zarovnání s levým okrajem fotky ve slajdech */
+.kokot_2 .codelam_text { margin-top: 30px; }
+.kokot_2 .codelam_text h { color: var(--svetla); display: block; line-height: 1.1; }
+.kokot_2 .codelam_text p { color: var(--svetla); opacity: 0.85; margin: 6px 0 0 !important; }
+.sluzba_nadpis { color: var(--svetla); }
+.sluzba_text p { color: var(--svetla); opacity: 0.85; }
+.sluzba_foto_hlavni { border-color: var(--svetla); }
+.sluzba_tlacitko { background-color: var(--kost); color: var(--zelena); }
+.sluzba_tlacitko:hover { background-color: var(--svetla); }
+.sluzby_sipka { color: var(--svetla); }
+.sluzby_tecky button { border-color: var(--svetla); }
+.sluzby_tecky button.aktivni { background: var(--svetla); }
+.parallax::before { /* přiznané ztmavení fotky, aby se líp četl text */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.12);
+}
+.parallax .overlay-text { position: relative; z-index: 1; }
+.modre_pozadie { background-image: none; background-color: var(--kost); }
+.faq-container { background-color: var(--svetla); box-shadow: none; }
+@media (max-width: 768px) {
+    .kokot_2 .codelam_container { width: 100%; padding: 0 26px; box-sizing: border-box; }
+    .kokot_2 .codelam_text { padding: 0; margin-top: 20px; }
+    .form_bublina_container .bublina_contact_form { font-size: 16px; padding: 12px 28px; margin: 10px auto; }
+}
+/* přechody (2026-11): jemnější vlna z tmavé do pískové, víc vzduchu kolem „Ahoj, já jsem Sofi“, mezi pískovou a zelenou rovná čára */
+.kokot .custom-shape-divider-top-1724510018 svg { height: 70px; }
+.kokot .sofi_obr_index { margin-top: 50px; }
+.kokot { padding-bottom: 60px; }
+.kokot_2 .custom-shape-divider-top-1724510018 { display: none; }
+.kokot_2 { padding-top: 50px; }
+@media (max-width: 768px) {
+    .kokot .custom-shape-divider-top-1724510018 svg { height: 40px; }
+    .kokot .sofi_obr_index { margin-top: 30px; }
+    .kokot { padding-bottom: 40px; }
+    .kokot_2 { padding-top: 30px; }
 }
