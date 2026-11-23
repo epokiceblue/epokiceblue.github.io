@@ -31,7 +31,7 @@
     <meta property="og:image" content="https://sofiezborilova.cz/fotky_sdileni/sofie-zborilova-fotografka-brno.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
-    <link rel="stylesheet" href="style.css?v=22">
+    <link rel="stylesheet" href="style.css?v=23">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -312,7 +312,7 @@
                 </div>
             </article>
             <article class="sluzba" id="sluzba-firmy" aria-roledescription="slide" aria-label="3 ze 3">
-                <a href="produktove.html" class="sluzba_hlavni"><img src="./fotky/branding-foceni-podnikatelka-brno.jpg" class="sluzba_foto_hlavni" alt="Podnikatelka sedí na zemi s notebookem a látkami, branding focení v Brně" loading="lazy" width="900" height="1352"></a>
+                <a href="produktove.html" class="sluzba_hlavni"><img src="./fotky/branding-foceni-podnikatelka-brno.jpg" class="sluzba_foto_hlavni" alt="Podnikatelka sedí na zemi s notebookem a látkami, branding focení v Brně" loading="lazy" width="900" height="1352"><video class="sluzba_video" muted loop playsinline preload="none" poster="./fotky_produktove/branding-video-barevna-typologie-a-styl-nahled.jpg" width="720" height="1280" role="img" aria-label="Krátké video z brandového focení pro poradkyni barevné typologie a stylu: žena v bílém saku a džínách se opírá o zeď mezi barevnými látkami"><source src="./fotky_produktove/branding-video-barevna-typologie-a-styl.mp4" type="video/mp4"></video></a>
                 <div class="sluzba_text sluzba_text_vys">
                     <h2 class="sluzba_nadpis sluzba_nadpis_mensi">firmy<br>a&nbsp;podnikatelé</h2>
                     <p>Buduješ značku a potřebuješ, aby to svět viděl? Ať už jde o produktové focení, nebo byznys portréty, vytvořím pro tebe vizuál, který nejen krásně vypadá, ale hlavně funguje. Společně vymyslíme koncept, který přesně zapadne do tvojí identity a ukáže lidskou tvář tvého podnikání. Pojďme vytvořit fotky, ze kterých tvoji klienti nespustí oči. Primárně fotím, ale když budeš chtít, natočíme při focení i krátká videa na sociální sítě, třeba reels – na foťák i na mobil.</p>
@@ -331,6 +331,18 @@
         </div>
     </div>
 </section>
+<script>
+/* video u firem: hraje jen když je vidět (šetří data i baterii), s omezeným pohybem nehraje */
+(function () {
+    var v = document.querySelector('.sluzba_video');
+    if (!v || !('IntersectionObserver' in window)) return;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    new IntersectionObserver(function (z) {
+        if (z[0].isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else v.pause();
+    }, { threshold: 0.3 }).observe(v);
+})();
+</script>
 <script>
 /* „Co vlastně dělám?“ – posun mezi 3 slajdy šipkami, tečkami i prstem */
 (function () {

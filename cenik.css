@@ -657,3 +657,19 @@ h2 span::before { content: ""; position: absolute; top: 0; bottom: 0; right: 100
     .cennik_portfolio { flex-direction: column; align-items: stretch; width: 100%; max-width: 280px; }
     .cennik_kontakt .bublina_cennik { text-align: center; font-size: 15px; }
 }
+
+/* ===== Úpravy 2026-11-23 (3) ===== */
+/* odkaz na galerii hned pod tlačítkem poptávky */
+.cenik_galerie { display: block; width: fit-content; margin: 14px auto 0; color: inherit; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; opacity: .85; }
+.cenik_galerie::after { content: " \2192"; }
+.cenik_galerie:hover { opacity: 1; }
+/* spodní pás „o mně“ místo odkazů na galerie */
+.cenik_omne { display: flex; align-items: center; justify-content: center; gap: 36px; padding: 50px 24px; background: #222222; color: #F7F4EE; }
+.cenik_omne img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; flex: none; }
+.cenik_omne div { max-width: 520px; }
+.cenik_omne p { margin: 0; line-height: 1.6; }
+.cenik_omne .cenik_omne_nadpis { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 24px; margin-bottom: 8px; }
+@media (max-width: 768px) {
+    .cenik_omne { flex-direction: column; text-align: center; gap: 18px; padding: 40px 22px; }
+    .cenik_omne img { width: 120px; height: 120px; }
+}
