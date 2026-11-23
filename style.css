@@ -95,7 +95,7 @@ section{
 .slide_track{
     --sw: 400px; /* šířka jedné fotky ve slideru */
     display: flex;
-    width: calc(var(--sw) * 44);
+    width: calc(var(--sw) * 46);
     animation: scroll 40s linear infinite;
 }
 
@@ -108,7 +108,7 @@ section{
         transform: translateX(0); 
     }
     100% {
-        transform: translateX(calc(var(--sw) * -22)); /* posun přesně o 22 fotek, smyčka bez skoku */
+        transform: translateX(calc(var(--sw) * -23)); /* posun přesně o 23 fotek (počet fotek ve slideru), smyčka bez skoku */
     }    
 }
 
@@ -847,6 +847,11 @@ html.menu-open {
     }
     .slider {
         height: 300px;
+        margin-bottom: 22px; /* tmavý pruh pod fotkami jako na PC */
+    }
+    /* vlna pod sliderem: na mobilu nižší, aby nebyla zdeformovaná */
+    .custom-shape-divider-top-1724510018 svg {
+        height: 50px;
     }
     /* mobil: užší fotky na výšku (4:5), aby byla vidět další fotka a slider nezabral celou šířku */
     .slide_track { --sw: 240px; }
