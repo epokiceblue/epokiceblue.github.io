@@ -2,7 +2,7 @@
 # Spuštění: python3 blog/gen_blog.py  (z kořene repozitáře)
 import os, json
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
-CSSV = 3
+CSSV = 4
 src = open('podminky.html', encoding='utf-8', newline='').read()
 hdr = src[src.index('<button class="mobile-menu-btn"'):src.index('<main')]
 hdr = hdr.replace('\r\n', '\n').replace('href="', 'href="../')
@@ -153,7 +153,7 @@ T = f'''<section class="b-hero">{img(P + 'hrave-rodinne-foceni-venku.jpg', 'Hrav
 <div class="uzky b-clanek bonus"><span class="kategorie">bonusový tip</span><h2 id="vyber-fotografa">vyber si fotografa, který ti s tím pomůže</h2>
 <p>Než skončím, ráda bych ti dala ještě jeden tip navíc. Musím ho zmínit, protože je hodně důležitý, možná vůbec nejdůležitější z celého článku.</p>
 <p>Dobrý fotograf tě s oblečením nenechá v tom samotné a pomůže ti ho vybrat. U mě to funguje takhle: před focením ti pošlu základní pravidla, tedy v podstatě tenhle článek.</p><p>Když si pořád nevíš rady, třeba u rodinného focení, připravím vám moodboard s inspirací. Z každé fotky si vezmete něco málo a zkombinujete to s tím, co máte doma, takže nemusíte nic kupovat. Nebo mi oblečení doma vyfotíš a kombinaci vymyslíme spolu.</p><p>U párového nebo portrétního focení často vymýšlíme i celý koncept. Fotky můžeme lehce naladit do retro stylu, do kovbojského stylu nebo do čehokoli, co je ti blízké. Vyber si proto fotografa, který ví, co dělá, a se vším ti pomůže.</p></div>
-<section class="zelena"><div class="uzky"><h2>na závěr</h2><p>Tohle bylo mých 7 tipů a jeden bonusový, kterých se můžeš držet. Chtěla bych ale zdůraznit, že není až tak důležité, kde fotíme a jak vypadáš, ale hlavně jak se cítíš. Soustřeď se hlavně na to, ať tě focení baví. Jak budou fotky vypadat, nech na mně.</p><p>Když si s výběrem nebudeš vědět rady, napiš mi. Moc ráda ti s oblečením pomůžu. A jestli chceš vidět, jak to vypadá v praxi, sleduj mě na Instagramu <a href="https://www.instagram.com/sofiezbo/">@sofiezbo</a>.</p>
+<section class="zelena"><div class="uzky"><p>Tohle bylo mých 7 tipů a jeden bonusový, kterých se můžeš držet. Chtěla bych ale zdůraznit, že není až tak důležité, kde fotíme a jak vypadáš, ale hlavně jak se cítíš. Soustřeď se hlavně na to, ať tě focení baví. Jak budou fotky vypadat, nech na mně.</p><p>Když si s výběrem nebudeš vědět rady, napiš mi. Moc ráda ti s oblečením pomůžu. A jestli chceš vidět, jak to vypadá v praxi, sleduj mě na Instagramu <a href="https://www.instagram.com/sofiezbo/">@sofiezbo</a>.</p>
 <p class="sdilet"><span>Znáš někoho, komu by tenhle článek pomohl? Klidně mu ho pošli.</span><button type="button" id="sdilet">sdílet článek</button></p></div></section>
 {konec(C['soubor'])}
 <script>document.getElementById('sdilet').addEventListener('click',function(){{var b=this,u=location.href.split('#')[0];if(navigator.share){{navigator.share({{title:document.title,url:u}}).catch(function(){{}});}}else if(navigator.clipboard){{navigator.clipboard.writeText(u).then(function(){{b.textContent='odkaz zkopírován';setTimeout(function(){{b.textContent='sdílet článek';}},2500);}});}}}});</script>'''
@@ -193,7 +193,7 @@ T2 = f"""{hero([(P + 'parove-foceni-beh-pres-louku.jpg', 'Pár běží přes lou
 {dvojice((P + 'dokumentarni-rodinne-foceni-brno.jpg', 'Dokumentární rodinné focení v Brně'), (P + 'rodinne-foceni-bez-pozovani-brno.jpg', 'Rodinné focení bez pózování v Brně'))}
 <div class="uzky b-clanek"><h2 id="mluvte">6. líná huba…</h2><p>Nebojte se mluvit. Nebojte se nesouhlasit. Při focení vám budu nabízet moje tipy, nápady nebo osvědčené postupy. Pokud vám to ale nesedí a necítíte se v takových věcech dobře, tak to vůbec nevadí. Hlavně mi to řekněte a vymyslíme jinou cestu, která vám bude vyhovovat. Focení by pro vás mělo být příjemné a určitě ne něco, do čeho se nutíte. Tak se prosím nepřetvařujte, i kdyby to bylo kvůli tomu, že nechcete moje nápady urazit. Nebojte, já to ustojím a naopak budu ráda za to, že si řeknete🌸</p>
 <h2 id="tisk">7. fotky nemusí být jen v mobilu</h2><p>Myslete na to, že fotky pořád můžete mít fyzicky v ruce. Na závěr jsem vám chtěla dát malý tip: nezapomeňte si fotky tisknout! V mobilu i v počítači se lehce ztratí, a i když se to tak nemusí zdát, nejsou nesmrtelné (soucítím se všemi, komu se taky někdy záhadně vymazaly soubory🙃).</p><p>Mám domluvenou 15% slevu na tisk fotek na <a href="https://www.kvalitnifotky.cz/" rel="noopener">kvalitnifotky.cz</a> s kódem <b>SOFIEZBORILOVA</b>, kde si můžete z focení sestavit knížku nebo album, nebo si je nechat vytisknout na velké formáty. Dám ale ruku do ohně, že tisk fotek máte k dispozici v každém aspoň trochu větším městě (např. v drogerii DM nebo Rossmann), takže by to mělo být lehce dostupné. Věřte mi, mít vaše fotky fyzicky v ruce je úplně jiný zážitek♥️</p></div>
-<section class="zelena"><div class="uzky"><h2>na závěr</h2><p>Doufám, že jsem vám můj přístup aspoň trochu přiblížila a snad je vám sympatický✨ Kdybyste se ke mně chtěli objednat, můžete přes <a href="../contact.html">kontaktní formulář</a> nebo můj <a href="https://www.instagram.com/sofiezbo/">Instagram</a>. Budu se těšit na každého z vás a budu ráda, když mi k tomu napíšete i něco o sobě, co bychom mohli do focení zakomponovat!</p><p>S.</p>
+<section class="zelena"><div class="uzky"><p>Doufám, že jsem vám můj přístup aspoň trochu přiblížila a snad je vám sympatický✨ Kdybyste se ke mně chtěli objednat, můžete přes <a href="../contact.html">kontaktní formulář</a> nebo můj <a href="https://www.instagram.com/sofiezbo/">Instagram</a>. Budu se těšit na každého z vás a budu ráda, když mi k tomu napíšete i něco o sobě, co bychom mohli do focení zakomponovat!</p><p>S.</p>
 {sdileni()}</div></section>
 {konec(C2['soubor'])}
 {SDILET_JS}"""
@@ -208,19 +208,22 @@ C3 = next(c for c in CLANKY if c['soubor'] == 'univerzalni-lokace-na-foceni.html
 B3 = [('svetlo', 'světlo je důležitější než místo'), ('zed', 'zeď, která má charakter'), ('lesik', 'lesík, louka nebo cesta za domem'),
       ('doma', 'u vás doma'), ('mesto', 'ulička, kavárna nebo roh domu')]
 def pribeh(t):
-    return f'<p class="b-pribeh"><span>příběh z focení</span>{t}</p>'
-T3 = f"""{hero([(P + 'predsvatebni-foceni-ve-vinohradu.jpg', 'Snoubenci procházejí vinohradem, předsvatební focení'), (P + 'cernobily-portret-paru-v-protisvetle.jpg', 'Pár v protisvětle na louce, černobílý párový portrét'), (P + 'rodinne-foceni-doma-na-gauci.jpg', 'Rodiče s miminkem na gauči doma')], 'rady před focením · 3 min čtení', 'univerzální lokace na focení, které máte na dosah')}
+    return f'</div>\n<section class="pribeh"><div class="uzky"><p>{t}</p></div></section>\n<div class="uzky b-clanek">'
+T3 = f"""{hero([(P + 'predsvatebni-foceni-ve-vinohradu.jpg', 'Snoubenci procházejí vinohradem, předsvatební focení'), (P + 'cernobily-portret-paru-v-protisvetle.jpg', 'Pár v protisvětle na louce, černobílý párový portrét'), (P + 'autenticke-parove-fotky-ve-meste.jpg', 'Autentické párové fotky ve městě')], 'rady před focením · 3 min čtení', 'univerzální lokace na focení, které máte na dosah')}
 <div class="uzky b-clanek"><p class="b-perex">Často mi lidé při domlouvání focení píšou:</p>
-<blockquote class="b-citat">„My tady kolem sebe nemáme žádné hezké místo na focení…“<br>„Všude je to jen pole, silnice nebo dětské hřiště.“</blockquote>
+<blockquote class="b-citat">„My tady kolem sebe nemáme žádné hezké místo na focení… Všude je to jen pole, silnice nebo dětské hřiště.“</blockquote>
 <p>A pokaždé se usměju. Protože krásné fotky nevznikají díky místu, ale primárně díky vám. ✨</p>
 <p>Jasně, rozkvetlá louka nebo západ slunce nad lesem vypadají kouzelně. Pravda ale je, že i naprosto obyčejná lokace může na fotkách působit nádherně, když víte, jak ji využít.</p>
 {obsah(B3)}
 <h2 id="svetlo" class="prvni">1. světlo je důležitější než místo</h2><p>Místo nemusí být dokonalé, pokud má dobré světlo. Stačí obyčejná ulice, okraj parku nebo vaše zahrada. Když se tam světlo opírá pod správným úhlem, fotky budou mít krásně měkký a přirozený nádech.</p>
 <p class="b-poznamka">💡 Pro tip: zkuste se rozhlédnout kolem domu hodinu před západem slunce. Uvidíte, jak se všechno mění.</p></div>
 {dvojice((P + 'romanticke-predsvatebni-foceni.jpg', 'Snoubenci při západu slunce na zahradě za farou, předsvatební focení'), (P + 'parove-foceni-pri-zapadu-slunce.jpg', 'Pár v objetí na louce při západu slunce'))}
-<div class="uzky b-clanek">{pribeh('Tohle předsvatební focení jsme fotili přímo ve vesnici snoubenců, na louce, nebo spíš zahradě za farou, která stojí hned u kostela, kde měli obřad. Byla tam i stará dřevěná vrata, která vytvořila krásnou texturu. Vystačili jsme si s málem a fotky jsou navíc spojené s místem jejich svatby.')}
+<div class="uzky b-clanek">
 <h2 id="zed">2. zeď, která má charakter</h2><p>Někdy to chce jen čisté pozadí, které nechá vyniknout vás. Starší omítka, cihlová zeď, světlý beton nebo třeba vrata garáže, všechno to může fungovat skvěle.</p>
 <p class="b-poznamka">📷 Na takových fotkách vyniknou emoce, pohyb a vaše propojení, protože nic kolem neruší pozornost.</p>
+</div>
+{kolaz((BL + 'predsvatebni-foceni-za-farou-roztazene-ruce.jpg', 'Snoubenci tančí s roztaženýma rukama na zahradě za farou'), (BL + 'predsvatebni-foceni-za-farou-stara-vrata.jpg', 'Snoubenci u starých dřevěných vrat a cihlové zdi, předsvatební focení'), (BL + 'predsvatebni-foceni-za-farou-detail.jpg', 'Detail snoubenců u dřevěných vrat'))}
+<div class="uzky b-clanek">{pribeh('Tohle předsvatební focení jsme fotili přímo ve vesnici snoubenců, na louce, nebo spíš zahradě za farou, která stojí hned u kostela, kde měli obřad. Byla tam i stará dřevěná vrata, která vytvořila krásnou texturu. Vystačili jsme si s málem a fotky jsou navíc spojené s místem jejich svatby.')}
 <h2 id="lesik">3. lesík, kousek louky nebo cesta za domem</h2><p>Myslíte si, že kolem vás není nic zajímavého? Možná byste se divili, jak kouzelně může na fotkách působit i obyčejná louka, úzká cesta za domem nebo pár stromů. Když se spojí přirozené světlo a vaše energie, vzniknou ty nejautentičtější snímky.</p><p>Navíc to má výhodu: děti se tam můžou proběhnout, pes klidně vběhne do záběru a všechno působí naprosto přirozeně.</p></div>
 <figure class="foto-vyska">{img(S_ + 'novomanzele-v-zelene-krajine-prostejov.jpg', 'Ženich drží nevěstu ve vzduchu v zelené krajině s kopečky nedaleko Olomouce')}</figure>
 <div class="uzky b-clanek">{pribeh('Tohle místo kousek od Olomouce jsem vybrala speciálně na svatební focení. Chtěla jsem, abychom ho měli v blízké dojezdové vzdálenosti, a přitom aby udělalo obrovský wow efekt. Stačí pár zelených kopečků.')}
@@ -228,11 +231,12 @@ T3 = f"""{hero([(P + 'predsvatebni-foceni-ve-vinohradu.jpg', 'Snoubenci procház
 <p class="b-poznamka">💬 A bonus? Nemusíte nikam jezdit! 😁</p>
 <p>Focení doma má ještě jeden přesah. Domov se časem mění: přijde rekonstrukce, nový nábytek, jiný obraz na zdi, nebo se odstěhujete. Až se na fotky podíváte za pár let, třeba i za třicet, řeknete si: „Ježiš, tady nám visel tenhle obraz a tohle byl náš koberec, úplně jsme na to zapomněli.“ Fotky tak mají o to větší váhu a o to větší příběh.</p>
 <p>A i když máte pocit, že váš byt nebo dům není dost hezký, nevadí. Vždycky najdeme nějaké zákoutí, kde to bude fungovat. Místo udělá hodně, ale není to všechno.</p></div>
-{kolaz((P + 'rodinna-laska-novorozenecke-foceni-brno.jpg', 'Rodiče líbají miminko, novorozenecké focení doma'), (P + 'rodinne-foceni-doma-na-gauci.jpg', 'Rodiče s miminkem na gauči v obýváku'), (P + 'prirozene-foceni-novorozence-doma-brno.jpg', 'Přirozené focení novorozence doma v Brně'))}
+<figure class="foto-vyska">{img(P + 'rodinne-foceni-doma-na-gauci.jpg', 'Rodiče s miminkem na gauči ve svém obýváku, rodinné focení doma')}</figure>
 <div class="uzky b-clanek">{pribeh('Tahle rodinka svůj byt zhruba půl roku po focení prodala, aby se mohla nastěhovat do vysněného domečku. Byt ale měli strašně rádi, a tak jsou pro ně tyhle fotky teď o to důležitější. Díky nim se můžou vrátit na místo, kam se už nejspíš nepodívají, ale kde prožili spoustu důležitých chvil.')}
 <h2 id="mesto">5. ulička, kavárna nebo roh domu</h2><p>I když miluju fotit v přírodě, i město je plné nenápadných zákoutí, která na fotkách působí kouzelně. Starší ulička, klidná boční cesta nebo roh domu s pěknou texturou zdi, to všechno může vytvořit nádherné pozadí, které vypadá přirozeně a nadčasově. A navíc to můžete spojit i s něčím užitečným, třeba že si po focení půjdete vychutnat něco dobrého do kavárny a uděláte si hezkej celej den. ☕️</p></div>
-<figure class="foto-sirsi">{img(P + 'predsvatebni-foceni-paru-ve-meste-brno.jpg', 'Snoubenci se líbají ve městě nad střechami Brna, předsvatební focení')}</figure>
-<section class="zelena"><div class="uzky"><h2>na závěr</h2><p>Takže pokud máte pocit, že „nemáte kde fotit“, věřte mi, že máte. Kouzlo není v místě, ale v pohledu, který se na něj dívá. A já věřím, že i z obyčejné cesty dokážeme vytvořit kousek vašeho příběhu. 🌿</p>
+<div class="uzky b-clanek">{pribeh('Tenhle pár mě vzal na místa, kam spolu rádi chodí na rande. Tuhle fotku jsme fotili na Staré radnici v Brně. I takhle se dá vybrat lokace: podle toho, co je vám blízké.')}</div>
+<figure class="foto-sirsi">{img(P + 'predsvatebni-foceni-paru-ve-meste-brno.jpg', 'Snoubenci se líbají na Staré radnici nad střechami Brna, předsvatební focení')}</figure>
+<section class="zelena"><div class="uzky"><p>Takže pokud máte pocit, že „nemáte kde fotit“, věřte mi, že máte. Kouzlo není v místě, ale v pohledu, který se na něj dívá. A já věřím, že i z obyčejné cesty dokážeme vytvořit kousek vašeho příběhu. 🌿</p>
 <p>📩 Chcete si zachytit své vzpomínky, ať už jste kdekoli? <a href="../contact.html">Napište mi</a>, společně najdeme místo, na kterém vzniknou fotky, co si zamilujete. ❤️</p>
 <p>V Brně mám míst projitých plno! Takže pokud ke mně budete chtít přijít na focení, pošlu vám tipy na místa včetně fotek a bližších informací. ❤️✨</p><p>S láskou,<br>S.</p>
 {sdileni()}</div></section>

@@ -168,3 +168,9 @@ html{scroll-behavior:smooth}
 .blog .b-pribeh{font-size:15px;font-style:italic;color:#4f4740;margin:0 0 10px}
 .b-pribeh span{display:block;font-size:13px;color:#8a7f73;margin-bottom:2px}
 @media(max-width:768px){.blog .b-citat{font-size:19px;line-height:1.35}}
+
+/* příběh z focení: celý vínový pás */
+.pribeh{background:#5C1F2E;color:#F2EBDD;margin:56px 0;padding:60px 24px}
+.blog .pribeh p{margin:0;font-style:italic;font-weight:300;font-size:19px;line-height:1.6}
+.pribeh + .uzky:empty{display:none}
+@media(max-width:768px){.pribeh{padding:44px 22px;margin:44px 0}.blog .pribeh p{font-size:17px}}
