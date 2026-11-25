@@ -2,7 +2,7 @@
 # Spuštění: python3 blog/gen_blog.py  (z kořene repozitáře)
 import os, json
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
-CSSV = 1
+CSSV = 2
 src = open('podminky.html', encoding='utf-8', newline='').read()
 hdr = src[src.index('<button class="mobile-menu-btn"'):src.index('<main')]
 hdr = hdr.replace('\r\n', '\n').replace('href="', 'href="../')
@@ -72,6 +72,10 @@ MEDAILON = f'''<div class="medailon">{img('fotky/sofie-zborilova-fotografka-port
 
 # ---------- seznam článků (nejnovější nahoře) ----------
 CLANKY = [
+    dict(soubor='jak-u-me-probiha-rodinne-a-parove-foceni.html', kat='rady před focením', cas='4 min',
+         titul='jak u mě probíhá rodinné a párové focení',
+         foto='fotky_portrety/parove-foceni-beh-pres-louku.jpg', foto_alt='Pár běží přes louku pod košilí, hravé párové focení',
+         perex='Nečekejte, že se budu přehnaně chválit. Chci vám přiblížit, jakým způsobem přistupuji k rodinnému a párovému focení.'),
     dict(soubor='co-si-vzit-na-sebe-na-foceni.html', kat='rady před focením', cas='5 min',
          titul='co si vzít na sebe na focení: 7 tipů, aby ti to slušelo',
          foto='fotky_blog/portret-zeny-v-kosili-s-kockami.jpg', foto_alt='Portrét ženy v košili s kočkami',
@@ -115,7 +119,7 @@ OBSAH = '<div class="obsah-obal"><nav class="obsah" aria-label="Obsah článku">
 def dvojice(a, b):
     return f'<div class="b-dvojice"><figure>{img(*a)}</figure><figure>{img(*b)}</figure></div>'
 
-C = CLANKY[0]
+C = next(c for c in CLANKY if c['soubor'] == 'co-si-vzit-na-sebe-na-foceni.html')
 TITLE = 'Co si vzít na sebe na focení: 7 tipů, aby ti to slušelo | Sofie Zbořilová'
 DESC = 'Nevíš, co si vzít na sebe na focení? 7 tipů od fotografky z Brna: jaké barvy a materiály volit, jak se sladit na rodinné či párové focení a palety barev pro každé roční období.'
 LD = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Co si vzít na sebe na focení: 7 tipů, aby ti to slušelo",
@@ -151,6 +155,48 @@ T = f'''<section class="b-hero">{img(P + 'hrave-rodinne-foceni-venku.jpg', 'Hrav
 {konec(C['soubor'])}
 <script>document.getElementById('sdilet').addEventListener('click',function(){{var b=this,u=location.href.split('#')[0];if(navigator.share){{navigator.share({{title:document.title,url:u}}).catch(function(){{}});}}else if(navigator.clipboard){{navigator.clipboard.writeText(u).then(function(){{b.textContent='odkaz zkopírován';setTimeout(function(){{b.textContent='sdílet článek';}},2500);}});}}}});</script>'''
 stranka(C['soubor'], head(TITLE, DESC, 'blog/' + C['soubor'], 'fotky_sdileni/co-si-vzit-na-sebe-na-foceni.jpg', 'pres-vlnu', EXTRA), T)
+
+
+# ---------- článek: jak u mě probíhá rodinné a párové focení ----------
+def hero(fotky, kat, titul):
+    return '<section class="b-hero">' + ''.join(img(f, a, lazy=False) for f, a in fotky) + f'\n<div class="b-hero-text"><span class="kategorie">{kat}</span><h1>{titul}</h1></div></section>'
+def obsah(body):
+    return '<div class="obsah-obal"><nav class="obsah" aria-label="Obsah článku"><b>v článku najdeš</b><ol>' + ''.join(f'<li><a href="#{a}">{t}</a></li>' for a, t in body) + '</ol></nav></div>'
+def kolaz(a, b, c):
+    return f'<div class="b-kolaz">{img(*a, c="ka")}{img(*b, c="kb")}{img(*c, c="kc")}</div>'
+def sdileni(): 
+    return '<p class="sdilet"><span>Znáš někoho, komu by tenhle článek pomohl? Klidně mu ho pošli.</span><button type="button" id="sdilet">sdílet článek</button></p>'
+SDILET_JS = """<script>document.getElementById('sdilet').addEventListener('click',function(){var b=this,u=location.href.split('#')[0];if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){b.textContent='odkaz zkopírován';setTimeout(function(){b.textContent='sdílet článek';},2500);});}});</script>"""
+def ld(headline, desc, soubor, obr, publ):
+    d = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": headline, "description": desc, "inLanguage": "cs",
+         "datePublished": publ, "dateModified": "2026-11-25", "image": WEB + obr, "mainEntityOfPage": WEB + "blog/" + soubor,
+         "author": {"@type": "Person", "name": "Sofie Zbořilová", "url": WEB}, "publisher": {"@type": "Person", "name": "Sofie Zbořilová", "url": WEB}}
+    return '\n    <script type="application/ld+json">' + json.dumps(d, ensure_ascii=False) + '</script>'
+
+C2 = CLANKY[0]
+B2 = [('styl', 'můj styl a vaše představa'), ('autenticita', 'nebudu vás měnit'), ('rande', 'focení jako rande'), ('prochazka', 'budeme chodit'),
+      ('nic-neni-spatne', 'nic není špatně'), ('mluvte', 'nebojte se mluvit'), ('tisk', 'fotky v ruce')]
+T2 = f"""{hero([(P + 'parove-foceni-beh-pres-louku.jpg', 'Pár běží přes louku, hravé párové focení'), (P + 'dokumentarni-rodinne-fotky-deti-brno.jpg', 'Maminka se synem v kvetoucí louce, dokumentární rodinné focení'), (P + 'parove-foceni-v-trave-u-lesa.jpg', 'Pár sedí v trávě na kraji lesa, uvolněné párové focení')], 'rady před focením · 4 min čtení', 'jak u mě probíhá rodinné a párové focení')}
+<div class="uzky b-clanek"><p class="b-perex">Nečekejte, že se v tomto článku budu přehnaně chválit a navádět vás, abyste šli na focení ke mně a ne ke konkurenci. Ne, fakt ne😂 Tímto článkem vám chci aspoň trochu přiblížit, jakým způsobem přistupuji k rodinnému a párovému focení (ale většina platí i na portrétní🤫). Zkusím to rozřadit do bodů, aby to pro vás bylo víc přehledné.</p>
+{obsah(B2)}
+<h2 id="styl" class="prvni">1. víte, jaký mám styl, ale…</h2><p>Předpokládám, že když se přihlásíte na focení, tak víte, jaký mám styl a jak nejspíš budou výsledné fotky vypadat. Ale pokud máte jinou představu, moc ráda si ji vyslechnu! Když se mnou bude rezonovat nebo mi bude připadat zajímavá a super, ráda s vámi vyzkouším něco, na co nejsem zvyklá.</p><p>V případě, že se naše představy vůbec nepotkají a ani jedna strana nebude chtít ustoupit, je v pořádku, když oslovíte jiného fotografa. Ráda vám nějakého doporučím, pokud mě napadne někdo, s kým si stylem sednete víc✨ Nemám ráda, když se fotografové berou jako konkurence, naopak si myslím, že je fajn si předávat práci. Zároveň věřím, že si klient musí s fotografem sednout, jde to totiž na výsledných fotkách poznat♥️</p>
+<h2 id="autenticita">2. nebudu vás měnit a strojit do něčeho, co nejste</h2><p>Při focení ode mě často uslyšíte věty jako: „Dělejte, jako kdybych tady nebyla a vy jste nevnímali nic okolo vás… jen sebe navzájem.“ nebo „Nebojte si s vaší holčičkou hrát, dělat blbosti, vzájemně se lechtat nebo si zahrát na babu.“ Důležitější je totiž pro mě autenticita než to, jestli pózujete přesně podle pravidel. Často si taky můžete všimnout, že v určitých momentech při focení mlčím. To je právě kvůli tomu, že vám chci dát prostor a zároveň se snažím vytvořit místo, které pro vás bude bezpečné.</p><p>Až se budete na fotky po pár letech dívat, které vám vyhrknou slzy do očí? Ty s velkým, ale falešným úsměvem, kde vypadáte jako z časopisu… nebo ty, ze kterých září radost, spokojenost a jsou na nich zaznamenány vaše společné chvíle? Přesně. Tak tady máte odpověď na to, proč k vašemu focení přistupuji takovým způsobem😊</p></div>
+{kolaz((P + 'autenticke-rodinne-foceni.jpg', 'Autentické rodinné focení'), (P + 'rodinne-foceni-lechtani-ve-studiu.jpg', 'Rodiče lechtají dceru, hravé rodinné focení ve studiu'), (P + 'holcicky-polstarova-bitva-studio.jpg', 'Holčičky s polštáři běhají po studiu'))}
+<div class="uzky b-clanek"><h2 id="rande">3. rande?</h2><p>Jeden z mých nejoblíbenějších tipů, co vám dávám, je, abyste si z focení udělali rande. A myslím to více způsoby. Zaprvé to může znamenat, že focení zařadíte do vašeho společně stráveného času a před ním nebo po něm si zajdete na rande (na kafe, procházku, do kina, cokoli…). A to neplatí jen pro páry, ale i pro rodiny!</p><p>A zadruhé tím myslím to, abyste vzali na rande i mě! Divný? Trochu. Ale věřte mi, že výsledný fotky za to stojí!! Kam rádi společně chodíte? Co spolu rádi děláte? Co vás vystihuje? Máte nějakej společnej koníček? Nebo kde jste měli vaše první rande? Říkejte, přehánějte. Plno z těchto věcí můžeme zakomponovat dohromady a voilà, místo obyčejných fotek máte ty vaše, jedinečný a s duší✨</p></div>
+<figure class="foto-vyska">{img(P + 'parove-foceni-ve-meste-pizza.jpg', 'Pár na rande ve městě s pizzou, párové focení')}</figure>
+<div class="uzky b-clanek"><h2 id="prochazka">4. počítejte s tím, že budeme chodit</h2><p>Pokud budeme fotit někde venku, bude to tak trochu procházka. Má to několik benefitů. Projdeme více míst a lokací, a tak vás fotky (a doufám, že ani focení!) nebudou nudit. Na čerstvým vzduchu a při chůzi si pročistíte hlavu, a pokud nejste na focení zvyklí a máte z toho stres, může vám to dost pomoct.</p><p>Máte prostor na to, abyste si mezi focením odpočinuli a abychom se o sobě vzájemně něco dozvěděli. Baví mě se o vás dozvídat, jací jste, jaký je váš příběh, co vás baví… hlavně, když se na focení vracíte🫶🏻 Na kamarádském přístupu si zakládám, a tak je pro mě důležité, abychom si vzájemně důvěřovali.</p></div>
+<figure class="foto-sirsi">{img(P + 'parove-foceni-v-rozkvetlem-sadu.jpg', 'Pár v objetí v rozkvetlém sadu na jaře')}</figure>
+<div class="uzky b-clanek"><h2 id="nic-neni-spatne">5. nic není špatně, aneb starosti a perfekcionismus nechte doma</h2><p>Nemusíte se každou chvíli kontrolovat. Pokud bude něco špatně, jsem tam od toho já, abych upozornila a případně opravila.</p><p>Když nevíte, co před foťákem dělat, jak se před ním chovat, a máte z toho strach, opravdu nemusíte mít žádné obavy. Navedu vás, pomůžu vám. Nejsem tam proto, abych si o vás myslela něco špatného, že něco nevíte nebo neznáte. Jsem váš kámoš a vždycky vám ráda podám pomocnou ruku.</p><p>Vaše dítě nemá náladu a dělá vše, jen ne a ne stát na místě? Nevadí, vždyť to děti dělají! Tak si s ním budeme chvíli hrát, budeme mu naslouchat, necháme ho, ať nám ukáže, co je v té hlíně tak zajímavého! Vždyť to jsou ty nejkrásnější okamžiky, kdy děti objevují svět a my bychom se od nich mohli v tolika věcech učit. Tady máte přesně tu autenticitu, o které jsem psala na začátku, tak se ji nesnažte přehlížet a nechte mě, ať vám zaznamenám i takové momenty. Později se už opakovat nebudou♥️</p></div>
+{dvojice((P + 'dokumentarni-rodinne-foceni-brno.jpg', 'Dokumentární rodinné focení v Brně'), (P + 'rodinne-foceni-bez-pozovani-brno.jpg', 'Rodinné focení bez pózování v Brně'))}
+<div class="uzky b-clanek"><h2 id="mluvte">6. líná huba…</h2><p>Nebojte se mluvit. Nebojte se nesouhlasit. Při focení vám budu nabízet moje tipy, nápady nebo osvědčené postupy. Pokud vám to ale nesedí a necítíte se v takových věcech dobře, tak to vůbec nevadí. Hlavně mi to řekněte a vymyslíme jinou cestu, která vám bude vyhovovat. Focení by pro vás mělo být příjemné a určitě ne něco, do čeho se nutíte. Tak se prosím nepřetvařujte, i kdyby to bylo kvůli tomu, že nechcete moje nápady urazit. Nebojte, já to ustojím a naopak budu ráda za to, že si řeknete🌸</p>
+<h2 id="tisk">7. fotky nemusí být jen v mobilu</h2><p>Myslete na to, že fotky pořád můžete mít fyzicky v ruce. Na závěr jsem vám chtěla dát malý tip: nezapomeňte si fotky tisknout! V mobilu i v počítači se lehce ztratí, a i když se to tak nemusí zdát, nejsou nesmrtelné (soucítím se všemi, komu se taky někdy záhadně vymazaly soubory🙃).</p><p>Mám domluvenou 15% slevu na tisk fotek na <a href="https://www.kvalitnifotky.cz/" rel="noopener">kvalitnifotky.cz</a> s kódem <b>SOFIEZBORILOVA</b>, kde si můžete z focení sestavit knížku nebo album, nebo si je nechat vytisknout na velké formáty. Dám ale ruku do ohně, že tisk fotek máte k dispozici v každém aspoň trochu větším městě (např. v drogerii DM nebo Rossmann), takže by to mělo být lehce dostupné. Věřte mi, mít vaše fotky fyzicky v ruce je úplně jiný zážitek♥️</p></div>
+<section class="zelena"><div class="uzky"><h2>na závěr</h2><p>Doufám, že jsem vám můj přístup aspoň trochu přiblížila a snad je vám sympatický✨ Kdybyste se ke mně chtěli objednat, můžete přes <a href="../contact.html">kontaktní formulář</a> nebo můj <a href="https://www.instagram.com/sofiezbo/">Instagram</a>. Budu se těšit na každého z vás a budu ráda, když mi k tomu napíšete i něco o sobě, co bychom mohli do focení zakomponovat!</p><p>S.</p>
+{sdileni()}</div></section>
+{konec(C2['soubor'])}
+{SDILET_JS}"""
+DESC2 = 'Jak u mě probíhá rodinné a párové focení: můj styl, autenticita místo pózování, focení jako rande, procházka, děti bez stresu a tip na tisk fotek. Fotografka Sofie Zbořilová, Brno.'
+stranka(C2['soubor'], head('Jak u mě probíhá rodinné a párové focení | Sofie Zbořilová', DESC2, 'blog/' + C2['soubor'], 'fotky_sdileni/jak-u-me-probiha-rodinne-a-parove-foceni.jpg', 'pres-vlnu',
+        ld('Jak u mě probíhá rodinné a párové focení', DESC2, C2['soubor'], 'fotky_sdileni/jak-u-me-probiha-rodinne-a-parove-foceni.jpg', '2024-02-05')), T2)
 
 # ---------- přehled blogu ----------
 kategorie = []
