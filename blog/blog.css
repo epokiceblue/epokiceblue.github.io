@@ -161,3 +161,25 @@ html{scroll-behavior:smooth}
 .b-kolaz .kc{width:46%;top:62%;left:6%}
 .karty{grid-template-columns:1fr}
 }
+
+/* citát ve stylu vzkazu v ceníku */
+.blog .b-citat{margin:30px auto 34px;max-width:520px;text-align:center;font-family:'Poppins',sans-serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.45;color:#2b2622}
+.blog .b-poznamka{font-size:15px;font-style:italic;color:#6b6157}
+.blog .b-pribeh{font-size:15px;font-style:italic;color:#4f4740;margin:0 0 10px}
+.b-pribeh span{display:block;font-size:13px;color:#8a7f73;margin-bottom:2px}
+@media(max-width:768px){.blog .b-citat{font-size:19px;line-height:1.35}}
+
+/* příběh z focení: obyčejný text těsně pod fotkami */
+.blog .t-pribeh{font-style:italic;font-size:15px;line-height:1.7;color:#4f4740;margin:-24px 0 64px}
+.b-dvojice.organic{display:block;max-width:1000px}
+.b-dvojice.organic::after{content:"";display:block;clear:both}
+.b-dvojice.organic figure:first-child{float:left;width:54%;position:relative;z-index:1}
+.b-dvojice.organic figure:last-child{float:right;width:50%;margin:30% 0 0 -4%;position:relative;z-index:2}
+.b-dvojice.organic figure:first-child img{aspect-ratio:2/3}
+.b-dvojice.organic figure:last-child img{aspect-ratio:4/5;border:1px solid #222;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+@media(max-width:768px){
+.blog .t-pribeh{font-size:14px;margin:-14px 0 48px}
+.b-dvojice.organic figure:first-child,.b-dvojice.organic figure:last-child{float:none}
+.b-dvojice.organic figure:first-child{width:72%}
+.b-dvojice.organic figure:last-child{width:58%;margin:-34% 0 0 auto}
+}
