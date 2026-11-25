@@ -146,3 +146,18 @@ html{scroll-behavior:smooth}
 @media(max-width:768px){.medailon .tlacitko{margin-right:0}.medailon .odkazy{display:block;margin-top:14px}}
 /* přehled: karty vždy vystředěné, i když je článků méně */
 @media(min-width:901px){.p-mriz{grid-template-columns:repeat(auto-fit,minmax(0,330px));justify-content:center}}
+
+/* koláž tří fotek (jako v portfoliu), poměry drží i na mobilu */
+.b-kolaz{position:relative;width:calc(100% - 48px);max-width:952px;aspect-ratio:1/.72;margin:56px auto}
+.b-kolaz img{position:absolute}
+.b-kolaz .ka{left:0;top:0;width:64%;aspect-ratio:3/2}
+.b-kolaz .kb{right:2%;top:14%;width:36%;aspect-ratio:3/4;z-index:2;border:1px solid #222;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.b-kolaz .kc{left:18%;top:50%;width:28%;aspect-ratio:4/5;z-index:3;border:1px solid #222;box-sizing:border-box}
+.karty{grid-template-columns:repeat(auto-fit,minmax(0,330px));justify-content:center}
+@media(max-width:768px){
+.b-kolaz{width:calc(100% - 40px);margin:40px auto 56px;aspect-ratio:1/1.32}
+.b-kolaz .ka{width:82%}
+.b-kolaz .kb{width:52%;top:30%;right:0}
+.b-kolaz .kc{width:46%;top:62%;left:6%}
+.karty{grid-template-columns:1fr}
+}
