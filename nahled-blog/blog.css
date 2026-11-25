@@ -129,3 +129,5 @@ figcaption{font-size:13px;font-style:italic;margin-top:8px}
 .a-hero-obr img{display:block;width:100%;height:auto!important;aspect-ratio:16/9}
 .vlna-zelena .intro-wave{background:transparent;position:relative;z-index:3}
 .a-hero-obr{margin-top:-100px;position:relative;z-index:1}
+.a-hero-obr img{aspect-ratio:auto}
+.a-hero-obr img{-webkit-mask-image:linear-gradient(#000 93%,transparent);mask-image:linear-gradient(#000 93%,transparent)}
