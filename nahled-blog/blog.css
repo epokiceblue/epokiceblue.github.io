@@ -102,3 +102,25 @@ figcaption{font-size:13px;font-style:italic;margin-top:8px}
 .zadani{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;max-width:1000px;margin:0 auto}
 .zadani b{display:block;font-style:italic;font-weight:400;color:#fff;font-size:19px;margin-bottom:6px}
 .blog .citat{margin:110px auto 0}.blog .a-misto{margin:28px 0 0}
+
+/* ===== v3 ===== */
+.a-inicialy{font-family:'Great Vibes',cursive;font-weight:400;font-size:230px;text-transform:none;gap:40px;padding-top:80px;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.a-inicialy .a-spojka{font-size:130px;margin-top:40px}
+/* konec: písková plocha se zrnem a jemnou vlnou */
+.konec{margin-top:140px;padding:0 0 130px;background-color:var(--sand);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.22 0 0 0 0 0.18 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");background-size:300px 300px;position:relative}
+.zelena + .konec{margin-top:0}
+.konec::before{content:"";position:absolute;left:0;right:0;top:-69px;height:70px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 70' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C250,0 520,70 800,35 C980,12 1100,20 1200,38 L1200,70 L0,70Z' fill='%23DDD3C4'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.zelena + .konec::before{display:none}
+.medailon{border-top:none;padding-top:90px}
+.karta img{background:#fff}
+/* obsah jako kus papíru */
+.obsah{background:linear-gradient(rgba(255,253,249,.6),rgba(255,253,249,.6)),url(../fotky/papir-textura.jpg) center/cover;padding:30px 40px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.12))}
+.obsah-obal{filter:drop-shadow(0 6px 12px rgba(0,0,0,.13));margin:0 0 50px}
+.obsah-obal .obsah{filter:none;margin:0}
+/* paleta: čtverečky */
+.paleta{gap:12px}
+.paleta span{flex:none;width:46px;height:46px}
+/* časté otázky: oddělené */
+.zelena .otazka{padding:20px 0;border-top:1px solid rgba(233,228,218,.25)}
+.zelena .otazka:last-child{border-bottom:1px solid rgba(233,228,218,.25)}
+.zelena h3{margin:0 0 4px}
