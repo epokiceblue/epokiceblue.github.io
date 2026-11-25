@@ -6,8 +6,7 @@ CSSV = 2
 src = open('podminky.html', encoding='utf-8', newline='').read()
 hdr = src[src.index('<button class="mobile-menu-btn"'):src.index('<main')]
 hdr = hdr.replace('\r\n', '\n').replace('href="', 'href="../')
-hdr = hdr.replace('<!--<a href="../#">blog</a>\n            <a href="../#">o mně</a>-->', '<a href="./">blog</a>')
-hdr = hdr.replace('<!--<div class="Item-4"> blog</div>\n            <div class="Item-4"> o mně</div>-->', '<div class="Item-4"> <a href="./">blog</a></div>')
+hdr = hdr.replace('href="../blog/"', 'href="./"')
 hdr = hdr.replace('\r\n', '\n')
 assert hdr.count('href="./"') == 2, 'odkaz na blog v menu nenalezen'
 foot = src[src.index('<footer'):src.index('</footer>') + 9].replace('\r\n', '\n')
@@ -130,12 +129,12 @@ LD = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Co 
 EXTRA = '\n    <script type="application/ld+json">' + json.dumps(LD, ensure_ascii=False) + '</script>'
 
 P = 'fotky_portrety/'; R = 'fotky_produktove/'; BL = 'fotky_blog/'
-T = f'''<section class="b-hero">{img(P + 'hrave-rodinne-foceni-venku.jpg', 'Hravé rodinné focení venku', lazy=False)}{img(P + 'parove-foceni-tanec-na-louce.jpg', 'Párové focení, tanec na louce', lazy=False)}{img(P + 'rodinne-foceni-v-kvetouci-louce.jpg', 'Rodinné focení v kvetoucí louce', lazy=False)}
+T = f'''<section class="b-hero">{img(P + 'hrave-rodinne-foceni-venku.jpg', 'Hravé rodinné focení venku', lazy=False)}{img(P + 'cernobily-portret-zeny-oslava-narozenin.jpg', 'Žena v černých šatech a saku si chytá podpatek, černobílý portrét ve studiu', lazy=False)}{img(P + 'rodice-drzi-dcery-vanocni-foceni.jpg', 'Rodiče drží dcery v náručí, vánoční rodinné focení ve studiu', lazy=False)}
 <div class="b-hero-text"><span class="kategorie">rady před focením · 5 min čtení</span><h1>co si vzít na sebe na focení: 7 tipů, aby ti to slušelo</h1></div></section>
 <div class="uzky b-clanek"><p class="b-perex">Oblečení hraje na fotkách obrovskou roli. Proto jsem sepsala pár rad a základních pravidel, kterých je fajn se při výběru outfitu držet. Platí pro portrétní, párové i rodinné focení.</p>
 {OBSAH}
 <h2 id="neonove-barvy" class="prvni">1. nech doma neonové barvy, loga a nápisy</h2><p>Tohle je základ všeho, a pokud si máš zapamatovat jediné pravidlo, je to tohle. Na fotkách má jít hlavně o tebe a o chvíli, kterou se snažíme zachytit, takže nedopusť, aby tě oblečení překřikovalo. Výrazné a křiklavé barvy se navíc odrážejí do obličeje, a to fakt nechceme. A hlavně se vyhni velkým logům a nápisům. Malé nenápadné logo nevadí, ale když to jde úplně bez, je to určitě lepší.</p></div>
-{dvojice((P + 'parove-foceni-na-louce-v-objeti.jpg', 'Pár v objetí na louce v jednoduchém oblečení bez nápisů'), (P + 'rodinne-foceni-v-prirode-hrave-brno.jpg', 'Rodina ve světlém oblečení na focení v přírodě u Brna'))}
+{dvojice((P + 'rodinne-foceni-studio-emoce-brno.jpg', 'Rodina ve světlém sladěném oblečení bez nápisů na focení ve studiu'), (P + 'rodinne-foceni-v-prirode-hrave-brno.jpg', 'Rodina ve světlém oblečení na focení v přírodě u Brna'))}
 <div class="uzky b-clanek"><h2 id="zemite-barvy">2. zemité barvy tě nikdy nezklamou</h2><p>Když vůbec nevíš, co si vzít na sebe a jak zkombinovat barvy, sáhni po zemitých tónech. S nimi nikdy nešlápneš vedle. Fotím hlavně v přírodě a tam se hodí obzvlášť. Mám ráda i pastelové barvy, na fotkách vypadají skvěle.</p><p>Pro inspiraci přikládám paletu barev ke každému ročnímu období. Ber ji opravdu jen jako inspiraci, většina barev se hodí skoro vždycky. Mysli ale na místo, kde budeme fotit, aby se tvoje oblečení nebilo s pozadím.</p></div>
 {palety()}
 <div class="uzky b-clanek"><h2 id="materialy">3. materiály a textury</h2><p>Neboj se kombinovat. Na fotkách vypadají skvěle různé textury, třeba kůže, koženka, džínovina, len nebo pletenina. Outfit tak jednoduše ozvláštníš.</p></div>
