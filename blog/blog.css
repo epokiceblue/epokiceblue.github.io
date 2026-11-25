@@ -169,35 +169,17 @@ html{scroll-behavior:smooth}
 .b-pribeh span{display:block;font-size:13px;color:#8a7f73;margin-bottom:2px}
 @media(max-width:768px){.blog .b-citat{font-size:19px;line-height:1.35}}
 
-/* příběhy z focení: text zapojený přímo do fotek */
-.blog .t-pribeh{font-style:italic;font-weight:300;font-size:16px;line-height:1.65;color:#2b2622;margin:0}
-/* koláž s textem: text vpravo dole pod fotkou u vrat */
-.b-kolaz.s-textem{aspect-ratio:1/.82}
-.b-kolaz.s-textem .kt{position:absolute;left:51%;right:2%;top:74%}
-/* fotka vlevo, text vpravo částečně přes fotku */
-.b-vedle{position:relative;display:flex;align-items:flex-end;max-width:952px;width:calc(100% - 48px);margin:56px auto}
-.b-vedle .vf{width:50%;flex:none}
-.b-vedle .vf img{aspect-ratio:2/3}
-.b-vedle .vt{position:relative;z-index:2;margin:0 0 9% -9%;width:46%;background:var(--bone);padding:28px 32px;box-sizing:border-box}
-.b-vedle .vt img{aspect-ratio:2/3;width:62%;margin:22px 0 0 auto}
-.b-vedle.obracene{flex-direction:row-reverse}
-.b-vedle.obracene .vt{margin:0 -9% 9% 0}
-/* široká fotka a text přes její spodní okraj */
-.b-pres{max-width:1000px;margin:44px auto;padding:0 24px;box-sizing:border-box}
-.b-pres img{aspect-ratio:3/2}
-.b-pres .vt{position:relative;z-index:2;width:52%;margin:-70px 0 0 6%;background:var(--bone);padding:24px 30px;box-sizing:border-box}
+/* příběh z focení: obyčejný text těsně pod fotkami */
+.blog .t-pribeh{font-style:italic;font-size:15px;line-height:1.7;color:#4f4740;margin:-24px 0 64px}
+.b-dvojice.organic{display:block;max-width:1000px}
+.b-dvojice.organic::after{content:"";display:block;clear:both}
+.b-dvojice.organic figure:first-child{float:left;width:54%;position:relative;z-index:1}
+.b-dvojice.organic figure:last-child{float:right;width:50%;margin:30% 0 0 -4%;position:relative;z-index:2}
+.b-dvojice.organic figure:first-child img{aspect-ratio:2/3}
+.b-dvojice.organic figure:last-child img{aspect-ratio:4/5;border:1px solid #222;box-shadow:0 8px 24px rgba(0,0,0,.15)}
 @media(max-width:768px){
-.blog .t-pribeh{font-size:15px;line-height:1.6}
-.b-kolaz.s-textem{aspect-ratio:1/1.76}
-.b-kolaz.s-textem .kb{top:22%}
-.b-kolaz.s-textem .kc{top:44.5%}
-.b-kolaz.s-textem .kt{left:53%;right:0;top:61%}.b-kolaz.s-textem .t-pribeh{font-size:14px;line-height:1.55}
-.b-vedle,.b-vedle.obracene{display:block;width:calc(100% - 40px);margin:44px auto}
-.b-vedle .vf{width:84%}
-.b-vedle.obracene .vf{margin-left:auto}
-.b-vedle .vt,.b-vedle.obracene .vt{width:80%;margin:-56px 0 0 auto;padding:20px 0 0 22px}
-.b-vedle.obracene .vt{margin:-56px auto 0 0;padding:20px 22px 0 0}
-.b-vedle .vt img{width:70%}
-.b-pres{padding:0 20px}
-.b-pres .vt{width:84%;margin:-44px 0 0 auto;padding:18px 0 0 20px}
+.blog .t-pribeh{font-size:14px;margin:-14px 0 48px}
+.b-dvojice.organic figure:first-child,.b-dvojice.organic figure:last-child{float:none}
+.b-dvojice.organic figure:first-child{width:72%}
+.b-dvojice.organic figure:last-child{width:58%;margin:-34% 0 0 auto}
 }
