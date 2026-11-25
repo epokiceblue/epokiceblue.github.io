@@ -161,3 +161,10 @@ html{scroll-behavior:smooth}
 .b-kolaz .kc{width:46%;top:62%;left:6%}
 .karty{grid-template-columns:1fr}
 }
+
+/* citát ve stylu vzkazu v ceníku */
+.blog .b-citat{margin:30px auto 34px;max-width:520px;text-align:center;font-family:'Poppins',sans-serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.45;color:#2b2622}
+.blog .b-poznamka{font-size:15px;font-style:italic;color:#6b6157}
+.blog .b-pribeh{font-size:15px;font-style:italic;color:#4f4740;margin:0 0 10px}
+.b-pribeh span{display:block;font-size:13px;color:#8a7f73;margin-bottom:2px}
+@media(max-width:768px){.blog .b-citat{font-size:19px;line-height:1.35}}
