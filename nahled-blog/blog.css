@@ -131,3 +131,71 @@ figcaption{font-size:13px;font-style:italic;margin-top:8px}
 .a-hero-obr{margin-top:-100px;position:relative;z-index:1}
 .a-hero-obr img{aspect-ratio:auto}
 .a-hero-obr img{-webkit-mask-image:linear-gradient(#000 93%,transparent);mask-image:linear-gradient(#000 93%,transparent)}
+
+/* ===== v5: palety, lišta, přehled ===== */
+.palety-obal{max-width:1000px;margin:44px auto;padding:0 24px}
+.palety{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.paleta-sezona{background:#E4E3E0;padding:34px 30px 16px;text-align:center;display:flex;flex-direction:column}
+.paleta-sezona h4{margin:0;font-size:24px;font-weight:700;color:#000;text-transform:lowercase}
+.paleta-sezona .pod{margin:0 0 22px!important;font-style:italic;font-size:14px;color:#6b6157}
+.barvy{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.barva{aspect-ratio:3/2;position:relative;display:flex;align-items:flex-end;padding:8px 10px;box-sizing:border-box}
+.barva span{color:#fff;font-size:12.5px;line-height:1.2;text-align:left}
+.barva.svetla span{color:#5b5249}
+.paleta-sezona .web{margin:auto 0 0!important;padding-top:16px;font-size:10.5px;letter-spacing:.06em;color:#a49d95}
+@media(max-width:700px){.palety{grid-template-columns:1fr}.paleta-sezona{padding:26px 16px 12px}}
+.sdilet button{background:none;border:1px solid #222;border-radius:999px;padding:8px 22px;font:14px Poppins,sans-serif;cursor:pointer;margin-top:10px}
+.zelena .kategorie{display:block;margin-bottom:6px}
+.zelena p{margin:0 0 14px}
+.b-clanek h2:first-of-type{margin-top:40px}
+/* lišta, která zůstane nahoře */
+.lista{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;gap:48px;padding:14px 0;background:rgba(34,34,34,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transform:translateY(-100%);transition:transform .3s}
+.lista.vidět{transform:none}
+.lista a{color:#fff;text-decoration:none;font:14px Poppins,sans-serif}
+@media(max-width:768px){.lista{display:none}}
+/* přehled blogu */
+.p-hero{display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:center;max-width:1300px;margin:0 auto;padding:50px 30px 30px;gap:20px}
+.p-kolaz{position:relative;height:460px}
+.p-kolaz img{position:absolute;height:auto!important}
+.k1{width:56%!important;aspect-ratio:2/3;left:0;top:10px}
+.k2{width:50%!important;aspect-ratio:3/4;left:44%;top:150px;z-index:2}
+.k3{width:42%!important;aspect-ratio:4/5;left:8%;top:300px;z-index:3}
+.k4{width:46%!important;aspect-ratio:2/3;right:4%;top:0}
+.k5{width:56%!important;aspect-ratio:3/2;right:34%;top:190px;z-index:2}
+.k6{width:40%!important;aspect-ratio:3/4;right:0;top:290px;z-index:3}
+.p-titul{text-align:center}
+.p-titul h1{font-size:110px!important;text-align:center!important;margin-bottom:14px}
+.p-titul p{max-width:380px;margin:0 auto 28px!important}
+.filtr{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.filtr button{font:italic 14px Poppins,sans-serif;color:#555;background:none;border:1px solid #bfb3a4;border-radius:999px;padding:6px 16px;cursor:pointer}
+.filtr .aktivni{background:#222;color:#fff;border-color:#222}
+.p-mriz{display:grid;grid-template-columns:repeat(3,1fr);gap:60px 40px;max-width:1150px;margin:70px auto 0;padding:0 40px}
+.p-karta{text-decoration:none;color:inherit;display:block}
+.p-mriz .p-karta img{display:block;width:100%;height:auto!important;aspect-ratio:1/1;object-fit:cover;border:1px solid #222;max-height:none}
+.p-karta{height:auto!important}
+.p-karta .kategorie{display:block;margin-top:14px;font-size:14px}
+.p-karta h3{margin:4px 0 8px;font-size:21px;color:#000;text-transform:lowercase;line-height:1.3}
+.p-karta p{font-size:14.5px;line-height:1.6;margin:0 0 8px!important}
+.cist{font-size:14px;color:#222;font-style:italic}
+@media(max-width:900px){.p-hero{grid-template-columns:1fr}.p-kolaz{display:none}.p-mriz{grid-template-columns:1fr;padding:0 20px}.p-titul h1{font-size:70px!important}}
+
+/* v6: mobil */
+.blog img,.konec img{width:100%!important;height:auto!important;max-width:none!important;object-fit:cover;display:block}
+.medailon img{width:150px!important;height:150px!important}
+@media(max-width:768px){
+.b-hero{grid-template-columns:1fr;height:auto}
+.b-hero img:not(:first-child){display:none}
+.b-hero img:first-child{aspect-ratio:4/5}
+.b-hero-text{padding:90px 22px 0}
+.b-hero-text h1{font-size:30px!important;line-height:1.2}
+.obsah ol{columns:1}
+.obsah{padding:26px 26px}
+.b-dvojice{gap:12px;padding:0 20px}
+.foto-sirsi,.foto-vyska{padding:0 20px}
+.karty{grid-template-columns:1fr;gap:44px}
+.medailon{flex-direction:column;text-align:center;gap:18px}
+.medailon .odkazy a{margin:0 9px}
+html,body{overflow-x:hidden}
+}
+.blog figure{margin:0}
+@media(max-width:768px){.b-dvojice figcaption{font-size:12px}}
