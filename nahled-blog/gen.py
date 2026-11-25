@@ -34,10 +34,10 @@ document.querySelectorAll('.obsah').forEach(function(el){
 });
 </script>'''
 L='<a href="../svatby.html">jak to u mě probíhá</a><a href="../cenik.html">ceník</a>'
-A=f'''<section class="hero-pod-vlnou a-hero">{img(S+'novomanzele-za-ruce-prochazka-v-prirode-'+H)}<div class="a-inicialy"><span>K</span><span class="a-spojka">a</span><span>M</span></div></section>
+A=f'''<section class="a-hero-obr"><img src="hero-km-lokalni.jpg" alt=""></section>
 <p class="kategorie a-misto">svatby · Svatojakubský pivovar, Hluboké · červen 2026</p>
 <div class="uzky a-pribeh"><h1 style="font-size:38px;margin-bottom:24px">Klára a Michal: svatba na dvoře starého pivovaru</h1>
-<p class="prvni">Když mi Klára poprvé psala, měla jasno jen v jedné věci: nechtěla den, který by se odehrával podle harmonogramu. Chtěla, aby se lidi bavili, aby se jedlo u dlouhého stolu a aby se na konci tančilo bosky na dlažbě. Všechno ostatní se prý nějak vyřeší.</p>
+<p>Když mi Klára poprvé psala, měla jasno jen v jedné věci: nechtěla den, který by se odehrával podle harmonogramu. Chtěla, aby se lidi bavili, aby se jedlo u dlouhého stolu a aby se na konci tančilo bosky na dlažbě. Všechno ostatní se prý nějak vyřeší.</p>
 <p>A taky se vyřešilo. Ráno v pokoji nad pivovarem vládl příjemný chaos. Družičky si půjčovaly sponky, maminka hledala nůžky na stuhu a Klára se smála tak, že ji kamarádka třikrát přemalovávala řasy. Kytice z lučních květin stála ve sklenici od okurek a nikomu to nevadilo.</p></div>
 <section class="blok"><div class="mriz">{img(S+'nevesta-s-druzickami-pripravy-smich-'+H,'p-a1')}{img(S+'nevesta-vlasy-s-veneckem-zezadu-'+H,'p-a2 ramecek')}{img(S+'nevesta-s-druzickou-smich-cernobila-'+H,'p-a3 stin')}</div></section>
 <div class="uzky text-mezi"><p>Michal čekal dole na dvoře a tvářil se, že vůbec není nervózní. Pak Klára vyšla ze dveří a bylo po statečnosti. Tenhle moment mám ráda nejvíc: ten krátký okamžik, kdy si dva lidi uvědomí, že je to opravdu dnes.</p></div>
@@ -50,7 +50,7 @@ A=f'''<section class="hero-pod-vlnou a-hero">{img(S+'novomanzele-za-ruce-prochaz
 <section class="blok"><div class="mriz">{img(S+'nevesta-tanci-na-svatebni-party-'+H,'p-a1')}{img(S+'nevesta-tanci-na-dvore-'+H,'p-a2 ramecek')}{img(S+'nevesta-s-kamaradkou-selfie-smich-cernobila-'+H,'p-a3 stin')}</div></section>
 <div class="siroka">{img(S+'nevesta-s-kamaradkami-radost-cernobila-'+H)}</div>'''
 A+=konec('chceš vidět víc?','Podívej se, jak vypadaly další svatby, které jsem fotila, nebo si přečti, jak se na focení připravit.',['sv1','sv2','ra2'],'zjistit volný termín',L)
-page('svatba.html','Svatební příběh – návrh 2',A,'pres-vlnu')
+page('svatba.html','Svatební příběh – návrh 4',A,'vlna-zelena')
 
 B=f'''<section class="hero-pod-vlnou b-hero">{img(P+'hrave-rodinne-foceni-venku.jpg')}{img(P+'dokumentarni-rodinne-foceni-brno.jpg')}{img(P+'rodinne-foceni-v-prirode-brno-2.jpg')}
 <div class="b-hero-text"><span class="kategorie">rady před focením</span><h1>co si vzít na sebe na rodinné focení</h1></div></section>

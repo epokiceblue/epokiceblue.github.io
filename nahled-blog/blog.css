@@ -124,3 +124,6 @@ figcaption{font-size:13px;font-style:italic;margin-top:8px}
 .zelena .otazka{padding:20px 0;border-top:1px solid rgba(233,228,218,.25)}
 .zelena .otazka:last-child{border-bottom:1px solid rgba(233,228,218,.25)}
 .zelena h3{margin:0 0 4px}
+/* v4: úvod svatby = Sofiin vlastní vizuál */
+.vlna-zelena .intro-wave{background:#4A4E3C}
+.a-hero-obr img{display:block;width:100%;height:auto!important;aspect-ratio:16/9}
