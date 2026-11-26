@@ -2,7 +2,7 @@
 # Spuštění: python3 blog/gen_blog.py  (z kořene repozitáře)
 import os, json
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
-CSSV = 6
+CSSV = 7
 src = open('podminky.html', encoding='utf-8', newline='').read()
 hdr = src[src.index('<button class="mobile-menu-btn"'):src.index('<main')]
 hdr = hdr.replace('\r\n', '\n').replace('href="', 'href="../')
@@ -75,6 +75,10 @@ CLANKY = [
          titul='jak se obléct na vánoční focení v ateliéru',
          foto='fotky_blog/vanocni-rodinne-foceni-na-gauci-v-atelieru.jpg', foto_alt='Rodina ve světlém oblečení na gauči u vánočního stromku v ateliéru',
          perex='Nevíte, co si vzít na vánoční focení? Mám pro vás pár tipů, jak se obléct tak, aby fotky působily přirozeně, útulně a nadčasově.'),
+    dict(soubor='rodinne-foceni-bez-stresu.html', kat='rady před focením', cas='4 min',
+         titul='rodinné focení bez stresu: 7 tipů, jak se připravit a užít si to naplno',
+         foto='fotky_portrety/holcicky-polstarova-bitva-studio.jpg', foto_alt='Holčičky s polštáři běhají po studiu, hravé rodinné focení',
+         perex='Rodinné focení by nemělo být o stresu, ale o pohodě. Děti nemusí stát na místě a vy nemusíte umět pózovat. Pár tipů, jak se připravit a užít si to.'),
     dict(soubor='rodinne-foceni-jako-vzpominka.html', kat='rady před focením', cas='3 min',
          titul='rodinné focení jako vzpomínka: proč má smysl ho dělat pravidelně',
          foto='fotky_blog/rodina-u-potoka-rodinne-foceni.jpg', foto_alt='Rodiče pomáhají synovi přejít potok, rodinné focení v přírodě',
@@ -334,6 +338,43 @@ T5 = f"""{hero([(BL + 'rodina-u-potoka-rodinne-foceni.jpg', 'Rodiče pomáhají 
 DESC5 = 'Rodinné focení jako vzpomínka: proč má smysl fotit rodinu pravidelně, třeba jednou ročně, a proč fotky jednou budou mít nevyčíslitelnou hodnotu. Fotografka Sofie Zbořilová, Brno.'
 stranka(C5['soubor'], head('Rodinné focení jako vzpomínka: proč ho dělat pravidelně | Sofie Zbořilová', DESC5, 'blog/' + C5['soubor'], 'fotky_sdileni/rodinne-foceni-jako-vzpominka.jpg', 'pres-vlnu',
         ld('Rodinné focení jako vzpomínka: proč má smysl ho dělat pravidelně', DESC5, C5['soubor'], 'fotky_sdileni/rodinne-foceni-jako-vzpominka.jpg', '2026-11-26')), T5)
+
+# ---------- článek: rodinné focení bez stresu ----------
+C6 = next(c for c in CLANKY if c['soubor'] == 'rodinne-foceni-bez-stresu.html')
+B6 = [('vyspete-se', 'vyspěte se'), ('obleceni', 'oblečení'), ('drobnosti', 'drobnosti, které děti milují'), ('jidlo', 'jídlo s rozmyslem'),
+      ('priprava', 'nepřehánějte přípravy'), ('pohyb', 'nebojte se pohybu'), ('plynout', 'nechte to plynout')]
+T6 = f"""{hero([(P + 'rodinne-foceni-v-prirode-hrave-brno.jpg', 'Hravé rodinné focení v přírodě u Brna'), (BL + 'cernobile-novorozenecke-foceni-miminko-na-rameni-tatinka.jpg', 'Miminko kouká tatínkovi přes rameno, černobílé rodinné focení'), (P + 'deti-bezi-za-rodici-vanocni-foceni.jpg', 'Holčičky běží rodičům do náruče, vánoční rodinné focení')], 'rady před focením · 4 min čtení', 'rodinné focení bez stresu: 7 tipů, jak se připravit')}
+<div class="uzky b-clanek"><p class="b-perex">Rodinné focení by nemělo být o stresu, ale o pohodě. Nemusíte mít všechno dokonalé, děti nemusí stát na místě, a už vůbec nemusíte mít pocit, že musíte „umět pózovat“.</p>
+<p>Cílem je zachytit vás takové, jací jste – přirozeně, autenticky a v pohodě. 🤍</p>
+<p>Aby focení proběhlo co nejlépe, sepsala jsem pár jednoduchých tipů, které vám pomůžou se připravit – a zároveň si to celé opravdu užít.</p>
+{obsah(B6)}
+<h2 id="vyspete-se" class="prvni">1. vyspěte se (nebo ať jsou vyspané aspoň děti 😄)</h2><p>Kdybyste si z celého článku měli odnést jen jednu věc, bude to první a poslední bod tohoto článku. 🙏🏻</p>
+<p>Vyspané děti = spokojené děti. Pokud fotíme odpoledne, zkuste, aby měly klidné dopoledne a dostatek jídla i pití. A když budete vyspaní i vy, bude to to nejlepší, co můžete udělat. Nezapomeňte totiž, že děti jsou jako zrcadlo a když z nás cítí, že nejsme v pohodě, nebudou ani ony. 🌿</p></div>
+<figure class="foto-vyska">{img(BL + 'cernobile-novorozenecke-foceni-miminko-na-rameni-tatinka.jpg', 'Miminko kouká tatínkovi přes rameno, maminka se na něj usmívá, černobílé rodinné focení')}</figure>
+<div class="uzky b-clanek"><h2 id="obleceni">2. oblečení – méně je více</h2><p>Držte se jednoduchosti a tónů, které k sobě ladí. Zemité barvy, béžová, krémová, tlumená zelená, světle hnědá – to nikdy nezklame. Vyhněte se křiklavým barvám, velkým logům a vzorům. Podrobněji jsem se rozepsala v článku <a href="co-si-vzit-na-sebe-na-foceni.html">co si vzít na sebe na focení</a> (a pokud se chystáte na Vánoce, tak i v článku <a href="jak-se-oblect-na-vanocni-foceni.html">jak se obléct na vánoční focení</a>).</p>
+<p class="b-poznamka">🧺 Malý tip: připravte si oblečení dostatečně předem, abyste to neřešili pár minut před odjezdem na focení.</p>
+<h2 id="drobnosti">3. přibalte drobnosti, které děti milují 🧸</h2><p>Hračku, plyšáka, oblíbený hrníček nebo sušenky – cokoli, co pomůže uvolnit atmosféru. Často právě tyhle malé rekvizity udělají fotky ještě osobnějšími.</p></div>
+{dvojice_org((P + 'holcicky-polstarova-bitva-studio.jpg', 'Holčičky s polštáři běhají po studiu, hravé rodinné focení'), (P + 'sestry-se-tuli-vanocni-foceni.jpg', 'Sestry se tulí nosy k sobě, vánoční focení ve studiu'))}
+<div class="uzky b-clanek"><h2 id="jidlo">4. jídlo ano, ale s rozmyslem</h2><p>Někdy je potřeba doplnit energii a je to úplně v pohodě. Pokud budete na focení brát nějaké jídlo, zkuste se vyhnout čokoládě. Jestli chcete opravdu realistické fotky a chcete, aby se vaše dítě patlalo ve svém prvním dortu – I’m all in! 😄 Ale pokud se jedná o „obyčejné“ rodinné focení, čokoláda vám může lehce zašpinit oblečení – a to nechceme.</p>
+<h2 id="priprava">5. nepřehánějte to s přípravami 🫶🏻</h2><p>Není potřeba, aby bylo všechno dokonalé. Nejkrásnější fotky vznikají, když jste sami sebou. Když se smějete, běháte, děláte si legraci – prostě když žijete.</p>
+<p class="b-poznamka">Focení není soutěž o nejhezčí rodinu, ale o zachycení vašeho vztahu a lásky. 🤍</p></div>
+<figure class="foto-vyska">{img(BL + 'rodice-vyhazuji-smejici-se-miminko-vanocni-foceni.jpg', 'Rodiče se smějí a vyhazují miminko do vzduchu u vánočního stromku')}</figure>
+<div class="uzky b-clanek"><h2 id="pohyb">6. nebojte se pohybu</h2><p>Nechci po vás, abyste stáli jako přikovaní a dívali se do objektivu – dobře, možná uděláme jednu takovou fotku pro babičku, ale u té to skončí. 😄</p>
+<p>Budu vás navádět tak, aby to bylo přirozené – procházka, hra s dětmi, tanec nebo klidné objetí. Když se budete hýbat, přirozeně zapomenete na foťák – a právě tehdy vznikají ty nejhezčí momenty.</p></div>
+<figure class="foto-sirsi">{img(P + 'hrave-rodinne-foceni-venku.jpg', 'Hravé rodinné focení venku v pohybu')}</figure>
+<div class="uzky b-clanek"><h2 id="plynout">7. všechno nechte trochu plynout ☀️</h2><p>Připravte se, ale netlačte na dokonalost. Když dítě nechce spolupracovat, nic se neděje a hlavně, je to úplně normální. Děti nejsou stroj, aby hodinu v kuse poslouchaly naše pokyny. Nemusí mít neustále úsměv od ucha k uchu.</p>
+<p>Nechme děti, aby byly dětmi a klidně i tím, kdo bude určovat průběh focení. Chtějí jít k vodě a hrát si s kamínky? Super! Pojďme všichni! Chtějí dělat závody v běhu? Můžeme!</p></div>
+<figure class="foto-sirsi">{img(BL + 'rodina-u-potoka-rodinne-foceni.jpg', 'Rodiče pomáhají synovi přejít potok po kamenech, rodinné focení v přírodě')}</figure>
+<div class="uzky b-clanek"><p>Děti nás svými nápady dokážou nádherně uvolnit – a je krásné, když se i dospělí nechají strhnout a na chvíli se znovu stanou dětmi.</p>
+<p>A navíc, někdy z toho, co se zdá jako „nepovedená chvilka“, vznikne ta nejhezčí fotka z celého focení.</p></div>
+<section class="zelena"><div class="uzky"><p>Rodinné focení není o perfektnosti. Je o vás – o tom, že jste spolu, že se smějete, že máte mezi sebou něco, co stojí za zachycení. A pokud si z toho kromě krásných fotek odnesete i hezký společný zážitek, splnilo to přesně svůj účel. 🌿</p>
+<p>📩 Chcete si domluvit rodinné focení v Brně nebo okolí? <a href="../contact.html">Napište mi</a> – společně to vymyslíme tak, aby to bylo přesně „vaše“. Ceny najdete v <a href="../cenik.html">ceníku</a> a ukázky rodinných fotek v <a href="../portrety.html">portfoliu</a>.</p>
+{sdileni()}</div></section>
+{konec(C6['soubor'])}
+{SDILET_JS}"""
+DESC6 = 'Rodinné focení bez stresu: 7 tipů, jak se připravit a užít si to naplno. Spánek, oblečení, hračky, jídlo, pohyb a děti, které nemusí stát na místě. Fotografka Sofie Zbořilová, Brno.'
+stranka(C6['soubor'], head('Rodinné focení bez stresu: 7 tipů, jak se připravit | Sofie Zbořilová', DESC6, 'blog/' + C6['soubor'], 'fotky_sdileni/rodinne-foceni-bez-stresu.jpg', 'pres-vlnu',
+        ld('Rodinné focení bez stresu: 7 tipů, jak se připravit a užít si to naplno', DESC6, C6['soubor'], 'fotky_sdileni/rodinne-foceni-bez-stresu.jpg', '2026-11-26')), T6)
 
 # ---------- přehled blogu ----------
 kategorie = []
