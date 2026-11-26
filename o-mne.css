@@ -35,3 +35,7 @@
 }
 body .intro-wave{background:#ECE6DB}
 .omne-text p{font-size:16.5px}
+.intro-wave{position:relative;width:100%;overflow:hidden;line-height:0}
+.intro-wave svg{position:relative;display:block;width:calc(200% + 4px);margin-left:-2px;height:60px;transform:rotateY(180deg)}
+.intro-wave .shape-fill{fill:#222222}
+@media(max-width:768px){.intro-wave svg{height:34px}}

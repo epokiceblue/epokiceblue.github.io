@@ -348,7 +348,7 @@ T6 = f"""{hero([(P + 'rodinne-foceni-v-prirode-hrave-brno.jpg', 'Hravé rodinné
 <p>Cílem je zachytit vás takové, jací jste – přirozeně, autenticky a v pohodě. 🤍</p>
 <p>Aby focení proběhlo co nejlépe, sepsala jsem pár jednoduchých tipů, které vám pomůžou se připravit – a zároveň si to celé opravdu užít.</p>
 {obsah(B6)}
-<h2 id="vyspete-se" class="prvni">1. vyspěte se (nebo ať jsou vyspané aspoň děti 😄)</h2><p>Kdybyste si z celého článku měli odnést jen jednu věc, bude to první a poslední bod tohoto článku (tedy bod 1 a bod 7). 🙏🏻</p>
+<h2 id="vyspete-se" class="prvni">1. vyspěte se (nebo ať jsou vyspané aspoň děti 😄)</h2><p>Kdybyste si z celého článku měli odnést jen jednu věc, bude to první a poslední bod tohoto článku. 🙏🏻</p>
 <p>Vyspané děti = spokojené děti. Pokud fotíme odpoledne, zkuste, aby měly klidné dopoledne a dostatek jídla i pití. A když budete vyspaní i vy, bude to to nejlepší, co můžete udělat. Nezapomeňte totiž, že děti jsou jako zrcadlo a když z nás cítí, že nejsme v pohodě, nebudou ani ony. 🌿</p></div>
 <figure class="foto-vyska">{img(BL + 'cernobile-novorozenecke-foceni-miminko-na-rameni-tatinka.jpg', 'Miminko kouká tatínkovi přes rameno, maminka se na něj usmívá, černobílé rodinné focení')}</figure>
 <div class="uzky b-clanek"><h2 id="obleceni">2. oblečení – méně je více</h2><p>Držte se jednoduchosti a tónů, které k sobě ladí. Zemité barvy, béžová, krémová, tlumená zelená, světle hnědá – to nikdy nezklame. Vyhněte se křiklavým barvám, velkým logům a vzorům. Podrobněji jsem se rozepsala v článku <a href="co-si-vzit-na-sebe-na-foceni.html">co si vzít na sebe na focení</a> (a pokud se chystáte na Vánoce, tak i v článku <a href="jak-se-oblect-na-vanocni-foceni.html">jak se obléct na vánoční focení</a>).</p>
