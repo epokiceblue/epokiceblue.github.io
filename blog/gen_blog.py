@@ -11,7 +11,7 @@ hdr = hdr.replace('\r\n', '\n')
 assert hdr.count('href="./"') == 2, 'odkaz na blog v menu nenalezen'
 foot = src[src.index('<footer'):src.index('</footer>') + 9].replace('\r\n', '\n')
 foot = foot.replace('href="', 'href="../').replace('href="../http', 'href="http').replace('href="../mailto', 'href="mailto')
-LISTA = '''<nav class="lista" aria-label="Menu"><a href="../index.html">hlavní stránka</a><a href="../svatby.html">portfolio</a><a href="../cenik.html">ceník</a><a href="./">blog</a><a href="../contact.html">kontakt</a></nav>'''
+LISTA = '''<nav class="lista" aria-label="Menu"><a href="../index.html">hlavní stránka</a><a href="../svatby.html">portfolio</a><a href="../cenik.html">ceník</a><a href="./">blog</a><a href="../o-mne.html">o mně</a><a href="../contact.html">kontakt</a></nav>'''
 SKRIPTY = '''<script>(function(){var l=document.querySelector('.lista'),h=document.querySelector('.black_background');function f(){l.classList.toggle('vidět',window.scrollY>(h.offsetHeight+60));}window.addEventListener('scroll',f,{passive:true});f();})();</script>
 <script src="../script.js?v=5"></script>'''
 WEB = 'https://sofiezborilova.cz/'
@@ -67,7 +67,7 @@ def zapis(fn, html):
 def img(p, alt, c='', lazy=True):
     return f'<img{" class=" + chr(34) + c + chr(34) if c else ""} src="../{p}" alt="{alt}"{" loading=" + chr(34) + "lazy" + chr(34) if lazy else ""}>'
 
-MEDAILON = f'''<div class="medailon">{img('fotky/sofie-zborilova-fotografka-portret.webp', 'Sofie Zbořilová, fotografka z Brna', lazy=False)}<div><h3>ahoj, jsem sofi</h3><p>Fotím svatby, rodiny a značky v Brně a Bratislavě. Mám ráda přirozené momenty, jemné barvy a lidi, kteří se nebojí být sami sebou.</p><a class="tlacitko" href="../contact.html">napiš mi</a><span class="odkazy"><a href="../portrety.html">portfolio</a><a href="../cenik.html">ceník</a></span></div></div>'''
+MEDAILON = f'''<div class="medailon">{img('fotky/sofie-zborilova-fotografka-portret.webp', 'Sofie Zbořilová, fotografka z Brna', lazy=False)}<div><h3>ahoj, jsem sofi</h3><p>Fotím svatby, rodiny a značky v Brně a Bratislavě. Mám ráda přirozené momenty, jemné barvy a lidi, kteří se nebojí být sami sebou.</p><a class="tlacitko" href="../contact.html">napiš mi</a><span class="odkazy"><a href="../o-mne.html">chci se o tobě dozvědět víc 🤍</a><a href="../portrety.html">portfolio</a><a href="../cenik.html">ceník</a></span></div></div>'''
 
 # ---------- seznam článků (nejnovější nahoře) ----------
 CLANKY = [
@@ -348,7 +348,7 @@ T6 = f"""{hero([(P + 'rodinne-foceni-v-prirode-hrave-brno.jpg', 'Hravé rodinné
 <p>Cílem je zachytit vás takové, jací jste – přirozeně, autenticky a v pohodě. 🤍</p>
 <p>Aby focení proběhlo co nejlépe, sepsala jsem pár jednoduchých tipů, které vám pomůžou se připravit – a zároveň si to celé opravdu užít.</p>
 {obsah(B6)}
-<h2 id="vyspete-se" class="prvni">1. vyspěte se (nebo ať jsou vyspané aspoň děti 😄)</h2><p>Kdybyste si z celého článku měli odnést jen jednu věc, bude to první a poslední bod tohoto článku. 🙏🏻</p>
+<h2 id="vyspete-se" class="prvni">1. vyspěte se (nebo ať jsou vyspané aspoň děti 😄)</h2><p>Kdybyste si z celého článku měli odnést jen jednu věc, bude to první a poslední bod tohoto článku (tedy bod 1 a bod 7). 🙏🏻</p>
 <p>Vyspané děti = spokojené děti. Pokud fotíme odpoledne, zkuste, aby měly klidné dopoledne a dostatek jídla i pití. A když budete vyspaní i vy, bude to to nejlepší, co můžete udělat. Nezapomeňte totiž, že děti jsou jako zrcadlo a když z nás cítí, že nejsme v pohodě, nebudou ani ony. 🌿</p></div>
 <figure class="foto-vyska">{img(BL + 'cernobile-novorozenecke-foceni-miminko-na-rameni-tatinka.jpg', 'Miminko kouká tatínkovi přes rameno, maminka se na něj usmívá, černobílé rodinné focení')}</figure>
 <div class="uzky b-clanek"><h2 id="obleceni">2. oblečení – méně je více</h2><p>Držte se jednoduchosti a tónů, které k sobě ladí. Zemité barvy, béžová, krémová, tlumená zelená, světle hnědá – to nikdy nezklame. Vyhněte se křiklavým barvám, velkým logům a vzorům. Podrobněji jsem se rozepsala v článku <a href="co-si-vzit-na-sebe-na-foceni.html">co si vzít na sebe na focení</a> (a pokud se chystáte na Vánoce, tak i v článku <a href="jak-se-oblect-na-vanocni-foceni.html">jak se obléct na vánoční focení</a>).</p>
