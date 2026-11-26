@@ -94,7 +94,7 @@ html{scroll-behavior:smooth}
 
 /* přehled blogu */
 .p-titul{text-align:center;padding:60px 24px 0}
-.p-titul h1{font-size:110px;text-align:center;margin-bottom:14px}
+.p-titul h1{font-size:110px;text-align:center;margin-bottom:14px;color:#3a3a3a}
 .p-titul p{max-width:420px;margin:0 auto 26px!important}
 .filtr{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
 .filtr button{font:italic 14px Poppins,sans-serif;color:#555;background:none;border:1px solid #bfb3a4;border-radius:999px;padding:6px 16px;cursor:pointer}

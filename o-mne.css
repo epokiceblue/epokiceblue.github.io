@@ -1,0 +1,41 @@
+/* stránka o mně */
+.omne{display:block;width:100%;justify-self:stretch;background:#ECE6DB;font-family:'Poppins',sans-serif;color:#555;font-size:16px;line-height:1.8}
+.omne a{color:#222}
+.omne-uvod{display:flex;align-items:center;gap:56px;max-width:900px;margin:0 auto;padding:70px 24px 64px;box-sizing:border-box}
+.omne-foto{width:260px;height:260px;border-radius:50%;object-fit:cover;flex:none}
+.omne-uvod h1{font-family:'Poppins',sans-serif;font-weight:700;font-size:44px;line-height:1.1;color:#3a3a3a;text-transform:lowercase;margin:0 0 14px;text-align:left}
+.omne-uvod p{margin:0;font-size:18px;max-width:480px}
+/* pás autoportrétů: pomalý plynulý pohyb */
+.omne-pas{position:relative;background:#08161F;overflow:hidden;padding:44px 0 52px}
+.omne-pas-in{display:flex;width:max-content;animation:omne-jede 120s linear infinite}
+.omne-pas img{display:block;height:440px;width:auto;flex:none}
+@keyframes omne-jede{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.omne-pas-in{animation:none}.omne-pas{overflow-x:auto}}
+.omne-popisek{position:absolute;right:24px;bottom:16px;font-size:12px;letter-spacing:.04em;color:#c9bfb2}
+/* text na béžovém papíře se zrnem */
+.omne-text{background-color:#ECE6DB;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.22 0 0 0 0 0.18 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");background-size:300px 300px;padding:72px 24px 40px}
+.omne-text-in{max-width:680px;margin:0 auto}
+.omne-text p{margin:0 0 20px}
+.omne-podpis{font-style:italic;font-size:20px}
+.omne-konec{text-align:center;padding:24px 24px 80px;background:#ECE6DB}
+.omne-tlacitko{display:inline-block;background:#2F3B2C;color:#fff!important;text-decoration:none;padding:15px 38px;border-radius:999px;font-size:16px}
+.omne-tlacitko:hover{background:#222}
+.omne-dalsi{margin:26px 0 0;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:15px}
+.omne-dalsi a{text-underline-offset:4px}
+@media(max-width:768px){
+.omne-uvod{flex-direction:column;align-items:flex-start;gap:28px;padding:48px 20px 44px}
+.omne-foto{width:190px;height:190px}
+.omne-uvod h1{font-size:34px}
+.omne-uvod p{font-size:16px}
+.omne-pas{padding:28px 0 40px}
+.omne-pas img{height:260px}
+.omne-pas-in{animation-duration:90s}
+.omne-popisek{right:20px;bottom:12px}
+.omne-text{padding:52px 20px 28px}
+}
+body .intro-wave{background:#ECE6DB}
+.omne-text p{font-size:16.5px}
+.intro-wave{position:relative;width:100%;overflow:hidden;line-height:0}
+.intro-wave svg{position:relative;display:block;width:calc(200% + 4px);margin-left:-2px;height:60px;transform:rotateY(180deg)}
+.intro-wave .shape-fill{fill:#222222}
+@media(max-width:768px){.intro-wave svg{height:34px}}
