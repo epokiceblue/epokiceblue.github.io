@@ -75,6 +75,10 @@ CLANKY = [
          titul='jak se obléct na vánoční focení v ateliéru',
          foto='fotky_blog/vanocni-rodinne-foceni-na-gauci-v-atelieru.jpg', foto_alt='Rodina ve světlém oblečení na gauči u vánočního stromku v ateliéru',
          perex='Nevíte, co si vzít na vánoční focení? Mám pro vás pár tipů, jak se obléct tak, aby fotky působily přirozeně, útulně a nadčasově.'),
+    dict(soubor='rodinne-foceni-jako-vzpominka.html', kat='rady před focením', cas='3 min',
+         titul='rodinné focení jako vzpomínka: proč má smysl ho dělat pravidelně',
+         foto='fotky_blog/rodina-u-potoka-rodinne-foceni.jpg', foto_alt='Rodiče pomáhají synovi přejít potok, rodinné focení v přírodě',
+         perex='Čas letí. Všichni to říkáme, ale naplno si to uvědomíme většinou až při pohledu na staré fotky. Proč má smysl fotit rodinu pravidelně a proč to tak miluju.'),
     dict(soubor='univerzalni-lokace-na-foceni.html', kat='rady před focením', cas='3 min',
          titul='univerzální lokace na focení, které máte na dosah',
          foto='fotky_portrety/rodinne-foceni-doma-na-gauci.jpg', foto_alt='Rodiče s miminkem na gauči doma, rodinné focení v obýváku',
@@ -289,6 +293,47 @@ T4 = f"""{hero([(BL + 'vanocni-foceni-miminko-v-cervenych-satech.jpg', 'Tatínek
 DESC4 = 'Jak se obléct na vánoční focení v ateliéru: 7 tipů na barvy, textury, sladění rodiny i oblečení pro děti, aby fotky byly útulné, nadčasové a ne kýčovité. Fotografka Sofie Zbořilová, Brno.'
 stranka(C4['soubor'], head('Jak se obléct na vánoční focení v ateliéru: 7 tipů | Sofie Zbořilová', DESC4, 'blog/' + C4['soubor'], 'fotky_sdileni/jak-se-oblect-na-vanocni-foceni.jpg', 'pres-vlnu',
         ld('Jak se obléct na vánoční focení v ateliéru', DESC4, C4['soubor'], 'fotky_sdileni/jak-se-oblect-na-vanocni-foceni.jpg', '2025-11-04')), T4)
+
+# ---------- článek: rodinné focení jako vzpomínka ----------
+C5 = next(c for c in CLANKY if c['soubor'] == 'rodinne-foceni-jako-vzpominka.html')
+B5 = [('kazdy-rok', 'každý rok je jiný'), ('chvile-pro-vas', 'chvíle pro vás'), ('hodnota', 'fotky s nevyčíslitelnou hodnotou'),
+      ('jak-casto', 'jak často se fotit'), ('co-si-odnest', 'co si z toho odnést')]
+T5 = f"""{hero([(BL + 'rodina-u-potoka-rodinne-foceni.jpg', 'Rodiče pomáhají synovi přejít potok, rodinné focení v přírodě'), (P + 'rodinne-foceni-v-prirode-brno-2.jpg', 'Rodina s miminkem sedí v lese v protisvětle, černobílé rodinné focení'), (P + 'rodinne-foceni-v-kvetouci-louce.jpg', 'Rodina s malým klukem leží v kvetoucí louce')], 'rady před focením · 3 min čtení', 'rodinné focení jako vzpomínka')}
+<div class="uzky b-clanek"><p class="b-perex">Proč má smysl ho dělat pravidelně a proč ho tak miluju 🥰</p>
+<blockquote class="b-citat">„Čas letí.“</blockquote>
+<p>Všichni to říkáme, všichni to víme – ale naplno si to uvědomíme většinou až při pohledu na staré fotky nebo až když je pozdě.</p>
+<p>Děti, které ještě před chvílí lezly po čtyřech, dnes běhají do školy. Naši rodiče, kteří se o nás celý život starali, dnes mají na tváři o pár vrásek navíc a možná teď potřebují, abychom se na oplátku postarali my o ně.</p>
+<p>A my si přejeme, abychom mohli ty chvíle prožít znovu – i když jen na okamžik.</p>
+<p>A přesně o tom rodinné focení je. Ne o dokonalých pózách nebo perfektních outfitech. Ale o zachycení okamžiků, které tvoří váš příběh.</p>
+{obsah(B5)}
+<h2 id="kazdy-rok" class="prvni">každý rok je jiný</h2><p>Každý rok se v rodině něco změní. Děti vyrostou, na nás jde vidět, jak vnitřně rosteme, máme jiné priority a třeba jsme změnili práci nebo bydlíme v jiném bytě. Rodinné fotky jsou krásný způsob, jak ten vývoj zachytit – a jak se po letech podívat zpátky a vidět, kolik lásky, smíchu i obyčejných dní za tím vším bylo.</p></div>
+<figure class="foto-sirsi">{img(BL + 'cernobile-tehotenske-foceni-ve-studiu.jpg', 'Budoucí maminka v černých šatech drží bříško, černobílé těhotenské focení ve studiu')}</figure>
+<div class="uzky b-clanek"><p>Fotím rodiny, které ke mně chodí každý rok. Vždycky se těší, až se na fotky podívají a zjistí, co všechno se změnilo, a až si aspoň na chvíli prožijí ty krásné momenty, kdy byli spolu.</p>
+<h2 id="chvile-pro-vas">focení není povinnost, ale chvíle pro vás</h2><p>Vím, že pro spoustu lidí může být představa focení stresující.</p>
+<blockquote class="b-citat">„Děti stejně neposedí.“<br>„Já nejsem fotogenická.“<br>„Nevím, co si obléct.“</blockquote>
+<p>Tyhle věty slyším často. Ale pokaždé, když focení skončí, slyším jinou:</p>
+<blockquote class="b-citat">„Bylo to vlastně hrozně příjemné a ani jsme si neuvědomili, že jsme na focení!“</blockquote>
+<p>Rodinné focení není jen o fotkách. Je to čas, kdy se konečně zastavíte. Kdy se smějete, hrajete si, obejmete se – a ani si neuvědomíte, že vás u toho někdo fotí.</p></div>
+<figure class="foto-vyska">{img(BL + 'holcicka-drzi-maminku-za-ruce-rodinne-foceni.jpg', 'Malá holčička v šedém svetříku drží maminku za ruce a učí se chodit')}</figure>
+<div class="uzky b-clanek"><h2 id="hodnota">fotky, které budou mít jednou nevyčíslitelnou hodnotu</h2><p>Možná teď máte pocit, že fotky jsou jen „něco navíc“.</p>
+<p>Ale za pár let – až budete listovat albem – se budete smát, dojímat a říkat si: „Tohle bylo to období, kdy…“</p>
+<p>Fotky mají zvláštní sílu. Vrací vás zpátky do míst a chvil, které už dávno nejsou, ale pořád v nás žijí. Jednoho dne pro vás ty snímky budou nejcennějším mostem do minulosti. 🌿</p></div>
+<figure class="foto-vyska">{img(P + 'rodinne-foceni-v-prirode-brno.jpg', 'Táta objímá dceru a vnučku v zahradě, rodinné focení tří generací')}</figure>
+<div class="uzky b-clanek"><h2 id="jak-casto">jak často má smysl se fotit</h2><p>Rodinné focení dává největší smysl dělat pravidelně – třeba jednou ročně. Nemusí to být vždy stejné prostředí nebo stejné období. Naopak – právě ta pestrost dělá váš příběh autentickým.</p>
+<p>Pro někoho je to letní focení v přírodě, pro jiné zase koulování se na zasněžené louce nebo třeba klidné dny strávené <a href="univerzalni-lokace-na-foceni.html">u vás doma</a>. Přemýšlejte o focení tak, že chcete zachovat, jací doopravdy jste, co vás vystihuje.</p></div>
+{kolaz((P + 'hrave-rodinne-foceni-venku.jpg', 'Hravé rodinné focení venku v létě'), (P + 'rodice-drzi-dcery-vanocni-foceni.jpg', 'Rodiče drží dcery v náručí, vánoční rodinné focení ve studiu'), (P + 'rodina-s-miminkem-v-kuchyni.jpg', 'Rodiče s miminkem v objetí ve své kuchyni, rodinné focení doma'))}
+<div class="uzky b-clanek"><h2 id="co-si-odnest">co si z toho mám teda odnést?</h2><p>Vzpomínky sice žijí v našich hlavách, ale časem se nám chtě nechtě promění nebo vytratí úplně. Fotky jim ale dávají tvar a díky nim se můžeme znovu přenést do chvil, které jsou pro nás cenné.</p>
+<p>Umožňují nám dotknout se času, který už odešel – a připomenout si, co je opravdu důležité.</p></div>
+<section class="zelena"><div class="uzky"><p>Pokud máte pocit, že letos chcete něco uchovat, něco pro sebe – pojďme zachytit vaši rodinu takovou, jaká je právě teď.</p>
+<p>Protože za pár let vám ty fotky řeknou víc, než by kdy dokázala slova. 🤍</p>
+<p>Rodinné focení fotím v Brně i v Bratislavě – venku v přírodě, ve studiu nebo klidně u vás doma. Jak takové focení u mě probíhá, si můžete přečíst <a href="jak-u-me-probiha-rodinne-a-parove-foceni.html">tady</a>, ceny najdete v <a href="../cenik.html">ceníku</a> a ukázky rodinných fotek v <a href="../portrety.html">portfoliu</a>.</p>
+<p>📩 Rezervujte si svůj termín přes <a href="../contact.html">kontaktní formulář</a>.</p>
+{sdileni()}</div></section>
+{konec(C5['soubor'])}
+{SDILET_JS}"""
+DESC5 = 'Rodinné focení jako vzpomínka: proč má smysl fotit rodinu pravidelně, třeba jednou ročně, a proč fotky jednou budou mít nevyčíslitelnou hodnotu. Fotografka Sofie Zbořilová, Brno.'
+stranka(C5['soubor'], head('Rodinné focení jako vzpomínka: proč ho dělat pravidelně | Sofie Zbořilová', DESC5, 'blog/' + C5['soubor'], 'fotky_sdileni/rodinne-foceni-jako-vzpominka.jpg', 'pres-vlnu',
+        ld('Rodinné focení jako vzpomínka: proč má smysl ho dělat pravidelně', DESC5, C5['soubor'], 'fotky_sdileni/rodinne-foceni-jako-vzpominka.jpg', '2026-11-26')), T5)
 
 # ---------- přehled blogu ----------
 kategorie = []
