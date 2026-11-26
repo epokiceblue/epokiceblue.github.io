@@ -71,6 +71,10 @@ MEDAILON = f'''<div class="medailon">{img('fotky/sofie-zborilova-fotografka-port
 
 # ---------- seznam článků (nejnovější nahoře) ----------
 CLANKY = [
+    dict(soubor='jak-se-oblect-na-vanocni-foceni.html', kat='rady před focením', cas='4 min',
+         titul='jak se obléct na vánoční focení v ateliéru',
+         foto='fotky_blog/vanocni-rodinne-foceni-na-gauci-v-atelieru.jpg', foto_alt='Rodina ve světlém oblečení na gauči u vánočního stromku v ateliéru',
+         perex='Nevíte, co si vzít na vánoční focení? Mám pro vás pár tipů, jak se obléct tak, aby fotky působily přirozeně, útulně a nadčasově.'),
     dict(soubor='univerzalni-lokace-na-foceni.html', kat='rady před focením', cas='3 min',
          titul='univerzální lokace na focení, které máte na dosah',
          foto='fotky_portrety/rodinne-foceni-doma-na-gauci.jpg', foto_alt='Rodiče s miminkem na gauči doma, rodinné focení v obýváku',
@@ -244,6 +248,47 @@ T3 = f"""{hero([(P + 'predsvatebni-foceni-ve-vinohradu.jpg', 'Snoubenci procház
 DESC3 = 'Nemáte kde fotit? Univerzální lokace na focení, které máte na dosah: dobré světlo, zeď s charakterem, louka za domem, váš domov i městská zákoutí. Fotografka Sofie Zbořilová, Brno.'
 stranka(C3['soubor'], head('Univerzální lokace na focení, které máte na dosah | Sofie Zbořilová', DESC3, 'blog/' + C3['soubor'], 'fotky_sdileni/univerzalni-lokace-na-foceni.jpg', 'pres-vlnu',
         ld('Univerzální lokace na focení, které máte na dosah', DESC3, C3['soubor'], 'fotky_sdileni/univerzalni-lokace-na-foceni.jpg', '2025-11-07')), T3)
+
+# ---------- článek: jak se obléct na vánoční focení ----------
+C4 = next(c for c in CLANKY if c['soubor'] == 'jak-se-oblect-na-vanocni-foceni.html')
+B4 = [('barvy', 'zemité a tlumené tóny'), ('textury', 'kombinujte textury'), ('pohodli', 'pohodlí je základ'), ('sladit', 'sladit, ale ne úplně'),
+      ('doplnky', 'něco navíc'), ('deti', 'oblečení pro děti'), ('sami-sebou', 'buďte sami sebou')]
+T4 = f"""{hero([(BL + 'vanocni-foceni-miminko-v-cervenych-satech.jpg', 'Tatínek drží smějící se miminko v červených šatech u vánočního stromku'), (BL + 'cernobila-holcicka-u-vanocniho-stromku.jpg', 'Holčička u vánočního stromku, černobílé vánoční focení v ateliéru'), (BL + 'maminka-s-dcerou-vanocni-foceni.jpg', 'Maminka v zelených šatech s dcerou na klíně, vánoční focení v ateliéru')], 'rady před focením · 4 min čtení', 'jak se obléct na vánoční focení v ateliéru')}
+<div class="uzky b-clanek"><p class="b-perex">Nevíte, co si vzít na vánoční focení? Mám pro vás pár tipů, jak se obléct tak, aby fotky působily přirozeně, útulně a nadčasově.</p>
+<p>Vánoční focení je pro mě vždycky trochu srdcovka. Jednak proto, že tyhle fotky mají úplně jinou atmosféru než cokoli během roku – a taky proto, že si na chvíli všichni dovolíme zpomalit, přitulit se, a prostě být spolu. 🎄</p>
+<p>A protože se mě často ptáte, co si obléct na vánoční focení, sepsala jsem pár tipů, které vám pomůžou, aby fotky působily přirozeně, hřejivě a nadčasově. A hlavně ne kýčovitě.</p>
+{obsah(B4)}
+<h2 id="barvy" class="prvni">1. držte se přírodních, zemitých a tlumených tónů</h2><p>Bílá, krémová, béžová, hnědá, olivová, khaki, karamelová, vínová nebo třeba jemně šedá – to jsou barvy, které ve vánočně zdobených ateliérech vypadají nádherně. Vyhněte se naopak výrazným červeným, sytě zeleným nebo zlatým tónům – ty by mohly na fotkách až moc poutat pozornost nebo vám odrážet barvy do obličeje… a to nechceme🙏🏻</p>
+<p>(Když se tyto barvy vyskytují na oblečení jen v malém množství, např. v nějakém vzoru, tak to nevadí.)</p>
+<p class="b-poznamka">👉 Tady platí: méně je víc. Čím jemnější barvy, tím víc vyniknete vy a vaše emoce.</p>
+<p>Další tipy na barvy a palety pro každé roční období najdete v článku <a href="co-si-vzit-na-sebe-na-foceni.html">co si vzít na sebe na focení</a>.</p></div>
+{dvojice_org((BL + 'vanocni-foceni-rodina-v-zemitych-barvach.jpg', 'Rodina v zemitých barvách u vánočního stromku, maminka v olivově zelených šatech'), (BL + 'holcicka-u-vanocniho-stromku.jpg', 'Holčička v tylové sukni sahá na vánoční stromek'))}
+<div class="uzky b-clanek"><h2 id="textury">2. kombinujte textury</h2><p>Když je prostor bílý a minimalistický, skvěle vyniknou různé materiály. Zkuste třeba kombinaci pleteniny, lnu, džínoviny, vlny nebo manšestru. Pletený svetr, jemná košile, dlouhé šaty nebo volné kalhoty – všechno, co působí měkce a pohodlně, se do takového prostředí hodí skvěle.</p></div>
+<figure class="foto-vyska">{img(BL + 'vanocni-tehotenske-foceni-v-atelieru-cernobile.jpg', 'Budoucí rodiče v pletených svetrech u vánočního stromku, černobílé těhotenské focení v ateliéru')}</figure>
+<div class="uzky b-clanek"><h2 id="pohodli">3. pohodlí je základ</h2><p>Cílem vánočního focení není dokonalost, ale pohoda. Chci, abyste se cítili dobře, mohli se přitulit, sednout si, lehnout, obejmout se. Takže pokud váháte mezi něčím, co „vypadá dobře“, a tím, v čem se cítíte skvěle – vybírejte pohodlí. Na fotkách je totiž vždycky vidět, jak se cítíte.</p>
+<p>Pokud jste ale objednaní na delší focení (o délce 1 hodiny), tak je prostor i na více variant oblečení, takže můžete využít různé styly😊</p></div>
+<figure class="foto-sirsi">{img(BL + 'rodina-lezi-na-plysovem-medvedovi-vanocni-foceni.jpg', 'Rodina leží na velkém plyšovém medvědovi, pohodové vánoční focení v ateliéru')}</figure>
+<div class="uzky b-clanek"><h2 id="sladit">4. sladit, ale ne úplně</h2><p>Pokud přijdete ve dvojici nebo s dětmi, zkuste sladit outfity do jednoho stylu a barevné palety, ale ne do stejného oblečení.</p>
+<p>Třeba: maminka v béžových šatech, táta v hnědé košili, dítě v krémovém svetříku a tmavě zelených kalhotech. Dohromady to bude působit přirozeně, měkce a vizuálně sjednoceně – ale ne „přes kopírák“.</p>
+<p>Zkuste se prosím vyhnout tomu, aby jeden člen rodiny přišel v teplákách a druhý ve svátečním elegantním oblečení – takový kontrast na focení opravdu nechceme.</p>
+<p class="b-poznamka">✨ TIP: Tato rodinka ale ukázala, že existují i výjimky. Nechali si natisknout společné mikiny s perníčkem a i když byli všichni oblečení stejně, vypadalo to kouzelně🥰</p></div>
+<figure class="foto-sirsi">{img(BL + 'vanocni-rodinne-foceni-na-gauci-v-atelieru.jpg', 'Rodina ve stejných světlých mikinách s miminkem na gauči u vánočního stromku')}</figure>
+<div class="uzky b-clanek"><h2 id="doplnky">5. dopřejte si něco navíc</h2><p>Šála, pletené ponožky, hrnek s kakaem, oblíbená knížka nebo třeba vánoční sušenky – drobnosti, které přinesete, dodají fotkám atmosféru. A pokud máte doma něco, co k vám prostě patří (např. plyšák vašeho dítěte nebo oblíbená deka), klidně to vezměte s sebou.</p></div>
+{dvojice_org((BL + 'vanocni-darky-a-svicky-rodinne-foceni.jpg', 'Rodiče s dcerou rozbalují dárky mezi svíčkami, vánoční rodinné focení'), (BL + 'tatinek-v-pletenem-svetru-s-dcerou.jpg', 'Tatínek ve světlém pleteném svetru s dcerou v ateliéru'))}
+<div class="uzky b-clanek"><h2 id="deti">6. oblečení pro děti</h2><p>U dětí platí to samé – zvolte tlumené barvy a měkké materiály. Svetříky, lacláče, malé šatičky, overal, klidně i punčochy. Vyhněte se velkým potiskům, logům a nápisům.</p>
+<p>A hlavně: nechte je být samy sebou. I když si sundají ponožky nebo rozcuchají vlasy, bude to kouzelný. 🤍</p></div>
+{dvojice_org((BL + 'holcicka-v-tutu-sukni-u-stromecku.jpg', 'Holčička v tylové sukni stojí u vánočního stromku'), (BL + 'holcicka-se-smeje-vanocni-foceni-v-atelieru.jpg', 'Smějící se holčička sedí na bílém pufu, vánoční focení v ateliéru'))}
+<div class="uzky b-clanek"><h2 id="sami-sebou">7. a nakonec: buďte sami sebou</h2><p>To nejhezčí na focení nejsou outfity, ale vy. Jak se smějete, jak se objímáte, jak vaše děti koukají na světýlka. Oblečení jen podtrhne to, co je uvnitř – a o to mi při focení vždycky jde.</p></div>
+<figure class="foto-sirsi">{img(BL + 'vanocni-rodinne-foceni-smich.jpg', 'Rodiče se smějí s dcerou mezi polštáři, přirozené vánoční rodinné focení')}</figure>
+<section class="zelena"><div class="uzky"><p>📸 Pokud si nejste jistí, co si vzít, klidně mi napište – moc ráda vám s výběrem pomůžu (nebo pošlu pár ukázek). A hlavně – užijte si samotné focení. Protože u těchto fotek budete jednou vzpomínat na dobu, kdy jste byli spolu. 🌙</p>
+<p>Chcete letos taky vánoční fotky, které nebudou kýčovité, ale hřejivé a hlavně vaše? Termíny na vánoční focení v ateliéru se každý rok rychle plní, tak mi napište včas přes <a href="../contact.html">kontaktní formulář</a> nebo <a href="https://www.instagram.com/sofiezbo/">Instagram</a>. Ceny najdete v <a href="../cenik.html">ceníku</a> a ukázky vánočních focení v <a href="../portrety.html">portfoliu</a>. ✨</p>
+<p>S láskou,<br>Sofi</p>
+{sdileni()}</div></section>
+{konec(C4['soubor'])}
+{SDILET_JS}"""
+DESC4 = 'Jak se obléct na vánoční focení v ateliéru: 7 tipů na barvy, textury, sladění rodiny i oblečení pro děti, aby fotky byly útulné, nadčasové a ne kýčovité. Fotografka Sofie Zbořilová, Brno.'
+stranka(C4['soubor'], head('Jak se obléct na vánoční focení v ateliéru: 7 tipů | Sofie Zbořilová', DESC4, 'blog/' + C4['soubor'], 'fotky_sdileni/jak-se-oblect-na-vanocni-foceni.jpg', 'pres-vlnu',
+        ld('Jak se obléct na vánoční focení v ateliéru', DESC4, C4['soubor'], 'fotky_sdileni/jak-se-oblect-na-vanocni-foceni.jpg', '2025-11-04')), T4)
 
 # ---------- přehled blogu ----------
 kategorie = []
