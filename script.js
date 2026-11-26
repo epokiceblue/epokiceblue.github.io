@@ -95,3 +95,21 @@ document.querySelectorAll('.process li strong').forEach(title => {
     rozloz();
     window.addEventListener('resize', rozloz);
 })();
+
+/* měření kliknutí na kontakt a odeslání formuláře (Google Analytics, jen se souhlasem v cookie liště) */
+(function () {
+    if (typeof gtag !== 'function') return;
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '', ev = null;
+        if (/contact\.html/.test(h)) ev = 'klik_na_kontakt';
+        else if (h.indexOf('mailto:') === 0) ev = 'klik_na_email';
+        else if (/instagram\.com/.test(h)) ev = 'klik_na_instagram';
+        else if (/facebook\.com/.test(h)) ev = 'klik_na_facebook';
+        else if (/o-mne\.html/.test(h)) ev = 'klik_o_mne';
+        if (ev) gtag('event', ev, { text_tlacitka: (a.textContent || '').trim().slice(0, 80), stranka: location.pathname, transport_type: 'beacon' });
+    }, true);
+    var f = document.querySelector('form[action*="formspree"]');
+    if (f) f.addEventListener('submit', function () { gtag('event', 'odeslany_formular', { stranka: location.pathname, transport_type: 'beacon' }); });
+})();
