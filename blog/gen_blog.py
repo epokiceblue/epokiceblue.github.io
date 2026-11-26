@@ -298,7 +298,7 @@ stranka(C4['soubor'], head('Jak se obléct na vánoční focení v ateliéru: 7 
 C5 = next(c for c in CLANKY if c['soubor'] == 'rodinne-foceni-jako-vzpominka.html')
 B5 = [('kazdy-rok', 'každý rok je jiný'), ('chvile-pro-vas', 'chvíle pro vás'), ('hodnota', 'fotky s nevyčíslitelnou hodnotou'),
       ('jak-casto', 'jak často se fotit'), ('co-si-odnest', 'co si z toho odnést')]
-T5 = f"""{hero([(BL + 'rodina-u-potoka-rodinne-foceni.jpg', 'Rodiče pomáhají synovi přejít potok, rodinné focení v přírodě'), (P + 'rodinne-foceni-v-prirode-brno-2.jpg', 'Rodina s miminkem sedí v lese v protisvětle, černobílé rodinné focení'), (P + 'rodinne-foceni-v-kvetouci-louce.jpg', 'Rodina s malým klukem leží v kvetoucí louce')], 'rady před focením · 3 min čtení', 'rodinné focení jako vzpomínka')}
+T5 = f"""{hero([(BL + 'rodina-u-potoka-rodinne-foceni.jpg', 'Rodiče pomáhají synovi přejít potok, rodinné focení v přírodě'), (P + 'rodinne-foceni-v-prirode-brno-2.jpg', 'Rodina s miminkem sedí v lese v protisvětle, černobílé rodinné focení'), (P + 'rodinne-foceni-bez-pozovani-brno.jpg', 'Rodiče se synem v rozkvetlé louce, rodinné focení bez pózování')], 'rady před focením · 3 min čtení', 'rodinné focení jako vzpomínka')}
 <div class="uzky b-clanek"><p class="b-perex">Proč má smysl ho dělat pravidelně a proč ho tak miluju 🥰</p>
 <blockquote class="b-citat">„Čas letí.“</blockquote>
 <p>Všichni to říkáme, všichni to víme – ale naplno si to uvědomíme většinou až při pohledu na staré fotky nebo až když je pozdě.</p>
