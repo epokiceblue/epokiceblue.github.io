@@ -113,3 +113,13 @@ document.querySelectorAll('.process li strong').forEach(title => {
     var f = document.querySelector('form[action*="formspree"]');
     if (f) f.addEventListener('submit', function () { gtag('event', 'odeslany_formular', { stranka: location.pathname, transport_type: 'beacon' }); });
 })();
+
+/* Ochrana fotek: na fotkách nejde pravé tlačítko (Uložit obrázek), přetažení myší ani dlouhý stisk na mobilu. */
+(function () {
+    var styl = document.createElement('style');
+    styl.textContent = 'img{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;-webkit-user-drag:none;}';
+    document.head.appendChild(styl);
+    function jeFotka(t) { return t && (t.tagName === 'IMG' || (t.closest && t.closest('picture'))); }
+    document.addEventListener('contextmenu', function (e) { if (jeFotka(e.target)) e.preventDefault(); });
+    document.addEventListener('dragstart', function (e) { if (jeFotka(e.target)) e.preventDefault(); });
+})();

@@ -41,7 +41,7 @@
             return (ra.top - rb.top) || (ra.left - rb.left);
         });
     }
-    function zdroj(img) { return img.currentSrc || img.src; }
+    function zdroj(img) { return img.getAttribute('data-velka') || img.currentSrc || img.src; }
     function ukaz(n) {
         i = (n + poradi.length) % poradi.length;
         var f = poradi[i];

@@ -13,7 +13,7 @@ foot = src[src.index('<footer'):src.index('</footer>') + 9].replace('\r\n', '\n'
 foot = foot.replace('href="', 'href="../').replace('href="../http', 'href="http').replace('href="../mailto', 'href="mailto')
 LISTA = '''<nav class="lista" aria-label="Menu"><a href="../index.html">hlavní stránka</a><a href="../svatby.html">portfolio</a><a href="../cenik.html">ceník</a><a href="./">blog</a><a href="../o-mne.html">o mně</a><a href="../contact.html">kontakt</a></nav>'''
 SKRIPTY = '''<script>(function(){var l=document.querySelector('.lista'),h=document.querySelector('.black_background');function f(){l.classList.toggle('vidět',window.scrollY>(h.offsetHeight+60));}window.addEventListener('scroll',f,{passive:true});f();})();</script>
-<script src="../script.js?v=6"></script>'''
+<script src="../script.js?v=7"></script>'''
 WEB = 'https://sofiezborilova.cz/'
 
 def head(title, desc, url, ogimg, body_class='', extra=''):
@@ -55,7 +55,7 @@ def head(title, desc, url, ogimg, body_class='', extra=''):
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../paticka.css?v=1">{extra}
+    <link rel="stylesheet" href="../paticka.css?v=2">{extra}
 </head>
 <body class="{body_class}">
     '''

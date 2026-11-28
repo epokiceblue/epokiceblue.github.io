@@ -828,3 +828,5 @@ body { font-family: sans-serif; }
 
 /* vlna na mobilu nižší, aby nebyla natažená (2026-11-23) */
 @media (max-width: 768px) { .intro-wave svg { height: 50px; } }
+/* galerie vždy přes celou šířku (menší náhledy se srcset by ji jinak zúžily) */
+.image-gallery { width: 100%; box-sizing: border-box; }
