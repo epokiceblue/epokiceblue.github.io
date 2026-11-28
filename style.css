@@ -1290,3 +1290,6 @@ html.menu-open {
     .sluzba_video { left: auto; right: -16%; width: 36%; bottom: -14px; border-width: 1px; }
     #sluzba-firmy .sluzba_hlavni { width: 74%; margin-left: 7%; }
 }
+
+/* rozměry obrázků v HTML (proti poskakování), výšku dál řídí CSS */
+:where(img[width][height]) { height: auto; }
