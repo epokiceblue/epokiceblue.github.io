@@ -17,7 +17,7 @@
 .omne-text-in{max-width:680px;margin:0 auto}
 .omne-text p{margin:0 0 20px}
 .omne-podpis{font-style:italic;font-size:20px}
-.omne-konec{text-align:center;padding:24px 24px 80px;background:#ECE6DB}
+.omne-konec{text-align:center;padding:24px 24px 80px;background-color:#ECE6DB;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.22 0 0 0 0 0.18 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");background-size:300px 300px;background-position:0 0}
 .omne-tlacitko{display:inline-block;background:#2F3B2C;color:#fff!important;text-decoration:none;padding:15px 38px;border-radius:999px;font-size:16px}
 .omne-tlacitko:hover{background:#222}
 .omne-dalsi{margin:26px 0 0;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:15px}

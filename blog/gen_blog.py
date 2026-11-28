@@ -55,7 +55,7 @@ def head(title, desc, url, ogimg, body_class='', extra=''):
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../paticka.css?v=2">{extra}
+    <link rel="stylesheet" href="../paticka.css?v=3">{extra}
 </head>
 <body class="{body_class}">
     '''
